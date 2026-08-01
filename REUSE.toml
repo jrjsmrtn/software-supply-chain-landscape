@@ -1,0 +1,18 @@
+version = 1
+SPDX-PackageName = "software-supply-chain-landscape"
+SPDX-PackageSupplier = "Georges Martin <jrjsmrtn@gmail.com>"
+
+# Single-licensed. Attribution is what every upstream source asks for, and what this bundle already
+# does structurally through `sources` and footnotes. The gates that check it live in the
+# supplychain-workspace meta-project and are licensed there.
+[[annotations]]
+path = ["knowledge/**", "README.md", "CHANGELOG.md", "CLAUDE.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Georges Martin <jrjsmrtn@gmail.com>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = [".gitignore", ".editorconfig", ".lefthook.yml", "REUSE.toml"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Georges Martin <jrjsmrtn@gmail.com>"
+SPDX-License-Identifier = "CC0-1.0"

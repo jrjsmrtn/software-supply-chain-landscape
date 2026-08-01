@@ -1,0 +1,20 @@
+root = true
+
+[*]
+indent_style = space
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+charset = utf-8
+
+[*.{md,yml,yaml,json}]
+indent_size = 2
+
+[*.py]
+indent_size = 4
+max_line_length = 100
+
+# Markdown: trailing whitespace is not significant in this repo's prose,
+# but two-space line breaks are never used, so trimming stays on.
+[*.md]
+max_line_length = 100

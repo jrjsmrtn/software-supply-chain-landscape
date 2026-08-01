@@ -1,0 +1,11 @@
+# Local Claude context — never committed
+CLAUDE.local.md
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc

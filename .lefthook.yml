@@ -1,0 +1,20 @@
+# Quality gates for the landscape bundle.
+#
+# This repository carries knowledge and nothing else. The gates that check the bundle —
+# OKF conformance, footnote attribution, `stale_after` expiry, links, ISO dates — live in the
+# `supplychain-workspace` meta-project, because they reason about private repositories and this
+# one is meant to be publishable. Run them from there, pointed here:
+#
+#   python3 workspace/scripts/check-okf.py
+#   python3 workspace/scripts/check-doc-links.py software-supply-chain-landscape/knowledge
+#   python3 workspace/scripts/check-dates.py software-supply-chain-landscape
+#
+# Install with: lefthook install
+
+pre-commit:
+  parallel: true
+  commands:
+    gitleaks:
+      run: gitleaks protect --staged --verbose
+    reuse:
+      run: reuse lint
