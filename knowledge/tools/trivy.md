@@ -15,7 +15,7 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T12:33:36Z'
-stale_after: 2027-02-01
+stale_after: 2026-12-01
 sources:
   - id: trivy-repo
     title: aquasecurity/trivy

@@ -17,7 +17,7 @@ verified:
     at: '2026-08-01T12:37:50Z'
   - by: claude/opus-5
     at: '2026-08-01T12:41:35Z'
-stale_after: 2027-02-01
+stale_after: 2027-08-01
 sources:
   - id: cdx-cbom
     title: 'CycloneDX: CBOM'

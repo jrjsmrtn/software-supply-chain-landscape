@@ -10,7 +10,7 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:20:00Z'
-stale_after: 2027-02-01
+stale_after: 2027-08-01
 sources:
   - id: renovate-min-age
     title: 'Renovate: minimum release age'

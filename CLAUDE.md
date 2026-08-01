@@ -34,6 +34,24 @@ the private meta-project, so that what ships is knowledge plus the metadata a co
    is exactly why it is written down. Re-verify against upstream, record it in `verified`, then move
    the date.
 
+## Choosing a `stale_after`
+
+Pick the tier that matches how fast the *claims in that concept* move — not how important the
+concept is. A default value applied without thinking is how 40 of 61 concepts once ended up sharing
+one date.
+
+| Tier | For |
+|---|---|
+| **~3 months** | draft or beta specifications under active revision (TEA, TEI) |
+| **~4 months** | version and capability claims about actively-shipping software; coverage counts that grow (tool concepts, `osv.dev` source counts, `endoflife.date` product totals) |
+| **~6 months** | registries and rosters, and enums that move with a spec version (CNA roster, purl type registry, VEX vocabularies, SPDX profiles) |
+| **~12 months** | definitions, ratified specifications, structural mechanisms, attack mechanics |
+| **~24 months** | durable rationale — currently only `landscape.md` |
+
+**Clustering within a tier is fine and intended.** Concepts that share a volatility class also tend
+to share sources, so re-verifying them in one sitting is cheaper than spreading them arbitrarily.
+Clustering *across* classes, because nobody chose, is the failure this replaced.
+
 ## Gates
 
 `gitleaks` and `reuse lint` run here on commit. **The bundle checks do not** — they live in the

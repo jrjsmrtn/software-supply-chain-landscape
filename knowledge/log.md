@@ -5,6 +5,15 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-02
 
+* **Reviewed**: every `stale_after` date. 40 of 61 concepts shared `2027-02-01` — a default reached
+  for rather than a judgement made. Reassigned 25 by volatility class: tool capability claims and
+  `instruction-payloads` (OWASP AST10 is at v1 public review) pulled in to ~4 months; BOM-type
+  definitions, attack mechanics, ratified specs and structural mechanisms pushed out to ~12 months.
+  The tiers are now written down in `CLAUDE.md` so the next concept gets assigned deliberately.
+  **No content was re-verified and no `verified` entry was added** — moving a date because the
+  volatility class was misjudged is not the same act as re-checking a claim, and only the second
+  earns a `verified` entry.
+
 * **Added**: `threats/instruction-payloads.md` — artifacts whose payload is natural-language
   instructions rather than code. Scope for agent skills was decided deliberately rather than by
   accumulation: the artifact *class* is in scope, the vendor and runtime landscape is not. The
