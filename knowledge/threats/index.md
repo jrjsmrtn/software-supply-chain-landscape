@@ -8,6 +8,7 @@ graph in the first place.
 * [Dependency confusion](dependency-confusion.md) - A public package under an internal name, chosen because its version is higher.
 * [Typosquatting](typosquatting.md) - A name a character or two away from a popular one.
 * [Maintainer compromise](maintainer-compromise.md) - The legitimate publisher, operated by someone else.
+* [Instruction payloads](instruction-payloads.md) - Artifacts whose payload is prose, so code scanners see nothing.
 
 # The common thread
 

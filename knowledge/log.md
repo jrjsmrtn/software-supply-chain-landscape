@@ -3,6 +3,13 @@
 Content changes to the knowledge bundle: concepts added, re-verified, corrected or expired.
 Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
+## 2026-08-02
+
+* **Added**: `threats/instruction-payloads.md` — artifacts whose payload is natural-language
+  instructions rather than code. Scope for agent skills was decided deliberately rather than by
+  accumulation: the artifact *class* is in scope, the vendor and runtime landscape is not. The
+  boundary and its test are recorded in the meta-project's ADR-0007.
+
 ## 2026-08-01
 
 * **Added**: `disclosure/` (2 concepts) — model cards (Mitchell et al. 2019) and datasheets for
