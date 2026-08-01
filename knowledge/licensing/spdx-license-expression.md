@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T11:55:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:37:22Z\'
 stale_after: 2026-12-01
 sources:
   - id: spdx
@@ -49,10 +52,13 @@ expression to "the licences involved" has discarded the only part that determine
 CycloneDX accepts three forms, of which only two are machine-actionable; the free-text name exists
 for licences that fit nowhere else.[^cyclonedx-licensing]
 
-> **Verify field names before relying on them.** SPDX 3.0 reorganised the model, so the 2.x
-> spellings above may not apply. The CycloneDX `acknowledgement` field and its `declared` /
-> `concluded` values were confirmed against the CycloneDX licensing documentation, but **the spec
-> version that introduced it was not** — check against the version your tooling actually emits.
+> **`acknowledgement` was introduced in CycloneDX 1.6.** Confirmed against the JSON schemas: absent
+> in `bom-1.5.schema.json`, present in 1.6 and 1.7. A tool emitting 1.5 or earlier cannot express
+> declared-versus-concluded at all. (An earlier revision of this concept recorded the introducing
+> version as unconfirmed.)
+>
+> **SPDX 3.0 reorganised the model**, so the 2.x field spellings above may not apply — check against
+> the version your tooling actually emits.
 
 # Related
 

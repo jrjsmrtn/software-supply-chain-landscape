@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:30:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:37:22Z\'
 stale_after: 2026-12-01
 sources:
   - id: cosign
@@ -49,6 +52,9 @@ inclusion proof together.
 This bit a real release pipeline in this workspace's `ansible-bom` project, which is why it is
 recorded rather than left to be rediscovered. Verify the installed binary's major version before
 copying any signing snippet.
+
+The v3 line remains current — 3.1.2 as of 2026-08-02, and the bundle format is unchanged since 3.0.
+The error text above was reproduced against 3.1.1.
 
 # Practice
 

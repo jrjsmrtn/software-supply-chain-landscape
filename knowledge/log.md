@@ -5,6 +5,25 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-02
 
+* **Re-verified**: the ~4 month tier, all 14 concepts. Six of the seven that had never carried a
+  `verified` entry were checked against upstream and now do; the seventh (`osv-scanner`) already
+  did. Three corrections resulted:
+  * `tools/dependency-track` — 5.0.3 → **5.0.4**, released 2026-07-30. One day after the concept
+    was written, which is precisely the decay rate this tier exists for.
+  * `intelligence/osv-dev` — "roughly two dozen sources" overstated it; **around twenty** current,
+    plus three conversion pipelines. The source list corroborates two other concepts: OpenSSF
+    Malicious Packages (`MAL-`) and the Erlang Ecosystem Foundation CNA are both in it.
+  * `licensing/spdx-license-expression` — the caveat "the spec version that introduced
+    `acknowledgement` was not confirmed" is **resolved**: absent in `bom-1.5.schema.json`, present
+    in 1.6 and 1.7, so **introduced in CycloneDX 1.6**. A tool emitting 1.5 cannot express
+    declared-versus-concluded at all.
+  * Unchanged and confirmed: purl-spec#854 still open and unmerged (last activity 2026-06-09),
+    OWASP Agentic Skills Top 10 still at v1 public review, osv-scanner still "11+ language
+    ecosystems and 19+ lockfile types", `model-signing` still 1.1.1, cosign v3 bundle format
+    current at 3.1.2.
+  * `intelligence/endoflife-date` — product count tightened to **462**, but its API's *beta* status
+    could not be re-confirmed and the concept now says so rather than repeating it.
+
 * **Reviewed**: every `stale_after` date. 40 of 61 concepts shared `2027-02-01` — a default reached
   for rather than a judgement made. Reassigned 25 by volatility class: tool capability claims and
   `instruction-payloads` (OWASP AST10 is at v1 public review) pulled in to ~4 months; BOM-type

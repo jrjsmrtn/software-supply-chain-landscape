@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:10:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:37:22Z\'
 stale_after: 2026-12-01
 sources:
   - id: osv-dev
@@ -26,9 +29,16 @@ The database half of OSV: upstream advisory sources normalised into the
 
 # Coverage
 
-Roughly two dozen upstream sources as of 2026-07, including ecosystem advisory databases (GitHub
-Security Advisories, PyPA, RustSec, the Go vulnerability database, npm), Linux distribution
-trackers, and OSS-Fuzz findings.[^osv-data-sources]
+**Around twenty current sources** as of 2026-08-02, plus conversion pipelines the OSV team
+maintains for Debian Security Advisories, Alpine SecDB and NVD CVEs.[^osv-data-sources]
+
+Ecosystem advisory databases (GitHub, PyPA, Go, RustSec, Haskell, R Consortium, opam), Linux
+distribution trackers (Rocky, AlmaLinux, Ubuntu, Bitnami), OSS-Fuzz, and the Global Security
+Database. Two entries are worth noticing because they appear elsewhere in this bundle:
+**OpenSSF Malicious Packages** (the `MAL-` records — see [OSV IDs](/naming/osv-ids.md)) and the
+**Erlang Ecosystem Foundation CNA** (see [Ægis](aegis.md)).
+
+An earlier revision of this concept said "roughly two dozen", which overstated it.
 
 > This count and source list are the perishable part of this concept and the reason for its earlier
 > expiry. The schema does not move at this rate — see [OSV schema](osv-schema.md).

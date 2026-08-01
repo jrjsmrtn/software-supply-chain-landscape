@@ -12,6 +12,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:20:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:37:22Z\'
 stale_after: 2026-12-01
 sources:
   - id: dependency-track
@@ -43,7 +46,8 @@ honest cost of the capability. Tools that scan on demand are cheaper and answer 
 # Version
 
 5.0 became generally available on **2026-06-09**, described by the project as its largest
-architectural redesign; 5.0.3 was current as of 2026-07.[^dt-5-release]
+architectural redesign. **5.0.4 is current as of 2026-08-02**; 5.0.3 was current when this concept
+was first written a day earlier, which is the decay rate this tier exists for.[^dt-5-release]
 
 > Version facts are the perishable part of this concept and the reason for its earlier expiry.
 

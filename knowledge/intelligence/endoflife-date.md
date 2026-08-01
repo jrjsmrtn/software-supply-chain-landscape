@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:10:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:37:22Z\'
 stale_after: 2026-12-01
 sources:
   - id: endoflife-date
@@ -21,8 +24,8 @@ sources:
     resource: https://endoflife.date/docs/api/v1/
 ---
 
-Community-maintained support-lifecycle database — roughly **460 products as of 2026-07**: operating
-systems, language runtimes, frameworks, databases, devices.[^endoflife-date]
+Community-maintained support-lifecycle database — **462 products as of 2026-08-02**, counted from
+the v1 API: operating systems, language runtimes, frameworks, databases, devices.[^endoflife-date]
 
 Vulnerability data is a *lagging* indicator: it reports what has already been found and published.
 Lifecycle status is the *leading* one, and no scanner reports it. A component with zero known
@@ -47,7 +50,9 @@ information you need for planning.
 
 # API
 
-Free, **v1, currently beta** — breaking changes possible.[^eol-api] Lists products, release cycles and dates,
+Free, **v1**, and responding as of 2026-08-02. It was documented as *beta* when this concept was
+written and **that status was not re-confirmed** at the last review — treat the stability of the
+contract as unverified rather than assuming either way.[^eol-api] Lists products, release cycles and dates,
 and supports [purl](/naming/purl.md) and [CPE](/naming/cpe.md) mapping, so lifecycle data joins to
 a BOM on the same key as vulnerability data.
 
