@@ -5,6 +5,21 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-01
 
+* **Added**: `formats/spdx-ai-profile.md` — SPDX 3.0's AI and Dataset profiles. Where CycloneDX has
+  one ML-BOM, SPDX has two: the model and the data it was trained on. Six energy properties split
+  by training/fine-tuning/inference, and structured governance fields (`knownBias`,
+  `safetyRiskAssessment`, `modelExplainability`, `anonymizationMethodUsed`) that CycloneDX carries
+  only as narrative.
+* **Corrected**: `formats/spdx.md`, `intelligence/vex.md` and `landscape.md` all stated that SPDX
+  handles VEX by "separate mechanisms". **False since 3.0** — the Security profile defines twelve
+  VEX relationship classes, a `justificationType` property and a `VexJustificationType` vocabulary.
+  That was the most-cited reason to prefer CycloneDX for triage. `vex.md` now documents three
+  justification vocabularies rather than two.
+* **Reframed**: CycloneDX versus SPDX is no longer presented as a choice with an audience-based
+  tiebreak. Their scopes are complementary — CycloneDX stronger on the build (graph, completeness,
+  one schema for the family), SPDX stronger on models, datasets and licence precision. Emitting both
+  for different subjects is legitimate; emitting both for the same subject is the thing to avoid.
+
 * **Added**: `threats/` (4 concepts) — the SLSA A–H threat taxonomy, dependency confusion,
   typosquatting, maintainer compromise. Fills the corpus's largest hole: 56 concepts described
   artifacts, named them and reported known-bad, and said nothing about how hostile code *enters* a

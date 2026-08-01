@@ -132,10 +132,21 @@ through what path?" rather than merely "is this package present somewhere?" It a
 whole xBOM family in one format and carries VEX and provenance data natively rather than
 delegating them to separate specifications.
 
-**SPDX** (Linux Foundation) grew out of *license compliance*. Both formats now do both jobs, and
-most tooling emits either on request, so the choice is rarely urgent. The historical origin still
-shows in their centers of gravity: reach for SPDX when the audience is legal, CycloneDX when the
-audience is security. This workspace treats CycloneDX as the default and SPDX as an export target.
+**SPDX** (Linux Foundation) grew out of *license compliance*. The old shorthand — SPDX for lawyers,
+CycloneDX for security — was never quite right and is now wrong: **SPDX 3.0 carries VEX natively**
+through its Security profile, which removes the differentiator most often cited for choosing
+CycloneDX.
+
+The more useful frame is that the two are **complementary rather than rival**. Their scopes overlap
+heavily and diverge at the edges, and the edges decide. CycloneDX is stronger where the question is
+about a *build*: the dependency graph, declared completeness, the whole xBOM family in one schema.
+SPDX is stronger where the question is about a *model or a dataset* — its AI and Dataset profiles
+carry structured energy, bias and safety fields with no CycloneDX equivalent — and where licensing
+must be answered precisely.
+
+A project shipping a model inside a container has a good reason to emit both, describing different
+things. What to avoid is emitting both for the same content with no answer to which is authoritative
+when they disagree.
 
 | | CycloneDX | SPDX |
 |---|---|---|
@@ -143,12 +154,12 @@ audience is security. This workspace treats CycloneDX as the default and SPDX as
 | Origin | vulnerability management | license compliance |
 | Standardization | Ecma (ECMA-424) | ISO/IEC 5962 |
 | Serializations | JSON, XML, Protocol Buffers | JSON, YAML, RDF, tag-value, spreadsheet |
-| xBOM coverage | SBOM, HBOM, OBOM, SaaSBOM, ML-BOM, CBOM in one format | SBOM-centric, with profiles added over time |
-| VEX / VDR | native (`vulnerabilities` array) | separate mechanisms |
-| Typical audience | security | legal |
+| xBOM coverage | SBOM, HBOM, OBOM, SaaSBOM, ML-BOM, CBOM in one format | profile-based: Software, AI, Dataset, Security, Build, Licensing |
+| VEX / VDR | native (`vulnerabilities` array) | native since 3.0 (Security profile) |
+| Strongest at | dependency graph, completeness, one schema for the whole family | AI/dataset metadata, licence precision, ISO reference |
 
-Both are widely supported and most generators emit either on request, so the choice is rarely
-urgent.
+Both are widely supported and most generators emit either on request. Treat the row above as *where
+each is strongest*, not as a tiebreak — several projects legitimately produce both.
 
 → Each format, completeness (`compositions`), merging:
 [`formats/` in the knowledge bundle](/formats/index.md)

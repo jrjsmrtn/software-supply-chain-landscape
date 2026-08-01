@@ -23,6 +23,9 @@ sources:
   - id: cyclonedx-vex
     title: 'CycloneDX: VEX capability'
     resource: https://cyclonedx.org/capabilities/vex/
+  - id: spdx-security
+    title: 'SPDX 3.0.1: Security profile'
+    resource: https://spdx.github.io/spdx-spec/v3.0.1/model/Security/Security/
 ---
 
 A scanner reports two hundred vulnerabilities. Most are not real problems for *this* product: the
@@ -85,9 +88,15 @@ CycloneDX `analysis.justification` (impactAnalysisJustification):
 | `protected_at_perimeter` |
 | `protected_by_mitigating_control` |
 
-The two justification vocabularies overlap in intent but not in spelling, and CycloneDX's is
+**SPDX 3.0 adds a third.** The Security profile carries VEX natively — twelve
+vulnerability-assessment relationship classes (`VexAffected…`, `VexNotAffected…`, `VexFixed…`,
+`VexUnderInvestigation…`), a `justificationType` property and a `VexJustificationType`
+vocabulary.[^spdx-security] Anything written on the assumption that SPDX handles VEX externally
+predates 3.0 — see [SPDX](/formats/spdx.md).
+
+The justification vocabularies overlap in intent but not in spelling, and CycloneDX's is
 finer-grained — `requires_configuration` and `protected_at_perimeter` have no OpenVEX equivalent.
-A lossless round-trip between them does not exist.
+A lossless round-trip between any two of the three does not exist.
 
 # Related
 
@@ -98,3 +107,4 @@ A lossless round-trip between them does not exist.
 [^cisa-vex]: [CISA VEX status justifications](https://www.cisa.gov/resources-tools/resources/vulnerability-exploitability-exchange-vex-status-justification-document-june-2022)
 [^openvex-spec]: [OpenVEX specification](https://github.com/openvex/spec/blob/main/OPENVEX-SPEC.md)
 [^cyclonedx-vex]: [CycloneDX VEX capability](https://cyclonedx.org/capabilities/vex/)
+[^spdx-security]: [SPDX 3.0.1 Security profile](https://spdx.github.io/spdx-spec/v3.0.1/model/Security/Security/)

@@ -17,6 +17,9 @@ sources:
   - id: spdx
     title: SPDX
     resource: https://spdx.dev/
+  - id: spdx-security
+    title: 'SPDX 3.0.1: Security profile'
+    resource: https://spdx.github.io/spdx-spec/v3.0.1/model/Security/Security/
 ---
 
 **Software Package Data Exchange** — the Linux Foundation format, and the older of the two
@@ -28,13 +31,13 @@ dominant ones. It grew out of **license compliance**, and its name says so.[^spd
 | Origin | license compliance |
 | Standardization | ISO/IEC 5962 |
 | Serializations | JSON, YAML, RDF, tag-value, spreadsheet |
-| xBOM coverage | SBOM-centric, with profiles added over time |
-| VEX / VDR | separate mechanisms |
+| xBOM coverage | profile-based — Software, AI, Dataset, Security, Build, Licensing |
+| VEX / VDR | **native since 3.0**, via the Security profile |
 | Typical audience | legal |
 
-Both formats now do both jobs and most generators emit either on request, so the choice is rarely
-urgent. What persists is the **centre of gravity**: reach for SPDX when the audience is legal, and
-when procurement or an ISO reference is the requirement.
+The origin still shows in the licensing depth, but **"SPDX for lawyers, CycloneDX for security" is
+no longer an accurate split**. As of 3.0 the two formats have overlapping *and* genuinely
+complementary scopes — see [choosing between them](cyclonedx.md#the-two-are-complementary-not-rivals).
 
 Two things follow from the licensing origin:
 
@@ -44,8 +47,30 @@ Two things follow from the licensing origin:
 - Some procurement processes mandate SPDX specifically. That is a reason to be able to *emit* it,
   not necessarily to store it.
 
-> **Verify field names against the version your tooling emits.** SPDX 3.0 reorganised the model;
-> field spellings documented for 2.x may not carry over.
+# Profiles are the 3.0 mechanism
+
+SPDX 3.0 reorganised around **namespaces (profiles)**, each adding a domain's vocabulary on top of
+Core. Nine exist in 3.0.1:[^spdx-security]
+
+`Core` · `Software` · `Licensing` · `Security` · `Build` · `Dataset` · `AI` · `Extension` · `Lite`
+
+Two consequences matter:
+
+- **SPDX now covers domains it used to leave alone.** The [AI and Dataset
+  profiles](spdx-ai-profile.md) carry structured model and training-data metadata — energy by
+  phase, `knownBias`, `safetyRiskAssessment` — with no CycloneDX equivalent.
+- **VEX is native.** The Security profile defines twelve vulnerability-assessment relationship
+  classes (`VexAffected…`, `VexNotAffected…`, `VexFixed…`, `VexUnderInvestigation…`), a
+  `Vulnerability` class, 21 properties including `justificationType` and `vexVersion`, and a
+  `VexJustificationType` vocabulary. Its own description is terse — "The Security Profile captures
+  security related information."[^spdx-security]
+
+> **This corrects a claim widely repeated about 2.x**, including in earlier versions of this bundle:
+> that SPDX handles VEX "by separate mechanisms". True before 3.0, false now, and it was the
+> most-cited reason to prefer CycloneDX for triage.
+
+> **Verify field names against the version your tooling emits.** Field spellings documented for 2.x
+> may not carry over, and much tooling still emits 2.x.
 
 # Related
 
@@ -55,3 +80,4 @@ Two things follow from the licensing origin:
   — the licence vocabulary, which both formats use
 
 [^spdx]: [SPDX](https://spdx.dev/)
+[^spdx-security]: [SPDX 3.0.1 Security profile](https://spdx.github.io/spdx-spec/v3.0.1/model/Security/Security/)
