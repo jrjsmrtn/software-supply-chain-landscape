@@ -5,6 +5,27 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-02
 
+* **Re-verified**: the ~6 month tier, 10 of 15 concepts. Four enrichments and one correction:
+  * `naming/purl-type-definitions` — **42 registered types**. `huggingface` and `mlflow` are
+    among them, so a model is nameable with a purl and an ML-BOM joins on the same key as
+    everything else. `ansible` still is not, which is the premise of
+    `provisional-purl-identifiers`.
+  * `formats/cyclonedx` — current specification **1.7.1** (2026-06-02) recorded; the concept gave
+    only the Ecma standard number.
+  * `tools/scorecard` — the check table omitted **`SBOM`**, the check most directly about this
+    bundle's subject.
+  * `intelligence/openvex` — specification **v0.2.0**, CC0-1.0.
+  * `intelligence/aegis` — the 3-month embargo is now quoted from the CNA's own security policy.
+    The **2025-05 authorization month is not stated on the CNA's own pages**; the concept now says
+    it is secondary-sourced rather than presenting it as primary.
+  * Verified against **schemas rather than capability pages**, after a capability page proved
+    incomplete on SPDX: the CycloneDX `impactAnalysisState` and `impactAnalysisJustification` enums
+    match `bom-1.7.schema.json` exactly, and the OpenVEX status values match `OPENVEX-SPEC.md`.
+  * **Five concepts were deliberately left unverified** — `nvd`, `vdr`, `csaf-vex`, `dependabot`,
+    `renovate`. Their claims were not re-checked this round, so no `verified` entry was added.
+    Stamping them would have made the field mean "someone looked at the tier" rather than "someone
+    checked this concept".
+
 * **Re-verified**: the ~4 month tier, all 14 concepts. Six of the seven that had never carried a
   `verified` entry were checked against upstream and now do; the seventh (`osv-scanner`) already
   did. Three corrections resulted:

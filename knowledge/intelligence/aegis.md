@@ -12,6 +12,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:10:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:45:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: aegis
@@ -27,11 +30,11 @@ The Erlang Ecosystem Foundation's security initiative for the BEAM ecosystem.[^a
 
 | | |
 |---|---|
-| Authorized as a CNA | 2025-05 |
+| Authorized as a CNA | 2025-05 — from the ecosystem announcement; **not stated on the CNA's own pages**, so treat the month as secondary-sourced |
 | Scope | active packages on Hex.pm; projects under `elixir-lang`, `erlang`, `erlef`, `erlef-cna`, `gleam-lang` |
 | Fallback | acts as CNA for all Hex.pm packages outside a more specific scope |
 | Publication | records are also published to OSV |
-| Embargo | coordinated disclosure capped at 3 months[^eef-cna] |
+| Embargo | *"The maximum embargo period is 3 months."*[^eef-cna] |
 
 # Why it is named here
 

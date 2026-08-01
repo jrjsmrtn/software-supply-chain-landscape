@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:00:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:45:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: cyclonedx
@@ -30,6 +33,7 @@ and standardized as **ECMA-424**.[^cyclonedx]
 | Steward | OWASP |
 | Origin | vulnerability management |
 | Standardization | Ecma (ECMA-424) |
+| Current specification | **1.7.1**, released 2026-06-02 |
 | Serializations | JSON, XML, Protocol Buffers |
 | xBOM coverage | SBOM, HBOM, OBOM, SaaSBOM, ML-BOM, CBOM — one format |
 | VEX / VDR | native, via the `vulnerabilities` array |

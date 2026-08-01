@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:10:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:45:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: cisa-vex
@@ -43,6 +46,10 @@ supply-chain programme fails in practice.
 
 **The formats do not share an enum.** This is the most common source of confusion when mapping
 between them, and it is why "supports VEX" is not a sufficient tooling requirement.
+
+> The CycloneDX values below were read from `bom-1.7.schema.json` and the OpenVEX values from
+> `OPENVEX-SPEC.md` — the schemas rather than the capability pages, after a capability page proved
+> incomplete on [SPDX](/formats/spdx.md).
 
 CISA / [OpenVEX](openvex.md) status values:[^cisa-vex][^openvex-spec]
 

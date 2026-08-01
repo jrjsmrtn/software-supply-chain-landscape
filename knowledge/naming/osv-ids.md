@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T11:50:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:45:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: osv-dev

@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:20:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:45:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: scorecard
@@ -35,6 +38,7 @@ Checks that intersect the rest of this bundle:
 | `Security-Policy` | a `SECURITY.md` with a disclosure route |
 | `Branch-Protection` | review and status-check requirements on the default branch |
 | `Token-Permissions` | least-privilege CI token scopes |
+| `SBOM` | whether a release publishes one — the check most directly about this bundle's subject |
 
 # Detection is positional, and that bites
 

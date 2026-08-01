@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:10:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:45:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: openvex
@@ -22,6 +25,10 @@ sources:
 ---
 
 The OpenSSF VEX format: **minimal, standalone JSON-LD documents**.[^openvex][^openvex-spec]
+
+Specification **v0.2.0**, released under CC0-1.0. Its status vocabulary — `not_affected`,
+`affected`, `fixed`, `under_investigation` — is the one CISA uses, and is documented with
+[VEX](vex.md) alongside the CycloneDX values it does not match.
 
 Its design position is that a VEX statement should be small enough to publish continuously and
 independently of any BOM. That matters because the useful VEX is often written months after the

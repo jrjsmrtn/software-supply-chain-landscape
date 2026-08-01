@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T11:50:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:45:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: type-definitions
@@ -59,6 +62,11 @@ The published `examples` are the useful part for an implementer: they are **exec
 expectations rather than prose**, so an implementation can be tested against upstream directly
 instead of against someone's reading of upstream. A round-trip test over the examples fails when
 either side moves.
+
+**42 types are registered as of 2026-08-02.** Two matter for this bundle's AI material:
+`huggingface` and `mlflow` — models are nameable with a purl, so an [ML-BOM](/bom-types/ml-bom.md)
+joins to vulnerability and lifecycle data on the same key as everything else. `ansible` is **not**
+among them, which is why [provisional identifiers](provisional-purl-identifiers.md) exists.
 
 A new type arrives by pull request. Review is on human timescales and can stall — see
 [Provisional identifiers for unregistered purl types](provisional-purl-identifiers.md).
