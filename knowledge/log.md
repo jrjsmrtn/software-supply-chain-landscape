@@ -5,6 +5,25 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-02
 
+* **Re-verified**: `distribution/tea` and `distribution/tei` — the two nearest expiry, and the two
+  that had never been checked. The largest single improvement of the day:
+  * **`tei` now documents its syntax.** The concept previously said the identifier syntax was
+    "deliberately not restated" because it was a moving target, and recorded that as the thing to
+    fill in once it settled. It has: `urn:tei:<type>:<domain-name>:<unique-identifier>`, with types
+    including `purl`, `swid` and `uuid`, and resolution through DNS (`A`/`AAAA`/`CNAME`) to a
+    `/.well-known/tea` endpoint over validated HTTPS. IANA registration of the URN scheme is still
+    outstanding. A purl nests *inside* a TEI as its identifier component — TEI names a release,
+    purl names a component.
+  * **`tea`'s object model was missing two levels.** It listed Product / Component / Collection /
+    Artifact and omitted **Product Release** — which is the primary entry point a TEI resolves
+    to — and **Release** (Component Release).
+  * **Beta 2 confirmed** from the specification repository, with the consequence made explicit:
+    the beta covers the *consumer* side only, and publisher-API work begins after 1.0. A consumer
+    can be built now; a publisher cannot. Note also that only `0.1.0-beta.1` is tagged, so the
+    status cannot be read from the release list.
+  * `landscape.md` updated to match, replacing the passage that said the syntax was too unstable to
+    restate.
+
 * **Re-verified**: the last five of the ~6 month tier — `nvd`, `vdr`, `csaf-vex`, `dependabot`,
   `renovate`. **Both short tiers are now fully verified.** One sourcing correction and three
   enrichments:

@@ -450,9 +450,14 @@ itself, so publishing a new VEX statement for an unchanged binary is a first-cla
 than a silent file swap.
 
 Governance follows CycloneDX's lineage: an OWASP effort being standardized through Ecma
-International TC54. It is early, and this document deliberately does not restate its identifier
-syntax or resolution mechanics, because those are the parts still moving. Treat TEA as a direction
-to track rather than something to build on today.
+International TC54. The identifier syntax and resolution mechanics have since settled enough to
+document — a `urn:tei:` URN resolved through DNS to a `/.well-known/tea` endpoint — but the
+specification is at **beta 2**, and deliberately covers the *consumer* side only: work on the
+publisher API begins after 1.0.
+
+So the asymmetry decides what you can do with it. Building something that *reads* TEA is possible
+now; building something that *publishes* is not, and publishing is the side most projects would
+need.
 
 → Object model, TEI, status:
 [`distribution/` in the knowledge bundle](/distribution/index.md)
