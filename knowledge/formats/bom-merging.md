@@ -10,6 +10,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:00:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:05:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: cyclonedx-cli

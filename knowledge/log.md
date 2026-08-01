@@ -5,6 +5,28 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-02
 
+* **Re-verified**: the ~12 month tier, 24 of 29. The most consequential correction of the review:
+  * **SLSA v1.1 reassigned the threat letters**, and `threats/slsa-threat-model` documented v1.0.
+    `D` was *use compromised dependency* and is now *External Build Parameters*; `G` was *compromise
+    package registry* and is now *Distribution Channel*, which v1.1 **partially addresses** through
+    consumer verification. Anyone citing "SLSA threat D" from the old concept would have meant
+    something the current specification does not. Rewritten for v1.1, with the reassignment called
+    out, and the citing concepts repointed.
+  * **`H` in v1.1 is *Package Selection* — typosquatting and naming confusion** — and SLSA states
+    *"this threat is not currently addressed by SLSA."* The specification now names the gap this
+    subdirectory was created to fill.
+  * `provenance/slsa` still said v1.0 was current. It is v1.1.
+  * `formats/bom-completeness` listed **six** `aggregate` values; the schema has **ten**. The four
+    omitted are the proprietary/open-source splits, which are what let a BOM say *we enumerated our
+    open-source dependencies and not our commercial ones*.
+  * `naming/bom-link` described one URN form with an optional fragment. The schema defines **two
+    distinct types**, with the serial number a UUID and the version a positive integer.
+  * `intelligence/osv-schema` omitted the record lifecycle fields, including **`withdrawn`** — a
+    scanner ignoring it keeps reporting advisories the database has retracted.
+  * `licensing/reuse` — specification version recorded: **REUSE 3.3**.
+  * **Five left unverified**: `copyleft-floor`, `declared-vs-concluded`, `spdx-license-list`, `cpe`,
+    `in-toto`. Their claims were not re-checked this round.
+
 * **Re-verified**: `distribution/tea` and `distribution/tei` — the two nearest expiry, and the two
   that had never been checked. The largest single improvement of the day:
   * **`tei` now documents its syntax.** The concept previously said the identifier syntax was

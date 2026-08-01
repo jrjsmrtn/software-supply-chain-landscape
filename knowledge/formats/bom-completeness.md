@@ -12,6 +12,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:00:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:05:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: cyclonedx-compositions
@@ -35,9 +38,17 @@ That is not a nuance; it is the difference between an inventory and a misleading
 | `complete` | every component is accounted for |
 | `incomplete` | known to be missing components |
 | `incomplete_first_party_only` | first-party components enumerated, third-party not |
+| `incomplete_first_party_proprietary_only` | first-party proprietary only |
+| `incomplete_first_party_opensource_only` | first-party open-source only |
 | `incomplete_third_party_only` | third-party components enumerated, first-party not |
+| `incomplete_third_party_proprietary_only` | third-party proprietary only |
+| `incomplete_third_party_opensource_only` | third-party open-source only |
 | `unknown` | completeness not determined |
 | `not_specified` | no assertion made |
+
+Read from `bom-1.7.schema.json`. An earlier revision listed six of the ten and omitted the
+proprietary/open-source splits, which are what let a BOM say *we enumerated our open-source
+dependencies and not our commercial ones* — a common and honest position.
 
 Note that `unknown` and `not_specified` are different claims: the first says nobody determined it,
 the second declines to assert anything. Neither is the same as `complete`, and a consumer that

@@ -13,6 +13,8 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T21:35:00Z'
+  - by: claude/opus-5
+    at: \'2026-08-01T23:05:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: birsan
@@ -39,8 +41,10 @@ misconfiguration in the classical sense, just the resolver doing what it was des
 The names are not secret either. Birsan harvested internal package names from GitHub, forum posts
 and JavaScript files that list a project's dependencies.[^birsan]
 
-This is SLSA threat **D**, and SLSA v1.0 does not address it — see
-[the threat model](slsa-threat-model.md).
+SLSA classes this under **dependency threats**, which carry no letter in v1.1 and which the
+specification states it "does not explicitly address" — see [the threat model](slsa-threat-model.md).
+Beware older material citing "SLSA threat D" for this: **v1.1 reassigned the letters**, and `D` now
+means External Build Parameters.
 
 # Practice
 
@@ -58,7 +62,7 @@ makes the substitution auditable, not preventable.
 
 # Related
 
-- [SLSA threat model](slsa-threat-model.md) — threat D, out of scope for SLSA v1.0
+- [SLSA threat model](slsa-threat-model.md) — dependency threats, which SLSA does not address
 - [Typosquatting](typosquatting.md) — the other name-based attack; that one needs a typo, this one
   does not
 - [osv.dev](/intelligence/osv-dev.md) — `MAL-` records cover published malicious packages

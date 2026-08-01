@@ -65,7 +65,8 @@ Curated ground truth exists for testing detection.[^typosquat-dataset]
 
 - [OSV IDs](/naming/osv-ids.md) — `MAL-` is a distinct namespace from vulnerability advisories
 - [Dependency confusion](dependency-confusion.md) — name-based, but needs no typo
-- [SLSA threat model](slsa-threat-model.md) — threat D
+- [SLSA threat model](slsa-threat-model.md) — **threat H, Package Selection** in SLSA v1.1, which
+  names typosquatting explicitly and states "this threat is not currently addressed by SLSA"
 
 [^typogard]: [Defending Against Package Typosquatting](https://dl.acm.org/doi/10.1007/978-3-030-65745-1_7)
 [^ossf-malicious]: [OpenSSF: Detecting Malicious Packages Using the OSV API](https://openssf.org/blog/2026/05/20/detecting-malicious-packages-using-the-osv-api/)

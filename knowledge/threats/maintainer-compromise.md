@@ -37,9 +37,9 @@ signature attests *who published*, which is exactly what an attacker has taken. 
 [Sigstore](/provenance/sigstore.md).
 
 **Provenance does not help.** SLSA grades the integrity of the build process; a compromised
-maintainer's build is faithfully and verifiably built from source they control. This is threats F
-and H in [the SLSA threat model](slsa-threat-model.md), and v1.0 addresses neither the registry
-compromise case (G) nor the dependency case (D).[^slsa-threats]
+maintainer's build is faithfully and verifiably built from source they control. In SLSA v1.1 this
+touches **A (Producer)** and **F (Artifact Publication)**, and source threats A–C are ones SLSA
+"does not yet address".[^slsa-threats]
 
 **Reproducible builds do not help**, for the same reason: reproducing an attacker's source produces
 the attacker's artifact.

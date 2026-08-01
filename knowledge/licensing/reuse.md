@@ -12,6 +12,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T11:55:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:05:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: reuse
@@ -24,6 +27,8 @@ sources:
 
 The FSFE convention for making copyright and licensing machine-readable **in the source tree**, so
 a BOM generator reads facts rather than inferring them.[^reuse]
+
+Current specification: **REUSE 3.3**, which is what `reuse lint` reports conformance against.
 
 It attacks [declared-versus-concluded](declared-vs-concluded.md) at the root: the licence stops
 being a manifest claim about a whole package and becomes a per-file fact.

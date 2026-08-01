@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:30:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:05:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: slsa
@@ -25,8 +28,12 @@ level.[^slsa]
 Provenance answers *how was this built*: which source, which builder, which parameters. The grading
 is about how hard that record would be to forge.
 
-> **Level numbering changed between v0.1 and v1.0 and is not restated here.** Cite a level only
-> alongside the specification version it refers to, or the claim is ambiguous.
+**v1.1 is current.** Build levels are written `Build L0` through `Build L3`.
+
+> **Numbering changed between v0.1 and v1.0, and v1.1 reassigned the *threat* letters.** Cite a
+> level or a threat letter only alongside the specification version it refers to — see
+> [the threat model](/threats/slsa-threat-model.md), where `D` means different things in v1.0
+> and v1.1.
 
 # The misreading to avoid
 
