@@ -16,6 +16,10 @@ sources:
   - id: osv-dev
     title: OSV — Open Source Vulnerabilities
     resource: https://osv.dev/
+  - id: ossf-malicious
+    title: 'OpenSSF: Detecting Malicious Packages Using the OSV API'
+    resource: https://openssf.org/blog/2026/05/20/detecting-malicious-packages-using-the-osv-api/
+    last_modified: '2026-05-20'
 ---
 
 Not one namespace but a family of them, each owned by the ecosystem that issues it and normalised
@@ -27,9 +31,25 @@ into the OSV schema by osv.dev.[^osv-dev]
 | `RUSTSEC-` | RustSec advisory database |
 | `GO-` | Go vulnerability database |
 | `GHSA-` | GitHub Advisory Database |
+| `MAL-` | OpenSSF malicious-packages — **not a vulnerability namespace** |
 
 The list is not exhaustive — osv.dev aggregates roughly two dozen upstream sources, and the prefix
 set grows as ecosystems adopt it.
+
+# `MAL-` is a different kind of claim
+
+`MAL-` records come from OpenSSF's **malicious-packages** repository — "the first open source system
+for collecting and publishing cross-ecosystem reports of malicious packages" — and are served
+through the same API as everything else, e.g. `https://api.osv.dev/v1/vulns/MAL-2025-6812`, and
+matched by the same `/query` and `/querybatch` endpoints.[^ossf-malicious]
+
+The distinction is worth holding onto. A `PYSEC-` or `GHSA-` record says *this version has a flaw*.
+A `MAL-` record says *this package is hostile* — there is no fixed version to upgrade to, and the
+remedy is removal rather than a bump. A scanner that surfaces both without distinguishing them
+invites exactly the wrong response.
+
+They are the machine-readable channel for [typosquatting](/threats/typosquatting.md) and
+[maintainer compromise](/threats/maintainer-compromise.md), which no vulnerability feed covers.
 
 # Why per-source identifiers rather than one namespace
 
@@ -49,3 +69,4 @@ lookup rather than a heuristic.
 - [CVE](cve.md) · [GHSA](ghsa.md) — linked by alias
 
 [^osv-dev]: [OSV — Open Source Vulnerabilities](https://osv.dev/)
+[^ossf-malicious]: [OpenSSF: Detecting Malicious Packages Using the OSV API](https://openssf.org/blog/2026/05/20/detecting-malicious-packages-using-the-osv-api/)

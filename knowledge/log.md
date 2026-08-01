@@ -5,6 +5,16 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-01
 
+* **Added**: `threats/` (4 concepts) — the SLSA A–H threat taxonomy, dependency confusion,
+  typosquatting, maintainer compromise. Fills the corpus's largest hole: 56 concepts described
+  artifacts, named them and reported known-bad, and said nothing about how hostile code *enters* a
+  dependency graph. Anchored on SLSA's own statement that v1.0 does not address threats A, B, C, D
+  or G — the bundle had inherited SLSA's blind spot.
+* **Corrected**: `naming/osv-ids.md` omitted the `MAL-` prefix. OpenSSF's malicious-packages
+  records are served through the same OSV API but assert something different — *this package is
+  hostile*, with no fixed version to upgrade to. A scanner that does not distinguish them from
+  `PYSEC-`/`GHSA-` advisories invites the wrong remedy.
+
 * **Extracted**: the bundle moved out of the `supplychain-workspace` meta-project into this
   repository, so it can be distributed. Cross-document links converted to bundle-relative form.
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis

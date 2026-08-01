@@ -15,6 +15,7 @@ okf_version: "0.2"
 * [licensing](licensing/index.md) - Licence identifiers and expressions, and the practices that make them trustworthy.
 * [naming](naming/index.md) - How components and vulnerabilities are identified, and the registries behind those identifiers.
 * [provenance](provenance/index.md) - How an artifact's origin is recorded, wrapped, and signed.
+* [threats](threats/index.md) - How malicious code enters a dependency graph, and why inventory and provenance do not stop it.
 * [tools](tools/index.md) - The runnable things, and the practices that make them safe.
 
 # About this bundle
