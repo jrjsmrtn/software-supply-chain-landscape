@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:10:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:52:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: csaf
@@ -20,6 +23,10 @@ sources:
 
 A **profile of CSAF** — the OASIS Common Security Advisory Framework — rather than a format of its
 own.[^csaf] Heavier than [OpenVEX](openvex.md), and favoured by large vendors.
+
+**CSAF 2.0** is the established version, with an errata revision; **CSAF 2.1** is under development
+in the OASIS technical committee alongside it. Pin the version a consumer expects rather than
+assuming, since a VEX profile follows the base specification.
 
 The weight is the point rather than an accident: CSAF is a full advisory framework with product
 trees, branches and relationships, built for organisations publishing advisories across large

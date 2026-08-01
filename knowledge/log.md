@@ -5,6 +5,25 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-02
 
+* **Re-verified**: the last five of the ~6 month tier — `nvd`, `vdr`, `csaf-vex`, `dependabot`,
+  `renovate`. **Both short tiers are now fully verified.** One sourcing correction and three
+  enrichments:
+  * `intelligence/vdr` and `landscape.md` gave VDR *"a lineage in NIST and EO 14028"*, attributed
+    to the CycloneDX VDR capability page. **That page says no such thing** — it cites
+    **ISO/IEC 29147:2018** and mentions neither NIST nor the Executive Order. The claim may be
+    defensible in US policy terms but it was sourced to a document that does not carry it. Both
+    places corrected.
+  * `tools/dependabot` — the `cooldown` block named properly: `default-days` plus per-bump
+    `semver-major-days` / `semver-minor-days` / `semver-patch-days`, and `include` / `exclude`
+    lists up to 150 entries.
+  * `tools/update-cooldown` — "both exempt security updates by default" understated it. For
+    Dependabot the boundary is structural: *"The `cooldown` option is only available for version
+    updates, not security updates."* It cannot delay a security fix even by misconfiguration.
+  * `intelligence/csaf-vex` — CSAF **2.0** established with an errata revision, **2.1** under
+    development alongside it.
+  * Confirmed unchanged: Renovate AGPL-3.0 with `minimumReleaseAge` still the option name; NVD's
+    role as CVE enrichment carrying CPE applicability and CVSS.
+
 * **Re-verified**: the ~6 month tier, 10 of 15 concepts. Four enrichments and one correction:
   * `naming/purl-type-definitions` — **42 registered types**. `huggingface` and `mlflow` are
     among them, so a model is nameable with a purl and an ML-BOM joins on the same key as

@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:20:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:52:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: dependabot
@@ -39,7 +42,14 @@ migration cost along with the bot.
 It satisfies the OpenSSF [Scorecard](scorecard.md) `Dependency-Update-Tool` check.
 
 **Configure a [cooldown](update-cooldown.md).** On default settings an update bot is not
-unambiguously safer than not updating.
+unambiguously safer than not updating. Dependabot's `cooldown` block takes `default-days` plus
+per-bump `semver-major-days` / `semver-minor-days` / `semver-patch-days`, and `include` / `exclude`
+lists of up to 150 entries — so a long delay on majors can coexist with a short one on
+patches.[^dependabot]
+
+Note the hard boundary: *"The `cooldown` option is only available for **version** updates, not
+**security** updates."*[^dependabot] Security fixes cannot be delayed by it even by
+misconfiguration.
 
 # Related
 

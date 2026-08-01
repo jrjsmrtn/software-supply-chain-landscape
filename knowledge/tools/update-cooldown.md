@@ -10,6 +10,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:20:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:52:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: renovate-min-age
@@ -32,7 +35,10 @@ window a registry-account takeover exploits.
 | [Renovate](renovate.md) | `minimumReleaseAge`[^renovate-min-age] |
 | [Dependabot](dependabot.md) | cooldown option, introduced in 2025[^dependabot] |
 
-**Both exempt security updates by default**, so fixes for known vulnerabilities are not delayed.
+**Neither delays security fixes.** For Dependabot this is structural rather than a default:
+*"The `cooldown` option is only available for **version** updates, not **security**
+updates."*[^dependabot] Renovate exempts them by configuration.
+
 That is what makes the trade-off acceptable rather than merely conservative — you are delaying
 feature churn, not patches.
 

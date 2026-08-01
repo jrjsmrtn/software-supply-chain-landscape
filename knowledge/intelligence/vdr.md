@@ -10,6 +10,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:10:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T22:52:00Z\'
 stale_after: 2027-02-01
 sources:
   - id: cyclonedx-vdr
@@ -18,7 +21,15 @@ sources:
 ---
 
 **Vulnerability Disclosure Report.** A supplier's standing, outward disclosure of a product's whole
-vulnerability picture — *what is wrong* — with a lineage in NIST and EO 14028.
+vulnerability picture — *what is wrong*. CycloneDX frames it as the ability to *"communicate known
+and unknown vulnerabilities affecting components and services"*, carrying vulnerability sources,
+severity, affected components and recommended mitigations.[^cyclonedx-vdr]
+
+> **A sourcing correction.** Earlier revisions of this concept, and the comparison table in
+> `landscape.md`, gave VDR "a lineage in NIST and EO 14028". **The CycloneDX VDR page does not say
+> that** — it references **ISO/IEC 29147:2018** as the relevant standard for vulnerability
+> disclosure and mentions neither NIST nor the Executive Order. The NIST framing is common in US
+> policy discussion, but it was attributed here to a source that does not carry it.
 
 It is routinely conflated with [VEX](vex.md), and they share a schema in CycloneDX, but they answer
 different questions. VDR **enumerates**; VEX **adjudicates**. Producing a VDR does not discharge

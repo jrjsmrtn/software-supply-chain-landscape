@@ -425,7 +425,7 @@ original push, while VDR terminology comes more from the NIST and Executive Orde
 | Trigger | ongoing, standing disclosure | a scan finding, or a customer asking about a specific CVE |
 | Center of gravity | the vulnerability records | the `analysis` verdict |
 | Direction | supplier discloses outward, broadly | supplier answers a specific downstream question |
-| Lineage | NIST / EO 14028 | CISA; implemented by CycloneDX, OpenVEX, CSAF |
+| Lineage | vulnerability-disclosure practice (CycloneDX cites ISO/IEC 29147:2018) | CISA; implemented by CycloneDX, OpenVEX, CSAF |
 
 → States, justifications, and the formats:
 [`intelligence/` in the knowledge bundle](/intelligence/index.md)
