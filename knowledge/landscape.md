@@ -715,7 +715,6 @@ algorithm, and a note that traffic over it is harvestable today and readable lat
 - **How-to**: none yet — "generate and verify an SBOM for project X" belongs in `../howto/`.
 - **ADR**: cross-project decisions (canonical BOM format, signing approach) belong in `../adr/`
   once the workspace is promoted to t1.
-- Repository conventions: [`CLAUDE.md`](../CLAUDE.md).
 
 ## Sources
 
