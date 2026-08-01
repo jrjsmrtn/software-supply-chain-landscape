@@ -10,6 +10,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T11:55:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:12:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: spdx-license-list
@@ -31,6 +34,11 @@ the code you wrote — not the thing you ship.
 | Self-hosted / internal use | attribution, if the floor is permissive |
 | Redistributing the artifact | offer source for copyleft components; satisfy each licence's terms |
 | Offering it as a network service | AGPL §13 source-offer, if any AGPL component is present |
+
+AGPL-3.0 §13 is headed *"Remote Network Interaction; Use with the GNU General Public License"*
+and requires a modified version to *"prominently offer all users interacting with it remotely
+through a computer network"* access to the source. Interaction over a network is the trigger —
+not distribution of a binary.
 
 # Two consequences that catch people
 

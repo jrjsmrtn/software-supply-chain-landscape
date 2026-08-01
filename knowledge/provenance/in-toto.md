@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T12:30:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:12:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: in-toto
@@ -34,8 +37,9 @@ The layout is the recipe; the link metadata is the evidence each cook actually f
 Most projects encounter in-toto not through layouts but through the **attestation envelope**,
 because that is what [SLSA](slsa.md) provenance travels inside.
 
-The envelope is deliberately generic: it carries a *subject* (which artifact, by digest) and a
-*predicate* (the claim being made). Provenance is one predicate type; SBOM references, test
+The envelope is deliberately generic. A Statement carries a **`subject`** — a required array of
+ResourceDescriptor objects, so one attestation can cover several artifacts — plus a
+**`predicateType`** URI naming the kind of claim, and the **`predicate`** itself. Provenance is one predicate type; SBOM references, test
 results and review attestations are others. That generality is why "attestation" is worth keeping
 distinct from "provenance" — provenance is a kind of attestation, not a synonym for it.
 

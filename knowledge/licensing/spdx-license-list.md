@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T11:55:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:12:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: spdx-license-list
@@ -38,6 +41,11 @@ field carrying prose is a licence field nothing downstream can act on.
 
 The `-only` / `-or-later` distinction replaced an older `+` suffix and is not cosmetic: it is the
 difference between one obligation and an open-ended set of them.
+
+**The superseded forms are still on the list**, flagged `isDeprecatedLicenseId` — 32 of 733
+identifiers as of 2026-08-02. So encountering `GPL-3.0` or `GPL-3.0+` does not mean the producer
+invented an identifier; it means they used a deprecated one, and the ambiguity `-only` was
+introduced to remove is back.
 
 # Related
 

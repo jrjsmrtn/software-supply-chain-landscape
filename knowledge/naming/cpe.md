@@ -11,6 +11,9 @@ status: stable
 generated:
   by: claude/opus-5
   at: '2026-08-01T11:50:00Z'
+verified:
+  - by: claude/opus-5
+    at: \'2026-08-01T23:12:00Z\'
 stale_after: 2027-08-01
 sources:
   - id: nvd-cpe
@@ -19,7 +22,8 @@ sources:
 ---
 
 The older component identifier, stewarded by **NIST** and designed to name IT *products* — vendor,
-product, version — rather than published packages.[^nvd-cpe]
+product, version — rather than published packages. Current specification **CPE 2.3**, with NIST
+publishing the official dictionary.[^nvd-cpe]
 
 The defining difference from [purl](purl.md) is **derivation**. A purl is computed from the
 package's own coordinates; a CPE is *assigned* from a controlled dictionary. That makes CPE

@@ -5,6 +5,23 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-02
 
+* **Every fact-bearing concept is now verified** — 60 of 61. Only `landscape.md` carries no
+  `verified` entry, which is correct: it is durable rationale, and its claims are arguments rather
+  than facts with sources to re-check.
+* **Re-tiered**: `provenance/slsa` and `threats/slsa-threat-model` moved from ~12 months to
+  ~6 months. The tier was assigned on the reasoning that ratified specifications do not move; SLSA
+  then turned out to have shipped v1.1 and rewritten its threat taxonomy. "Ratified" is a weaker
+  guarantee than it sounds when a specification is actively developed.
+* **Last five verified**, with four enrichments:
+  * `licensing/spdx-license-list` — the superseded `+` forms are **still on the list**, flagged
+    `isDeprecatedLicenseId` (32 of 733 identifiers). Encountering `GPL-3.0` means a deprecated
+    identifier was used, not an invented one — and the ambiguity `-only` exists to remove is back.
+  * `provenance/in-toto` — a Statement's `subject` is a **required array of ResourceDescriptor
+    objects**, so one attestation can cover several artifacts; `predicateType` is a URI.
+  * `licensing/copyleft-floor` — AGPL-3.0 §13 quoted by its actual heading, *"Remote Network
+    Interaction"*. The trigger is interaction over a network, not distribution of a binary.
+  * `naming/cpe` — current specification **CPE 2.3**.
+
 * **Re-verified**: the ~12 month tier, 24 of 29. The most consequential correction of the review:
   * **SLSA v1.1 reassigned the threat letters**, and `threats/slsa-threat-model` documented v1.0.
     `D` was *use compromised dependency* and is now *External Build Parameters*; `G` was *compromise
