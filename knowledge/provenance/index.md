@@ -2,6 +2,7 @@
 
 * [Sigstore](sigstore.md) - Keyless signing: short-lived certificates bound to an OIDC identity, logged publicly.
 * [cosign](cosign.md) - The Sigstore client, and why verification without an expected identity proves nothing.
+* [model-signing (OMS)](model-signing.md) - Signs a directory tree by hashing every component into a manifest. Not only for models.
 
 # Provenance and attestation
 

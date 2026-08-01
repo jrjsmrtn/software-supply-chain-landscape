@@ -59,6 +59,8 @@ worse than shipping none — it invites a check that silently passes for the wro
 # Related
 
 - [Sigstore](sigstore.md) — Fulcio, Rekor, and the keyless flow
+- [model-signing (OMS)](model-signing.md) — the sibling for **directory trees**: cosign signs a blob
+  or an image, model-signing signs a manifest over every file in a tree
 - [SLSA](slsa.md) — provenance is the other half of a signed release
 
 [^cosign]: [Sigstore: cosign](https://docs.sigstore.dev/cosign/signing/overview/)

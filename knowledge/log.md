@@ -5,6 +5,13 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-01
 
+* **Added**: `provenance/model-signing.md` — the Sigstore project's tool for signing a *directory
+  tree*, by hashing every component into a manifest and signing that. Fills a real gap: `cosign`
+  signs one blob or image, and a model, a skill and an OKF bundle are all trees of files. Four
+  signing methods including keyless OIDC and PKCS #11. Records that OMS is the format and
+  `model-signing` one implementation — the Sigstore/cosign separation again. NVIDIA uses it to sign
+  agent skills, which is the evidence that it is not model-specific.
+
 * **Added**: `formats/spdx-ai-profile.md` — SPDX 3.0's AI and Dataset profiles. Where CycloneDX has
   one ML-BOM, SPDX has two: the model and the data it was trained on. Six energy properties split
   by training/fine-tuning/inference, and structured governance fields (`knownBias`,
