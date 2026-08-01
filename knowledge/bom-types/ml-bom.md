@@ -68,6 +68,8 @@ difference — see [SPDX AI and Dataset profiles](/formats/spdx-ai-profile.md).
 - [SBOM](sbom.md) — the framework and library dependencies underneath a model still need one
 - [cdxgen](/tools/cdxgen.md) — generates AI-BOM
 - [SPDX AI and Dataset profiles](/formats/spdx-ai-profile.md) — the other expression
+- [Model cards](/disclosure/model-cards.md) · [Datasheets for datasets](/disclosure/datasheets-for-datasets.md)
+  — the narrative counterparts: a BOM says what a model is made of, a card says what it is for
 
 [^cdx-mlbom]: [CycloneDX: ML-BOM](https://cyclonedx.org/capabilities/mlbom/)
 [^spdx-ai]: [SPDX 3.0.1 AI profile](https://spdx.github.io/spdx-spec/v3.0.1/model/AI/AI/)

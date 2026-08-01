@@ -82,6 +82,8 @@ an application with ordinary dependencies. Expect all three.
 - [ML-BOM](/bom-types/ml-bom.md) — the BOM type these express, alongside CycloneDX's
 - [SPDX](spdx.md) — the profile mechanism and the full namespace list
 - [CycloneDX](cyclonedx.md) — the other expression, stronger elsewhere
+- [Model cards](/disclosure/model-cards.md) · [Datasheets for datasets](/disclosure/datasheets-for-datasets.md)
+  — the same ground as narrative rather than fields
 
 [^spdx-ai]: [SPDX 3.0.1 AI profile](https://spdx.github.io/spdx-spec/v3.0.1/model/AI/AI/)
 [^spdx-dataset]: [SPDX 3.0.1 Dataset profile](https://spdx.github.io/spdx-spec/v3.0.1/model/Dataset/Dataset/)

@@ -5,6 +5,12 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
 ## 2026-08-01
 
+* **Added**: `disclosure/` (2 concepts) — model cards (Mitchell et al. 2019) and datasheets for
+  datasets (Gebru et al.). Deliberately a new subdirectory rather than filed under `bom-types/`:
+  a BOM says what an artifact is *made of*, a card says what it is *for*. Placing them together
+  would have blurred the distinction the concepts exist to draw. It is also where the identified
+  AI-governance gap (EU AI Act, NIST AI RMF) will go.
+
 * **Added**: `provenance/model-signing.md` — the Sigstore project's tool for signing a *directory
   tree*, by hashing every component into a manifest and signing that. Fills a real gap: `cosign`
   signs one blob or image, and a model, a skill and an OKF bundle are all trees of files. Four

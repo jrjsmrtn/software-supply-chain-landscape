@@ -9,6 +9,7 @@ okf_version: "0.2"
 # Subdirectories
 
 * [bom-types](bom-types/index.md) - The xBOM family: what each variant inventories, and whether it describes an artifact, a deployment or a process.
+* [disclosure](disclosure/index.md) - Documents that travel with an artifact saying what it is for, and where it fails.
 * [distribution](distribution/index.md) - How a consumer discovers and retrieves a release's artifacts.
 * [formats](formats/index.md) - The BOM interchange formats, and the document-level practices that go with them.
 * [intelligence](intelligence/index.md) - Vulnerability and lifecycle data, who issues it, and how findings are triaged.
