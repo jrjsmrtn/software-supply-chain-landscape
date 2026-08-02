@@ -87,4 +87,3 @@ an application with ordinary dependencies. Expect all three.
 
 [^spdx-ai]: [SPDX 3.0.1 AI profile](https://spdx.github.io/spdx-spec/v3.0.1/model/AI/AI/)
 [^spdx-dataset]: [SPDX 3.0.1 Dataset profile](https://spdx.github.io/spdx-spec/v3.0.1/model/Dataset/Dataset/)
-[^lf-aibom]: [Linux Foundation: Implementing AI BOM with SPDX 3.0](https://www.linuxfoundation.org/hubfs/LF%20Research/lfr_spdx_aibom_102524a.pdf)
