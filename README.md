@@ -26,9 +26,9 @@ Every concept states where its facts came from, who checked them, and when they 
 | `stale_after` | when the concept stops being trustworthy |
 
 A footnote whose label is not a `sources[].id` attributes nothing, and a concept past its
-`stale_after` fails a gate. Both are **enforced by a checker, not asked for in prose** — the
-checkers live alongside the private workspace this corpus was extracted from and are run against
-this repository before publishing.
+`stale_after` fails a gate. Both are **enforced by a checker, not asked for in prose** — run on
+every commit, and again weekly on a schedule. The weekly run is the one that matters for expiry:
+a concept goes stale with the calendar, on a repository nobody has touched.
 
 That discipline came from being burned: an earlier version of this corpus cited project homepages
 for claims that needed specific pages, and one URL had been written from memory.

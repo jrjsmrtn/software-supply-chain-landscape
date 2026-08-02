@@ -2,12 +2,16 @@
 #
 # This repository carries knowledge and nothing else. The gates that check the bundle —
 # OKF conformance, footnote attribution, `stale_after` expiry, links, ISO dates — live in the
-# `supplychain-workspace` meta-project, because they reason about private repositories and this
-# one is meant to be publishable. Run them from there, pointed here:
+# `supplychain-workspace` meta-project, because this one is meant to be publishable.
 #
-#   python3 workspace/scripts/check-okf.py
-#   python3 workspace/scripts/check-doc-links.py software-supply-chain-landscape/knowledge
-#   python3 workspace/scripts/check-dates.py software-supply-chain-landscape
+# They are no longer run by hand. `bundle-gates` below invokes them from the sibling checkout,
+# so a commit here is gated by them. Two limits to know about:
+#
+#   - It depends on the sibling being checked out beside this repository. If it is not, the hook
+#     FAILS rather than skipping: a gate that quietly does nothing is the failure mode this
+#     arrangement already risks, and silence is what makes it dangerous.
+#   - A hook only fires on commit, so it cannot catch a `stale_after` that expires while nobody
+#     is committing. That is what the weekly scheduled run is for.
 #
 # Install with: lefthook install
 
@@ -18,3 +22,15 @@ pre-commit:
       run: gitleaks protect --staged --verbose
     reuse:
       run: reuse lint
+    bundle-gates:
+      run: |
+        G=../workspace/scripts
+        if [ ! -d "$G" ]; then
+          echo "bundle-gates: no meta-project at $G" >&2
+          echo "The gates live in supplychain-workspace, expected beside this repository." >&2
+          echo "Without it, OKF conformance, attribution, expiry, links and dates are UNCHECKED." >&2
+          exit 1
+        fi
+        python3 "$G/check-okf.py" &&
+        python3 "$G/check-doc-links.py" knowledge &&
+        python3 "$G/check-dates.py" .

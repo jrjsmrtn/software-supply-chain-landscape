@@ -20,10 +20,12 @@ place for them.
   in `REUSE.toml` and enforced by `reuse lint`. The upstream source set is permissive throughout —
   Apache-2.0, CC0-1.0 and US government works — with no share-alike obligation to propagate
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md`
-- `reuse lint` in the pre-commit gate, alongside `gitleaks`. The bundle checks — OKF conformance,
-  footnote attribution, `stale_after` expiry, links, ISO dates — run from the meta-project, pointed
-  here. **A known weakness**: a gate that lives apart from what it checks can silently stop
-  running, so running them is a deliberate act before publishing
+- `reuse lint` in the pre-commit gate, alongside `gitleaks`
+- **The bundle checks — OKF conformance, footnote attribution, `stale_after` expiry, links, ISO
+  dates — run automatically.** They live in the meta-project, so a `bundle-gates` hook command
+  invokes them from the sibling checkout on every commit, and a weekly scheduled run catches
+  expiry, which is a function of today's date rather than of a diff and so cannot be caught by a
+  hook at all. The hook fails loudly if the sibling is absent rather than skipping
 
 ### Changed
 

@@ -54,19 +54,28 @@ Clustering *across* classes, because nobody chose, is the failure this replaced.
 
 ## Gates
 
-`gitleaks` and `reuse lint` run here on commit. **The bundle checks do not** — they live in the
-`supplychain-workspace` meta-project, because they reason about private repositories. Run them from
-there before publishing anything:
+The bundle checks still live in the `supplychain-workspace` meta-project — this repository carries
+knowledge and nothing else — but they are **no longer run by hand**. Two mechanisms, covering two
+different failures:
 
-```bash
-python3 workspace/scripts/check-okf.py                                             # conformance, attribution, expiry
-python3 workspace/scripts/check-doc-links.py software-supply-chain-landscape/knowledge
-python3 workspace/scripts/check-dates.py software-supply-chain-landscape
-```
+| When | What runs | Catches |
+|---|---|---|
+| every commit here | `bundle-gates` in `.lefthook.yml`, invoking `../workspace/scripts/` | anything a change breaks |
+| weekly, unattended | `workspace/scripts/run-gates.sh` via a `launchd` agent | `stale_after` expiry |
 
-**This is a known weakness**, recorded as such: a gate that lives apart from what it checks can
-silently stop running. Until that is resolved, running them is a deliberate act rather than an
-automatic one.
+**The scheduled run is not redundant.** Expiry is a function of today's date, not of a diff: a
+concept goes stale on a repository nobody is committing to, so a hook would never fire. Failures
+raise a macOS notification and land in `~/Library/Logs/supplychain-bundle-gates.log`.
+
+The hook **fails** if the meta-project is not checked out beside this repository, rather than
+skipping. A gate that quietly does nothing is the failure this arrangement risks, and silence is
+what makes it dangerous.
+
+Run them by hand at any time with `../workspace/scripts/run-gates.sh`.
+
+**The residual weakness is narrower but real**: the gates and what they check are still separate
+repositories, so a clone without the sibling cannot self-check. That is a publication-time problem,
+not a today problem — and until then the hook says so loudly instead of passing.
 
 ## Conventions
 
