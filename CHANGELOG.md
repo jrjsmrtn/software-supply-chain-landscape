@@ -11,6 +11,38 @@ place for them.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-08-02
+
+**65 concepts.** Completes the opening set of instruments in `regulation/`. With three in place, the
+directory's real output is a comparison no single concept could carry: **they give three different
+answers to what an SBOM must contain.**
+
+| Instrument | Stated content floor |
+|---|---|
+| EU Cyber Resilience Act | at least the **top-level dependencies** |
+| 2026 minimum elements | **17 named data fields** |
+| FD&C Act §524B | **none stated** — only which kinds of component must be covered |
+
+### Added
+
+- **`regulation/fdc-act-524b.md`** — section 524B of the Federal Food, Drug, and Cosmetic Act,
+  codified at 21 U.S.C. §360n-2, effective 2023-03-29. An SBOM is a condition of premarket
+  submission for a "cyber device". Sourced from the codified statute, not from agency guidance
+- The statute **states no content floor**, naming only commercial, open-source and off-the-shelf
+  components. The floor is set below the statute, by guidance — and a reader who does not find one
+  in the text should not conclude there is none
+- Like the CRA, it directs the document **to an authority rather than to the customer**. Two
+  jurisdictions, the same shape: neither compels publication to the people using the product
+
+### Changed
+
+- The CRA concept's `stale_after` moves from 2026-11-01 to **2026-09-01**. Its next milestone is
+  2026-09-11, when reporting obligations begin, so the old date would have prompted a re-check two
+  months after the fact it guards had already changed. An expiry that fires once a date has passed
+  is checking the wrong thing
+- FDA guidance elaborating §524B is **deliberately not tracked**: process for demonstrating
+  compliance rather than a content requirement on a document, and faster-moving than the statute
+
 ## [0.3.0] - 2026-08-02
 
 **64 concepts.** A second instrument in `regulation/`, and the contrast between the two is the
@@ -94,7 +126,8 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/releases/tag/v0.1.0
