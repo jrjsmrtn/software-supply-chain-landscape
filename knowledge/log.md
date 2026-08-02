@@ -181,6 +181,23 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked
   by the same gates as everything else.
+* **Swept** 2026-08-02: a **version-currency check** across every concept citing a versioned
+  specification — asking only *"is the cited version still the current one?"*, which is a different
+  question from *"is this claim accurate?"* and is the one the 2026-08-01 verification pass never
+  asked. That pass checked SLSA claims against v1.1 pages without noticing v1.1 had been retired.
+
+  Confirmed current at source: **CycloneDX 1.7.1**, **SPDX 3.0.1**, **OpenVEX v0.2.0**,
+  **model-signing v1.1.1**, **cosign v3.1.2**, **REUSE 3.3** (confirmed by `reuse lint` itself),
+  and **CSAF** — 2.0 established with 2.1 at committee-specification-draft-02, which is what
+  `intelligence/csaf-vex.md` already says. `naming/purl.md` cites ECMA-427 without claiming an
+  edition, so its 1st edition of 2025-12 contradicts nothing.
+
+  **Not confirmed**: CPE 2.3. NIST's product page states API schema versions rather than the
+  specification version, and no better source was checked. Recorded as unverified rather than
+  assumed stable.
+
+  Outcome: **SLSA was the only stale version claim**, and it was already corrected. This entry
+  exists so the negative result is dated and does not get redone blindly.
 * **Corrected**: `provenance/slsa.md` and `threats/slsa-threat-model.md`, both written against
   **v1.1 — which is retired**. `slsa.md` stated flatly that "v1.1 is current". Found by accident
   while researching a different bundle, six months before either concept's `stale_after` would have
