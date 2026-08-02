@@ -15,7 +15,7 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-02T07:40:00Z'
-stale_after: 2026-11-01
+stale_after: 2026-09-01
 sources:
   - id: cra
     title: Regulation (EU) 2024/2847 (Cyber Resilience Act)
@@ -86,7 +86,9 @@ planning signal into a declared, bounded commitment.
 # Dates
 
 Article 71 states the rule for entry into force rather than the date, and gives the application
-dates directly.[^cra] **These are the perishable part of this concept.**
+dates directly.[^cra] **These are the perishable part of this concept**, and this concept's
+`stale_after` is set to expire *before* the next milestone rather than after it — an expiry that
+fires once a date has already passed is checking the wrong thing.
 
 | Milestone | Date | Basis |
 |---|---|---|

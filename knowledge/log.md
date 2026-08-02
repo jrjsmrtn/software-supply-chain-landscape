@@ -181,6 +181,13 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked
   by the same gates as everything else.
+* **Added**: `regulation/fdc-act-524b.md`, completing the opening set named in the scope decision.
+  Sourced from the codified statute at 21 U.S.C. §360n-2 rather than from FDA guidance — an early
+  attempt landed on a webinar deck about a superseded 2024 draft, which is what the primary-source
+  rule is for. The finding is a negative one: the statute states **no content floor at all**, naming
+  only which kinds of component must be covered, so the three instruments now in this directory give
+  three different answers to "what must an SBOM contain". Like the CRA, it directs the document to
+  an authority rather than to the customer.
 * **Added**: `regulation/sbom-minimum-elements.md`. Written as the **2026** edition, not the 2021
   NTIA one: CISA, with the NSA, FBI and sixteen international partners, published a replacement on
   2026-07-29 — four days before the scope ADR named the superseded document as a candidate. The

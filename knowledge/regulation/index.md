@@ -1,6 +1,7 @@
 # Instruments
 
 * [SBOM Minimum Elements (2026)](sbom-minimum-elements.md) - The floor for what counts as an SBOM in US federal procurement: 17 data fields, replacing the 2021 NTIA original.
+* [FD&C Act §524B](fdc-act-524b.md) - US medical devices: an SBOM is a condition of premarket submission, with no content floor in the statute itself.
 * [EU Cyber Resilience Act](cra.md) - Regulation (EU) 2024/2847: an SBOM becomes a legal obligation, floored at top-level dependencies and not required to be published.
 
 # What belongs here
