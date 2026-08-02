@@ -1,7 +1,7 @@
 ---
 type: Specification
 title: SLSA
-description: Graded requirements for build provenance — measuring the integrity of the build and delivery process, not the code.
+description: Graded requirements for provenance across two tracks as of v1.2 — measuring the integrity of the build and source processes, not the code.
 resource: https://slsa.dev/
 tags:
   - provenance
@@ -14,26 +14,42 @@ generated:
 verified:
   - by: claude/opus-5
     at: \'2026-08-01T23:05:00Z\'
+  - by: claude/opus-5
+    at: '2026-08-02T12:30:00Z'
 stale_after: 2027-02-01
 sources:
   - id: slsa
     title: SLSA
     resource: https://slsa.dev/
+  - id: slsa-v12
+    title: SLSA specification v1.2
+    resource: https://slsa.dev/spec/v1.2/
+  - id: slsa-source
+    title: 'SLSA v1.2: Source requirements'
+    resource: https://slsa.dev/spec/v1.2/source-requirements
 ---
 
-**Supply-chain Levels for Software Artifacts.** Graded requirements for build provenance, organised
-into tracks — the Build track being the one most projects mean when they cite a
-level.[^slsa]
+**Supply-chain Levels for Software Artifacts.** Graded requirements for provenance, organised into
+tracks — the Build track being the one most projects mean when they cite a level.[^slsa]
 
-Provenance answers *how was this built*: which source, which builder, which parameters. The grading
-is about how hard that record would be to forge.
+Build provenance answers *how was this built*: which source, which builder, which parameters. The
+grading is about how hard that record would be to forge.
 
-**v1.1 is current.** Build levels are written `Build L0` through `Build L3`.
+**v1.2 is current; v1.1 is retired.**[^slsa-v12] It defines **two tracks**:
 
-> **Numbering changed between v0.1 and v1.0, and v1.1 reassigned the *threat* letters.** Cite a
-> level or a threat letter only alongside the specification version it refers to — see
-> [the threat model](/threats/slsa-threat-model.md), where `D` means different things in v1.0
-> and v1.1.
+| Track | Grades | Levels |
+|---|---|---|
+| **Build** | how an artifact was produced from its sources | `Build L1`–`Build L3` |
+| **Source** | "how a source revision was created" — version control, retained history, enforced controls, two-party review | `Source L1`–`Source L4`[^slsa-source] |
+
+The Source track matters beyond compiled software: for an artifact that is never built, it is the
+only track with anything to say. Build Environment and Dependency tracks exist in the **Working
+Draft**, not in v1.2.
+
+> **Version numbering has moved repeatedly, and so have the threat letters.** Cite a level or a
+> threat letter only alongside the specification version it refers to — see
+> [the threat model](/threats/slsa-threat-model.md), where `D` means different things in v1.0 and
+> v1.1, and where v1.2 added a ninth letter and renamed a second.
 
 # The misreading to avoid
 
@@ -62,3 +78,5 @@ path on a throwaway tag rather than discovering the gap on a version you intend 
 - [Sigstore](sigstore.md) · [cosign](cosign.md) — the signing layer
 
 [^slsa]: [SLSA](https://slsa.dev/)
+[^slsa-v12]: [SLSA specification v1.2](https://slsa.dev/spec/v1.2/)
+[^slsa-source]: [SLSA v1.2: Source requirements](https://slsa.dev/spec/v1.2/source-requirements)

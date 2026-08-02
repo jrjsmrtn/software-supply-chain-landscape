@@ -181,6 +181,15 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked
   by the same gates as everything else.
+* **Corrected**: `provenance/slsa.md` and `threats/slsa-threat-model.md`, both written against
+  **v1.1 — which is retired**. `slsa.md` stated flatly that "v1.1 is current". Found by accident
+  while researching a different bundle, six months before either concept's `stale_after` would have
+  prompted a re-check. v1.2 adds a **Source track** (`Source L1`–`L4`), which closes v1.1's stated
+  gap that "SLSA does not yet address source threats"; the threat taxonomy gains a ninth letter,
+  **(I) Usage**, and renames (B) from *Authoring & Reviewing* to *Modifying the source*. Dependency
+  and availability threats remain unaddressed, and a Dependency track exists only in the Working
+  Draft. Also recorded: the spec's own overview page still says dependency threats are "A-H,
+  recursively" while its detail page enumerates A–I.
 * **Added**: `regulation/fdc-act-524b.md`, completing the opening set named in the scope decision.
   Sourced from the codified statute at 21 U.S.C. §360n-2 rather than from FDA guidance — an early
   attempt landed on a webinar deck about a superseded 2024 draft, which is what the primary-source
