@@ -11,6 +11,30 @@ place for them.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-02
+
+**63 concepts.** Adds a `regulation/` directory — the causal layer the corpus was missing. It
+explained every mechanism and never said who requires them, or by when.
+
+Minor rather than patch: a new top-level directory and a new `type` value are additive changes a
+consumer can see.
+
+### Added
+
+- **`knowledge/regulation/`**, admitted by one test recorded in the meta-project: an instrument is
+  in scope only if it changes **what a bill of materials must contain, or when one must exist**.
+  General cyber-security obligations that never reach the BOM are out of scope, and so is any
+  question of whether an instrument applies to a given reader — that is legal advice, and every
+  concept in the directory says so
+- **`regulation/cra.md`** — Regulation (EU) 2024/2847, the Cyber Resilience Act. Sourced entirely
+  from the enacting text on EUR-Lex rather than from commentary, which is a stricter sourcing rule
+  than the rest of the bundle applies. Two findings that summaries routinely lose: the SBOM floor is
+  **top-level dependencies only**, not the transitive graph; and the Regulation compels the document
+  to *exist* and be producible on reasoned request, but not to be **published** — disclosure to
+  users is explicitly optional
+- The **`Regulation`** type. A regulation obliges rather than describes, so `Specification` was the
+  wrong shelf
+
 ## [0.1.0] - 2026-08-02
 
 First release: **62 concepts**, extracted from the `supplychain-workspace` meta-project into a
@@ -45,5 +69,6 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/releases/tag/v0.1.0
