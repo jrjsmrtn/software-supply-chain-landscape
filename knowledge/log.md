@@ -181,6 +181,13 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked
   by the same gates as everything else.
+* **Added**: `regulation/sbom-minimum-elements.md`. Written as the **2026** edition, not the 2021
+  NTIA one: CISA, with the NSA, FBI and sixteen international partners, published a replacement on
+  2026-07-29 — four days before the scope ADR named the superseded document as a candidate. The
+  count roughly doubled to 17 data fields, `Supplier Name` became `Component Producer` with the
+  ambiguity acknowledged rather than fixed, and SWID tags were dropped as not widely used. Its
+  instruction to declare unknown provenance explicitly is the same principle as CycloneDX
+  `compositions` and declared-versus-concluded licensing.
 * **Added**: `regulation/` and its first concept, `regulation/cra.md`, under a scope test recorded
   in the meta-project: an instrument is in scope only if it changes what a bill of materials must
   contain or when one must exist. Sourced entirely from the enacting text on EUR-Lex rather than

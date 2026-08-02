@@ -1,5 +1,6 @@
 # Instruments
 
+* [SBOM Minimum Elements (2026)](sbom-minimum-elements.md) - The floor for what counts as an SBOM in US federal procurement: 17 data fields, replacing the 2021 NTIA original.
 * [EU Cyber Resilience Act](cra.md) - Regulation (EU) 2024/2847: an SBOM becomes a legal obligation, floored at top-level dependencies and not required to be published.
 
 # What belongs here
