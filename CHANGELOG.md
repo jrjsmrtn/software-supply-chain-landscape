@@ -11,32 +11,39 @@ place for them.
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-08-02
+
+First release: **62 concepts**, extracted from the `supplychain-workspace` meta-project into a
+repository of their own. A bundle that cannot leave its parent cannot be fetched, and OKF names a
+git repository as the recommended distribution unit.
+
+**Tagged, not published.** This repository is private. Publication is a separate decision running
+through its own gate, and a version tag does not pre-empt it.
+
 ### Added
 
-- Extracted from the `supplychain-workspace` meta-project as an independent repository, so the
-  bundle can actually be distributed. A bundle that cannot leave its parent cannot be fetched, and
-  OKF names a git repository as the recommended distribution unit
-- **CC BY 4.0** for knowledge and documentation, **Apache-2.0** for the scripts, declared per-file
-  in `REUSE.toml` and enforced by `reuse lint`. The upstream source set is permissive throughout —
-  Apache-2.0, CC0-1.0 and US government works — with no share-alike obligation to propagate
-- `README.md`, `CHANGELOG.md`, and `knowledge/log.md`
-- `reuse lint` in the pre-commit gate, alongside `gitleaks`
-- **The bundle checks — OKF conformance, footnote attribution, `stale_after` expiry, links, ISO
-  dates — run automatically.** They live in the meta-project, so a `bundle-gates` hook command
-  invokes them from the sibling checkout on every commit, and a weekly scheduled run catches
-  expiry, which is a function of today's date rather than of a diff and so cannot be caught by a
-  hook at all. The hook fails loudly if the sibling is absent rather than skipping
+- **The bundle.** 62 concepts across ten directories — `bom-types` (7), `disclosure` (2),
+  `distribution` (2), `formats` (5), `intelligence` (11), `licensing` (5), `naming` (8),
+  `provenance` (5), `threats` (5), `tools` (11) — plus `knowledge/landscape.md`, the
+  read-straight-through explanation. It is carried as a concept (`type: Explanation`) rather than a
+  separate document, so the bundle is one distribution unit instead of two halves that only make
+  sense together
+- **Per-claim provenance.** Every concept carries `sources` with keyed ids, footnotes that resolve
+  to them, a `verified` trust tier and a `stale_after` expiry. 61 of 62 are verified; `landscape.md`
+  is deliberately not, being durable rationale rather than a checkable fact
+- **`stale_after` chosen per concept, not by default.** Five volatility tiers, from ~3 months for
+  drafts under revision to ~24 months for durable rationale. An earlier state had 40 of 61 concepts
+  sharing one date, which is what a default applied without thinking looks like
+- **CC BY 4.0**, declared in `REUSE.toml` and enforced by `reuse lint`. The upstream source set was
+  checked rather than assumed — Apache-2.0, CC0-1.0 and US government works — so no share-alike
+  obligation propagates to consumers
+- **Automated gates.** OKF conformance, footnote→`sources[].id` attribution in both directions,
+  `stale_after` expiry, link resolution including bundle-relative `/`, and ISO 8601 dates in prose.
+  They run on every commit and again weekly, because expiry is a function of today's date rather
+  than of a diff and no commit hook can fire for it. The scripts live in the meta-project; the hook
+  invokes them and fails loudly if it is absent rather than skipping
+- `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
+  file records releases
 
-### Changed
-
-- **This repository carries knowledge and nothing else.** The checking scripts and the decision log
-  were moved into the meta-project it was extracted from: both reason about private repositories,
-  and this one is meant to be publishable. What ships is the bundle plus the metadata a consumer
-  needs — README, changelog, licence
-- **Single-licensed CC BY 4.0** as a result. With the scripts gone there is no Apache-2.0 component
-  and no mixed-licence question
-- **The landscape explanation is now a bundle concept** (`knowledge/landscape.md`,
-  `type: Explanation`) rather than a separate Diátaxis document. It gains the attribution and expiry
-  gates it previously escaped, and the bundle becomes one distribution unit instead of two halves
-  that had to be fetched together to make sense
-- All cross-document links converted to bundle-relative form
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/releases/tag/v0.1.0
