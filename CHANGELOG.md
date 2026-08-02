@@ -11,6 +11,31 @@ place for them.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-02
+
+**64 concepts.** A second instrument in `regulation/`, and the contrast between the two is the
+point: they set opposite content floors.
+
+**If you hold a reference to "the NTIA minimum elements", it points at a superseded document.** The
+2021 edition was replaced on 2026-07-29. The concept leads with this, because the old name is the
+one still in circulation.
+
+### Added
+
+- **`regulation/sbom-minimum-elements.md`** — the **2026** edition, published 2026-07-29 by CISA
+  with the NSA, FBI and sixteen international partner agencies. 17 data fields, up from the seven in
+  the 2021 NTIA original it replaces, split into SBOM metadata and component data
+- Where no producer can be determined, the document requires the author to **declare the component
+  as being of unknown provenance** rather than omit the field. A declared gap and a silent omission
+  are indistinguishable to a reader — the same argument as CycloneDX `compositions` and
+  declared-versus-concluded licensing, and now cross-linked to both
+
+### Changed
+
+- The two instruments in `regulation/` now show a **17-field floor against a top-level-dependencies
+  floor**. A document can satisfy the CRA comfortably and be thin against US federal procurement.
+  That contrast only became visible once both were written
+
 ## [0.2.0] - 2026-08-02
 
 **63 concepts.** Adds a `regulation/` directory — the causal layer the corpus was missing. It
@@ -69,6 +94,7 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/releases/tag/v0.1.0
