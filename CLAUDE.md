@@ -86,7 +86,8 @@ not a today problem — and until then the hook says so loudly instead of passin
 - **Bundle-relative links** (`/naming/purl.md`) between concepts; the leading `/` means the bundle
   root, not the filesystem root.
 - **Type vocabulary**: `BOM Type`, `Format`, `Identifier`, `Specification`, `Data Source`, `Tool`,
-  `Practice`, `Organization`, `Explanation`.
+  `Practice`, `Organization`, `Explanation`, `Regulation`. A regulation is not a specification —
+  it obliges rather than describes — so it takes its own type.
 - Commits: Conventional Commits. Branch: `main` only.
 - `knowledge/log.md` records bundle content changes; `CHANGELOG.md` records releases.
 - **`knowledge/` must name no private repository, path or host.** It is the published product.

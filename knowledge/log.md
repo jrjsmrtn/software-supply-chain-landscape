@@ -181,6 +181,13 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked
   by the same gates as everything else.
+* **Added**: `regulation/` and its first concept, `regulation/cra.md`, under a scope test recorded
+  in the meta-project: an instrument is in scope only if it changes what a bill of materials must
+  contain or when one must exist. Sourced entirely from the enacting text on EUR-Lex rather than
+  from commentary, which is a stricter rule than the rest of the bundle applies. Two findings worth
+  the space: the Regulation's SBOM floor is **top-level dependencies only**, not the transitive
+  graph, and it compels the document to exist without compelling its publication — disclosure to
+  users is explicitly optional under Annex II point 9. Introduces the `Regulation` type.
 * **Added**: `intelligence/repology.md` — the version-currency axis, which neither `osv.dev`
   (vulnerabilities) nor `endoflife.date` (support dates) covers: how far behind upstream an
   installed packaging is. It also records the project-versus-package distinction as a worked answer
