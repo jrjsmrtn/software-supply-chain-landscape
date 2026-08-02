@@ -16,6 +16,7 @@
 * [OpenVEX](openvex.md) - OpenSSF's minimal standalone VEX documents.
 * [CSAF VEX](csaf-vex.md) - A VEX profile of OASIS CSAF, favoured by large vendors.
 
-# Lifecycle
+# Lifecycle and currency
 
 * [endoflife.date](endoflife-date.md) - Support-lifecycle data: the leading indicator scanners are blind to.
+* [Repology](repology.md) - How far behind upstream a packaging is, across 293 repositories — and identity across ecosystems, which purl does not attempt.

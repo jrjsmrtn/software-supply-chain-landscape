@@ -181,6 +181,12 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked
   by the same gates as everything else.
+* **Added**: `intelligence/repology.md` — the version-currency axis, which neither `osv.dev`
+  (vulnerabilities) nor `endoflife.date` (support dates) covers: how far behind upstream an
+  installed packaging is. It also records the project-versus-package distinction as a worked answer
+  to identity *across* ecosystems, which purl deliberately does not attempt. Sourced against the
+  API docs and statistics page; two limits worth the space are that its data carries no declared
+  licence, and that distro backporting makes `outdated` a signal rather than a verdict.
 * **Corrected**: `bom-types/cbom.md` — verified `cryptoProperties.assetType` against the CycloneDX
   1.6 and 1.7 JSON schemas. Protocols **are** a first-class asset type, and "keys" is not one;
   keys are `related-crypto-material`. The capability page lists three of the four.
