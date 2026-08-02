@@ -11,6 +11,45 @@ place for them.
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-08-02
+
+**Corrections only — no new concepts, and minor rather than patch on purpose.** These do not repair
+how the corpus says things; they change what it asserts. A consumer holding v0.4.0 has two concepts
+describing a **retired** version of SLSA as current.
+
+### Fixed
+
+- **`provenance/slsa.md` and `threats/slsa-threat-model.md` were written against SLSA v1.1, which is
+  retired.** `slsa.md` stated flatly that "v1.1 is current". Both are now verified against **v1.2**
+- **SLSA now has a Source track** (`Source L1`–`L4`: version controlled; history and provenance;
+  continuous technical controls; two-party review). This closes v1.1's own stated gap — *"SLSA does
+  not yet address source threats, but we anticipate doing so in a future version"* — which both
+  concepts had been asserting as current
+- **The threat taxonomy is A–I, not A–H.** `(I) Usage` is new, and `(B)` was renamed from
+  *Authoring & Reviewing* to *Modifying the source*. The letters have now moved twice; the concept
+  says so rather than presenting the current set as settled
+- Build Environment and Dependency tracks are **Working Draft only**, not in v1.2 — recorded so the
+  draft's navigation is not mistaken for the release
+
+### Changed
+
+- Recorded that reviewer **collusion, "bugdoor" changes and rubber stamping are each explicitly
+  "not currently addressed by SLSA"** within `(B)` — worth knowing before treating two-party review
+  as a solved control
+- Recorded that the specification's own overview page still describes dependency threats as
+  "`A-H`, recursively" while its detail page enumerates `A`–`I`. Prefer the detail page
+- Noted that a bare "SLSA Level 3" is **ambiguous between tracks** since v1.2, and almost always
+  means Build L3
+
+Unchanged, and re-confirmed: dependency threats and availability remain unaddressed in the same
+words, and package selection (H) is still "not currently addressed" — so the argument that
+typosquatting, dependency confusion and maintainer compromise live in categories SLSA leaves open
+survives intact.
+
+**How this was found matters more than what it was.** It surfaced by accident while researching a
+sibling bundle, six months before either concept's `stale_after` would have prompted a re-check.
+`stale_after` bounds how long an error can survive; it does not detect one.
+
 ## [0.4.0] - 2026-08-02
 
 **65 concepts.** Completes the opening set of instruments in `regulation/`. With three in place, the
@@ -126,7 +165,8 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.1.0...v0.2.0
