@@ -89,7 +89,10 @@ not a today problem — and until then the hook says so loudly instead of passin
   `Practice`, `Organization`, `Explanation`, `Regulation`. A regulation is not a specification —
   it obliges rather than describes — so it takes its own type.
 - Commits: Conventional Commits. Branch: `main` only.
-- `knowledge/log.md` records bundle content changes; `CHANGELOG.md` records releases.
+- `knowledge/log.md` records bundle content changes; `CHANGELOG.md` records releases. **Both are
+  headed by release**: new entries go under `## Unreleased`, and cutting `vX.Y.Z` renames that
+  heading to `## vX.Y.Z — <ISO date>`. The log's heading is the bundle's only in-band version —
+  OKF has none, and a git tag does not travel with a copied `knowledge/` tree.
 - **`knowledge/` must name no private repository, path or host.** It is the published product.
   This file is developer guidance and may reference the meta-project by name — but never a
   hostname, URL or credential, which belong in `CLAUDE.local.md`.

@@ -11,6 +11,17 @@ place for them.
 
 ## [Unreleased]
 
+### Changed
+
+- `knowledge/log.md` is now **headed by release** (`## vX.Y.Z — <date>`) instead of by date. This
+  puts a version *inside* the bundle for the first time: OKF has no content-version field —
+  `okf_version` declares the specification revision — and a git tag does not travel with a copied
+  `knowledge/` tree, so a detached bundle could not name itself at all. The unit OKF calls "the unit
+  of distribution" now carries the one identifier a consumer needs to say which release they hold.
+- Repaired an ordering fault found while regrouping: the five newest entries had been inserted into
+  the middle of the **oldest** dated section, and one carried an inline date contradicting the
+  heading above it. Entries are unchanged verbatim; only their grouping and order moved.
+
 ## [0.5.0] - 2026-08-02
 
 **Corrections only — no new concepts, and minor rather than patch on purpose.** These do not repair

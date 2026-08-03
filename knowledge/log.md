@@ -1,9 +1,83 @@
 # Bundle Update Log
 
 Content changes to the knowledge bundle: concepts added, re-verified, corrected or expired.
-Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 
-## 2026-08-02
+**Headings carry the release the entries shipped in**, so a `knowledge/` tree separated from this
+repository can still name its own version. OKF has no in-band content-version field — `okf_version`
+declares the *specification* revision — and a git tag does not travel with a copied directory, so
+without this the unit OKF calls "the unit of distribution" would carry no version at all.
+[`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases.
+
+## Unreleased
+
+* **Swept** 2026-08-02: a **version-currency check** across every concept citing a versioned
+  specification — asking only *"is the cited version still the current one?"*, which is a different
+  question from *"is this claim accurate?"* and is the one the 2026-08-01 verification pass never
+  asked. That pass checked SLSA claims against v1.1 pages without noticing v1.1 had been retired.
+
+  Confirmed current at source: **CycloneDX 1.7.1**, **SPDX 3.0.1**, **OpenVEX v0.2.0**,
+  **model-signing v1.1.1**, **cosign v3.1.2**, **REUSE 3.3** (confirmed by `reuse lint` itself),
+  and **CSAF** — 2.0 established with 2.1 at committee-specification-draft-02, which is what
+  `intelligence/csaf-vex.md` already says. `naming/purl.md` cites ECMA-427 without claiming an
+  edition, so its 1st edition of 2025-12 contradicts nothing.
+
+  **Not confirmed**: CPE 2.3. NIST's product page states API schema versions rather than the
+  specification version, and no better source was checked. Recorded as unverified rather than
+  assumed stable.
+
+  Outcome: **SLSA was the only stale version claim**, and it was already corrected. This entry
+  exists so the negative result is dated and does not get redone blindly.
+
+## v0.5.0 — 2026-08-02
+
+* **Corrected**: `provenance/slsa.md` and `threats/slsa-threat-model.md`, both written against
+  **v1.1 — which is retired**. `slsa.md` stated flatly that "v1.1 is current". Found by accident
+  while researching a different bundle, six months before either concept's `stale_after` would have
+  prompted a re-check. v1.2 adds a **Source track** (`Source L1`–`L4`), which closes v1.1's stated
+  gap that "SLSA does not yet address source threats"; the threat taxonomy gains a ninth letter,
+  **(I) Usage**, and renames (B) from *Authoring & Reviewing* to *Modifying the source*. Dependency
+  and availability threats remain unaddressed, and a Dependency track exists only in the Working
+  Draft. Also recorded: the spec's own overview page still says dependency threats are "A-H,
+  recursively" while its detail page enumerates A–I.
+
+## v0.4.0 — 2026-08-02
+
+* **Added**: `regulation/fdc-act-524b.md`, completing the opening set named in the scope decision.
+  Sourced from the codified statute at 21 U.S.C. §360n-2 rather than from FDA guidance — an early
+  attempt landed on a webinar deck about a superseded 2024 draft, which is what the primary-source
+  rule is for. The finding is a negative one: the statute states **no content floor at all**, naming
+  only which kinds of component must be covered, so the three instruments now in this directory give
+  three different answers to "what must an SBOM contain". Like the CRA, it directs the document to
+  an authority rather than to the customer.
+
+## v0.3.0 — 2026-08-02
+
+* **Added**: `regulation/sbom-minimum-elements.md`. Written as the **2026** edition, not the 2021
+  NTIA one: CISA, with the NSA, FBI and sixteen international partners, published a replacement on
+  2026-07-29 — four days before the scope ADR named the superseded document as a candidate. The
+  count roughly doubled to 17 data fields, `Supplier Name` became `Component Producer` with the
+  ambiguity acknowledged rather than fixed, and SWID tags were dropped as not widely used. Its
+  instruction to declare unknown provenance explicitly is the same principle as CycloneDX
+  `compositions` and declared-versus-concluded licensing.
+
+## v0.2.0 — 2026-08-02
+
+* **Added**: `regulation/` and its first concept, `regulation/cra.md`, under a scope test recorded
+  in the meta-project: an instrument is in scope only if it changes what a bill of materials must
+  contain or when one must exist. Sourced entirely from the enacting text on EUR-Lex rather than
+  from commentary, which is a stricter rule than the rest of the bundle applies. Two findings worth
+  the space: the Regulation's SBOM floor is **top-level dependencies only**, not the transitive
+  graph, and it compels the document to exist without compelling its publication — disclosure to
+  users is explicitly optional under Annex II point 9. Introduces the `Regulation` type.
+
+## v0.1.0 — 2026-08-02
+
+* **Added**: `intelligence/repology.md` — the version-currency axis, which neither `osv.dev`
+  (vulnerabilities) nor `endoflife.date` (support dates) covers: how far behind upstream an
+  installed packaging is. It also records the project-versus-package distinction as a worked answer
+  to identity *across* ecosystems, which purl deliberately does not attempt. Sourced against the
+  API docs and statistics page; two limits worth the space are that its data carries no declared
+  licence, and that distro backporting makes `outdated` a signal rather than a verdict.
 
 * **Every fact-bearing concept is now verified** — 60 of 61. Only `landscape.md` carries no
   `verified` entry, which is correct: it is durable rationale, and its claims are arguments rather
@@ -136,8 +210,6 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
   accumulation: the artifact *class* is in scope, the vendor and runtime landscape is not. The
   boundary and its test are recorded in the meta-project's ADR-0007.
 
-## 2026-08-01
-
 * **Added**: `disclosure/` (2 concepts) — model cards (Mitchell et al. 2019) and datasheets for
   datasets (Gebru et al.). Deliberately a new subdirectory rather than filed under `bom-types/`:
   a BOM says what an artifact is *made of*, a card says what it is *for*. Placing them together
@@ -181,68 +253,19 @@ Releases are in [`../CHANGELOG.md`](../CHANGELOG.md).
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked
   by the same gates as everything else.
-* **Swept** 2026-08-02: a **version-currency check** across every concept citing a versioned
-  specification — asking only *"is the cited version still the current one?"*, which is a different
-  question from *"is this claim accurate?"* and is the one the 2026-08-01 verification pass never
-  asked. That pass checked SLSA claims against v1.1 pages without noticing v1.1 had been retired.
 
-  Confirmed current at source: **CycloneDX 1.7.1**, **SPDX 3.0.1**, **OpenVEX v0.2.0**,
-  **model-signing v1.1.1**, **cosign v3.1.2**, **REUSE 3.3** (confirmed by `reuse lint` itself),
-  and **CSAF** — 2.0 established with 2.1 at committee-specification-draft-02, which is what
-  `intelligence/csaf-vex.md` already says. `naming/purl.md` cites ECMA-427 without claiming an
-  edition, so its 1st edition of 2025-12 contradicts nothing.
-
-  **Not confirmed**: CPE 2.3. NIST's product page states API schema versions rather than the
-  specification version, and no better source was checked. Recorded as unverified rather than
-  assumed stable.
-
-  Outcome: **SLSA was the only stale version claim**, and it was already corrected. This entry
-  exists so the negative result is dated and does not get redone blindly.
-* **Corrected**: `provenance/slsa.md` and `threats/slsa-threat-model.md`, both written against
-  **v1.1 — which is retired**. `slsa.md` stated flatly that "v1.1 is current". Found by accident
-  while researching a different bundle, six months before either concept's `stale_after` would have
-  prompted a re-check. v1.2 adds a **Source track** (`Source L1`–`L4`), which closes v1.1's stated
-  gap that "SLSA does not yet address source threats"; the threat taxonomy gains a ninth letter,
-  **(I) Usage**, and renames (B) from *Authoring & Reviewing* to *Modifying the source*. Dependency
-  and availability threats remain unaddressed, and a Dependency track exists only in the Working
-  Draft. Also recorded: the spec's own overview page still says dependency threats are "A-H,
-  recursively" while its detail page enumerates A–I.
-* **Added**: `regulation/fdc-act-524b.md`, completing the opening set named in the scope decision.
-  Sourced from the codified statute at 21 U.S.C. §360n-2 rather than from FDA guidance — an early
-  attempt landed on a webinar deck about a superseded 2024 draft, which is what the primary-source
-  rule is for. The finding is a negative one: the statute states **no content floor at all**, naming
-  only which kinds of component must be covered, so the three instruments now in this directory give
-  three different answers to "what must an SBOM contain". Like the CRA, it directs the document to
-  an authority rather than to the customer.
-* **Added**: `regulation/sbom-minimum-elements.md`. Written as the **2026** edition, not the 2021
-  NTIA one: CISA, with the NSA, FBI and sixteen international partners, published a replacement on
-  2026-07-29 — four days before the scope ADR named the superseded document as a candidate. The
-  count roughly doubled to 17 data fields, `Supplier Name` became `Component Producer` with the
-  ambiguity acknowledged rather than fixed, and SWID tags were dropped as not widely used. Its
-  instruction to declare unknown provenance explicitly is the same principle as CycloneDX
-  `compositions` and declared-versus-concluded licensing.
-* **Added**: `regulation/` and its first concept, `regulation/cra.md`, under a scope test recorded
-  in the meta-project: an instrument is in scope only if it changes what a bill of materials must
-  contain or when one must exist. Sourced entirely from the enacting text on EUR-Lex rather than
-  from commentary, which is a stricter rule than the rest of the bundle applies. Two findings worth
-  the space: the Regulation's SBOM floor is **top-level dependencies only**, not the transitive
-  graph, and it compels the document to exist without compelling its publication — disclosure to
-  users is explicitly optional under Annex II point 9. Introduces the `Regulation` type.
-* **Added**: `intelligence/repology.md` — the version-currency axis, which neither `osv.dev`
-  (vulnerabilities) nor `endoflife.date` (support dates) covers: how far behind upstream an
-  installed packaging is. It also records the project-versus-package distinction as a worked answer
-  to identity *across* ecosystems, which purl deliberately does not attempt. Sourced against the
-  API docs and statistics page; two limits worth the space are that its data carries no declared
-  licence, and that distro backporting makes `outdated` a signal rather than a verdict.
 * **Corrected**: `bom-types/cbom.md` — verified `cryptoProperties.assetType` against the CycloneDX
   1.6 and 1.7 JSON schemas. Protocols **are** a first-class asset type, and "keys" is not one;
   keys are `related-crypto-material`. The capability page lists three of the four.
+
 * **Restored**: six sources dropped during migration, each the specific page supporting a claim
   rather than a project homepage — osv.dev's data-sources page, CISA's VEX status-justification
   document, the OpenVEX specification, CycloneDX's VEX and VDR capability pages, and
   endoflife.date's v1 API docs. One CISA URL written from memory was removed.
+
 * **Added**: `bom-types/` (7 concepts) and the six remaining `tools/` concepts, sourced against
   CycloneDX capability pages and upstream repositories. `MBOM` was missing from this corpus
   entirely; `HBOM` covers firmware; `OBOM` is full-stack.
+
 * **Added**: the initial migration — 38 concepts across `naming/`, `licensing/`, `formats/`,
   `intelligence/`, `tools/`, `provenance/` and `distribution/`, from the retired reference tier.
