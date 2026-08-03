@@ -14,6 +14,32 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-08-03
 
+* **Re-verified**: `regulation/cra.md`, ahead of its 2026-09-01 expiry, against the enacting text
+  from the Publications Office rather than commentary. EUR-Lex answers HTTP 202 with an empty body
+  to a non-browser client, so the official XHTML manifestation was retrieved by content negotiation
+  on the CELEX resource — worth recording, because "the primary source was unreachable" is otherwise
+  how a re-verification quietly becomes a search-summary check.
+
+  **One citation was wrong.** The SBOM-on-reasoned-request provision is **Annex VII point 8**, not
+  Annex VIII point 8; Annex VIII is *Conformity Assessment Procedures* and says nothing about
+  SBOMs. That also collapsed a table row: what were listed as two provisions — "technical
+  documentation" and "market surveillance authority" — are one, since Annex VII *is* the technical
+  documentation and its point 8 is conditioned on the request. **Article 53** added as the separate,
+  broader access route.
+
+  Confirmed verbatim and unchanged: the Article 3(39) definition; "at the very least the top-level
+  dependencies" in Annex I Part II(1); Article 13(24)'s *implementing* act power over "the format
+  and elements", under Article 62(2); Article 13(8)'s support period with "at least five years" and
+  the shorter-expected-use carve-out; Annex II point 9's optional user disclosure, quoted in full;
+  and all three Article 71 dates — 2026-06-11, 2026-09-11, 2027-12-11.
+
+  **Re-tiered** from a milestone-tracking expiry to ~6 months (2027-02-01). The old rule — expire
+  before the next application date — existed so a date would be re-checked before it passed. The
+  dates are now primary-source verified and are fixed law, so nothing about them changes when
+  2026-09-11 arrives. What can change at any time is the implementing act on SBOM format, and the
+  expiry now follows that. Its absence is also the one claim here not checkable against the
+  enacting text, which cannot report what it does not contain.
+
 * **Corrected**: this log violated **OKF §9**, which requires date headings in ISO 8601
   `YYYY-MM-DD` form. It had been restructured earlier the same day to head entries by release
   (`## v0.5.0 — 2026-08-02`), on the incorrect premise that `log.md` bodies are unconstrained prose.

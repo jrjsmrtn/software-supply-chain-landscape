@@ -15,7 +15,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-02T07:40:00Z'
-stale_after: 2026-09-01
+  - by: claude/opus-5
+    at: '2026-08-03T11:20:00Z'
+stale_after: 2027-02-01
 sources:
   - id: cra
     title: Regulation (EU) 2024/2847 (Cyber Resilience Act)
@@ -49,20 +51,34 @@ not the transitive graph. Everything the rest of this corpus says about deep dep
 good practice, not CRA compliance — and a document that satisfies the Regulation may say very little
 about where a vulnerability actually entered.
 
-The format is **not fixed yet**. Article 13(24) empowers the Commission to specify "the format and
-elements" of the SBOM by implementing act, taking account of European or international standards.
+The format is **not fixed yet**. Article 13(24) empowers the Commission, "by means of implementing
+acts taking into account European or international standards and best practices", to "specify the
+format and elements of the software bill of materials referred to in Part II, point (1), of
+Annex I", under the examination procedure of Article 62(2).[^cra] Note *implementing* acts — the
+delegated-act power in Article 13 concerns the support period, not the SBOM format.
+
 Until one is adopted, "a commonly used and machine-readable format" is the only constraint — which
-[CycloneDX](/formats/cyclonedx.md) and [SPDX](/formats/spdx.md) both plainly meet.
+[CycloneDX](/formats/cyclonedx.md) and [SPDX](/formats/spdx.md) both plainly meet. **No implementing
+act had been adopted as of 2026-08-03**, with the underlying European standard still in development
+at CEN/CENELEC. That negative is the one claim here checked against secondary sources rather than
+the enacting text, which cannot report its own absence — treat it as the item most likely to go
+stale.
 
 # Mandated, not published
 
-Three separate provisions govern who sees the document, and they do not add up to disclosure:
+The obligation to *draw up* an SBOM and the question of who *sees* it are separate, and the second
+does not add up to disclosure:
 
 | Recipient | Provision | Obligation |
 |---|---|---|
-| Technical documentation | Annex VII | The SBOM is part of the vulnerability-handling information the manufacturer must hold |
-| Market surveillance authority | Annex VIII, point 8 | Provided **on reasoned request**, where necessary to check compliance |
-| The user | Annex II, point 9 | **Only if the manufacturer chooses to.** If they do, they must say where it can be accessed |
+| Nobody in particular | Annex I, Part II(1) | The SBOM must **exist**, as part of vulnerability handling |
+| Market surveillance authority | **Annex VII, point 8** | Enters the technical documentation "where applicable, **further to a reasoned request** from a market surveillance authority provided that it is necessary in order for that authority to be able to check compliance"[^cra] |
+| Market surveillance authority | Article 53 | A broader access-to-data route, also **upon a reasoned request**, covering design, development, production and vulnerability handling |
+| The user | Annex II, point 9 | **Only if the manufacturer chooses to**: "If the manufacturer decides to make available the software bill of materials to the user, information on where the software bill of materials can be accessed"[^cra] |
+
+Note that Annex VII is the *content of the technical documentation*, and its point 8 is where the
+SBOM appears — conditioned on the request. Annex VIII is *Conformity Assessment Procedures* and says
+nothing about SBOMs.
 
 So the CRA compels an SBOM to *exist* and to be *producible on demand*. It does not compel
 publication to customers, and Annex II point 9 makes that explicitly optional. A reader expecting
@@ -85,10 +101,10 @@ planning signal into a declared, bounded commitment.
 
 # Dates
 
-Article 71 states the rule for entry into force rather than the date, and gives the application
-dates directly.[^cra] **These are the perishable part of this concept**, and this concept's
-`stale_after` is set to expire *before* the next milestone rather than after it — an expiry that
-fires once a date has already passed is checking the wrong thing.
+Article 71 states the rule for entry into force rather than the date, and gives the three
+application dates directly — general application, then two exceptions, one for Article 14 and one
+for Chapter IV (Articles 35 to 51).[^cra] All three are quoted in ISO form below; the Regulation
+writes them day-then-month.
 
 | Milestone | Date | Basis |
 |---|---|---|
@@ -100,6 +116,12 @@ fires once a date has already passed is checking the wrong thing.
 
 Only entry into force is derived rather than read; Article 71(1) states the twenty-day rule and the
 date follows from the publication date.
+
+These were once the perishable part of this concept, and its `stale_after` was set to fire before
+the next milestone so a date would be re-checked before it passed. **That rule has done its job.**
+All three dates are now verified against the enacting text and are fixed law; nothing about them
+will change as 2026-09-11 passes. The volatility that remains is the **implementing act on SBOM
+format**, which can land at any time, so the expiry now follows that instead.
 
 **The ordering is the interesting part.** Reporting obligations bite over a year before the
 Regulation applies generally, so the CRA's first practical effect on a manufacturer is *disclosure*,
