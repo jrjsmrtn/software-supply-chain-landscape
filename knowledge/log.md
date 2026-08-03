@@ -2,13 +2,30 @@
 
 Content changes to the knowledge bundle: concepts added, re-verified, corrected or expired.
 
-**Headings carry the release the entries shipped in**, so a `knowledge/` tree separated from this
-repository can still name its own version. OKF has no in-band content-version field — `okf_version`
-declares the *specification* revision — and a git tag does not travel with a copied directory, so
-without this the unit OKF calls "the unit of distribution" would carry no version at all.
+**Date headings, per OKF §9**, which requires ISO 8601 `YYYY-MM-DD` and admits no other heading form.
+The log's model is date-grouped, not release-grouped, so an entry cannot carry its release in a
+heading and five releases landing on one day share one. The release map below is how a `knowledge/`
+tree separated from this repository still names its version: OKF has no in-band content-version
+field, and a git tag does not travel with a copied directory.
+
+**Releases**, newest first: **v0.5.0** 2026-08-02 · **v0.4.0** 2026-08-02 · **v0.3.0** 2026-08-02 ·
+**v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases.
 
-## Unreleased
+## 2026-08-03
+
+* **Corrected**: this log violated **OKF §9**, which requires date headings in ISO 8601
+  `YYYY-MM-DD` form. It had been restructured earlier the same day to head entries by release
+  (`## v0.5.0 — 2026-08-02`), on the incorrect premise that `log.md` bodies are unconstrained prose.
+  The spec constrains the headings; the premise was inferred from §5 rather than read from §9. Found
+  by `okf validate` v0.2.1, which reported 6 errors. Date headings restored, and the release map
+  moved into the preamble, where it is prose and therefore conformant.
+* **Corrected**: **37 `verified[].at` values** were malformed, carrying literal backslash-escaped
+  quotes around the timestamp. Valid YAML, so `yaml.safe_load` accepted them and the local gates —
+  which assert only that `type` is present — never inspected the value. None parsed as a timestamp.
+  Also found by `okf validate` (OKF §5.2).
+
+## 2026-08-02
 
 * **Swept** 2026-08-02: a **version-currency check** across every concept citing a versioned
   specification — asking only *"is the cited version still the current one?"*, which is a different
@@ -28,8 +45,6 @@ without this the unit OKF calls "the unit of distribution" would carry no versio
   Outcome: **SLSA was the only stale version claim**, and it was already corrected. This entry
   exists so the negative result is dated and does not get redone blindly.
 
-## v0.5.0 — 2026-08-02
-
 * **Corrected**: `provenance/slsa.md` and `threats/slsa-threat-model.md`, both written against
   **v1.1 — which is retired**. `slsa.md` stated flatly that "v1.1 is current". Found by accident
   while researching a different bundle, six months before either concept's `stale_after` would have
@@ -40,8 +55,6 @@ without this the unit OKF calls "the unit of distribution" would carry no versio
   Draft. Also recorded: the spec's own overview page still says dependency threats are "A-H,
   recursively" while its detail page enumerates A–I.
 
-## v0.4.0 — 2026-08-02
-
 * **Added**: `regulation/fdc-act-524b.md`, completing the opening set named in the scope decision.
   Sourced from the codified statute at 21 U.S.C. §360n-2 rather than from FDA guidance — an early
   attempt landed on a webinar deck about a superseded 2024 draft, which is what the primary-source
@@ -49,8 +62,6 @@ without this the unit OKF calls "the unit of distribution" would carry no versio
   only which kinds of component must be covered, so the three instruments now in this directory give
   three different answers to "what must an SBOM contain". Like the CRA, it directs the document to
   an authority rather than to the customer.
-
-## v0.3.0 — 2026-08-02
 
 * **Added**: `regulation/sbom-minimum-elements.md`. Written as the **2026** edition, not the 2021
   NTIA one: CISA, with the NSA, FBI and sixteen international partners, published a replacement on
@@ -60,8 +71,6 @@ without this the unit OKF calls "the unit of distribution" would carry no versio
   instruction to declare unknown provenance explicitly is the same principle as CycloneDX
   `compositions` and declared-versus-concluded licensing.
 
-## v0.2.0 — 2026-08-02
-
 * **Added**: `regulation/` and its first concept, `regulation/cra.md`, under a scope test recorded
   in the meta-project: an instrument is in scope only if it changes what a bill of materials must
   contain or when one must exist. Sourced entirely from the enacting text on EUR-Lex rather than
@@ -69,8 +78,6 @@ without this the unit OKF calls "the unit of distribution" would carry no versio
   the space: the Regulation's SBOM floor is **top-level dependencies only**, not the transitive
   graph, and it compels the document to exist without compelling its publication — disclosure to
   users is explicitly optional under Annex II point 9. Introduces the `Regulation` type.
-
-## v0.1.0 — 2026-08-02
 
 * **Added**: `intelligence/repology.md` — the version-currency axis, which neither `osv.dev`
   (vulnerabilities) nor `endoflife.date` (support dates) covers: how far behind upstream an
@@ -222,6 +229,8 @@ without this the unit OKF calls "the unit of distribution" would carry no versio
   signing methods including keyless OIDC and PKCS #11. Records that OMS is the format and
   `model-signing` one implementation — the Sigstore/cosign separation again. NVIDIA uses it to sign
   agent skills, which is the evidence that it is not model-specific.
+
+## 2026-08-01
 
 * **Added**: `formats/spdx-ai-profile.md` — SPDX 3.0's AI and Dataset profiles. Where CycloneDX has
   one ML-BOM, SPDX has two: the model and the data it was trained on. Six energy properties split

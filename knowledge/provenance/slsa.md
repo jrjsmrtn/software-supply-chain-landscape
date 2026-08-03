@@ -13,7 +13,7 @@ generated:
   at: '2026-08-01T12:30:00Z'
 verified:
   - by: claude/opus-5
-    at: \'2026-08-01T23:05:00Z\'
+    at: '2026-08-01T23:05:00Z'
   - by: claude/opus-5
     at: '2026-08-02T12:30:00Z'
 stale_after: 2027-02-01
