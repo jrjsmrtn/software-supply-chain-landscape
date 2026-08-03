@@ -114,6 +114,10 @@ not a today problem — and until then the hook says so loudly instead of passin
   If a subject has nothing but a definition, leave it out until sourcing earns it a file.
 - **A capability page is a weaker source than a schema.** This was learned the hard way on CBOM:
   CycloneDX's marketing page lists three asset types, the JSON schema has four.
+- **EUR-Lex cannot be fetched programmatically** — it returns HTTP 202 with an empty body rather
+  than an error, so a `regulation/` re-verification silently falls back to commentary. The working
+  route is content negotiation on the Publications Office CELEX resource; the exact command and the
+  headers that matter are in the meta-project's `CLAUDE.md` under *Sourcing Methods*.
 - **`verified` is an act, not a formatting step.** Absent is the honest default. Most of this corpus
   is migrated prose that nobody has re-checked, and it says so.
 - **The gates verify structure, not sense.** Links resolving and YAML parsing says nothing about
