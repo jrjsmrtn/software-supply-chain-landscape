@@ -1,17 +1,28 @@
 # Quality gates for the landscape bundle.
 #
-# This repository carries knowledge and nothing else. The gates that check the bundle —
-# OKF conformance, footnote attribution, `stale_after` expiry, links, ISO dates — live in the
-# `supplychain-workspace` meta-project, because this one is meant to be publishable.
+# CONFORMANCE comes from `okf` (github.com/okfcli/okf), pinned at v0.2.1 — ADR-0010. It checks
+# §5.1 footnote->sources[].id, §5.2 ISO datetimes, §5.5 stale_after expiry, §8 index.md
+# frontmatter, §9 log.md date headings, and link resolution. On first run against this bundle it
+# found 6 errors and 37 malformed timestamps that the previous local gates never looked at.
 #
-# They are no longer run by hand. `bundle-gates` below invokes them from the sibling checkout,
-# so a commit here is gated by them. Two limits to know about:
+#   install: go install github.com/okfcli/okf/cmd/okf@v0.2.1
 #
-#   - It depends on the sibling being checked out beside this repository. If it is not, the hook
-#     FAILS rather than skipping: a gate that quietly does nothing is the failure mode this
-#     arrangement already risks, and silence is what makes it dangerous.
-#   - A hook only fires on commit, so it cannot catch a `stale_after` that expires while nobody
-#     is committing. That is what the weekly scheduled run is for.
+# The LOCAL gates in the `supplychain-workspace` meta-project now cover only what okf does not:
+#   - check-okf.py   two footnote-DEFINITION faults (referenced-but-undefined, defined-but-unused)
+#   - check-dates.py ISO dates across the whole repository, including CLAUDE.md and CHANGELOG.md,
+#                    which are not part of the bundle and which okf therefore never sees
+# `check-doc-links.py` was retired here: okf resolves bundle links, and two implementations of one
+# rule diverge silently.
+#
+# Three limits to know about:
+#
+#   - okf is a hard requirement. If it is absent the hook FAILS rather than skipping — a gate that
+#     quietly does nothing is the failure mode this arrangement risks, and silence makes it
+#     dangerous. A publishable bundle passing an unrun gate is worse than a blocked commit.
+#   - The local gates depend on the meta-project being checked out beside this repository. Same
+#     rule: absent means fail, not skip.
+#   - A hook only fires on commit, so it cannot catch a `stale_after` that expires while nobody is
+#     committing. That is what the weekly scheduled run is for.
 #
 # Install with: lefthook install
 
@@ -22,15 +33,27 @@ pre-commit:
       run: gitleaks protect --staged --verbose
     reuse:
       run: reuse lint
+    okf-conformance:
+      run: |
+        if ! command -v okf >/dev/null 2>&1; then
+          echo "okf not found on PATH — OKF conformance is UNCHECKED." >&2
+          echo "  install: go install github.com/okfcli/okf/cmd/okf@v0.2.1" >&2
+          exit 1
+        fi
+        R=../workspace/scripts/okf-report.py
+        out=$(okf validate knowledge); rc1=$?
+        printf '%s' "$out" | python3 "$R"
+        out=$(okf lint knowledge); rc2=$?
+        printf '%s' "$out" | python3 "$R"
+        [ "$rc1" -eq 0 ] && [ "$rc2" -eq 0 ]
     bundle-gates:
       run: |
         G=../workspace/scripts
         if [ ! -d "$G" ]; then
           echo "bundle-gates: no meta-project at $G" >&2
           echo "The gates live in supplychain-workspace, expected beside this repository." >&2
-          echo "Without it, OKF conformance, attribution, expiry, links and dates are UNCHECKED." >&2
+          echo "Without it, footnote definitions and repo-level ISO dates are UNCHECKED." >&2
           exit 1
         fi
-        python3 "$G/check-okf.py" &&
-        python3 "$G/check-doc-links.py" knowledge &&
+        python3 "$G/check-okf.py" knowledge &&
         python3 "$G/check-dates.py" .
