@@ -69,10 +69,9 @@ contributions.)"*[^kernel-submitting-patches]
 A project adopts the DCO as-is or adopts something else. There is no house variant, and a "modified
 DCO" is a contradiction rather than a stricter policy.
 
-A project needing different terms needs a **CLA** — a different instrument entirely, which typically
-transfers or licenses rights to a steward rather than certifying a contributor's right to submit,
-and which can be a hard stop for contributors bound by an employer. *This corpus has no CLA concept
-yet*; that is a gap, not an omission by scope.
+A project needing different terms needs a **[CLA](cla.md)** — a different instrument entirely, which
+*grants* rights to a steward rather than certifying a contributor's right to submit, and whose
+employer clause can be a hard stop for contributors bound by one.
 
 ## Its stated purpose is tracking, not enforcement
 

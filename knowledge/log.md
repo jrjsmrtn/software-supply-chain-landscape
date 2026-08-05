@@ -30,8 +30,21 @@ field, and a git tag does not travel with a copied directory.
 * Also records that multi-`Signed-off-by` chains are a **custody trail, not co-authorship** — later
   entries are "from people handling and transporting the patch, but were not involved in its
   development". Reading them as authorship misattributes work to maintainers who only forwarded it.
-* **Named gap**: no CLA concept exists in this corpus. The DCO record points at the distinction
-  without pretending it is covered.
+* **Added**: `provenance/cla.md` — closing the gap the DCO record had just named. Worked from
+  Apache's **ICLA V2.2** read in full, because the category name predicts nothing: Apache
+  *licenses* and explicitly does not assign (*"You reserve all right, title, and interest in and to
+  Your Contributions"*), while other stewards assign or take relicensing rights. The record says so
+  and refuses to generalise.
+* The contrast that matters operationally is **§4, the employer clause**, not the licence grant. A
+  missing `Signed-off-by` is fixable by amending a commit; a §4 problem needs *your employer* to
+  waive rights or sign a Corporate CLA, which is weeks if it works at all. That is why a CLA belongs
+  on a pre-work checklist and a DCO on a pre-merge one.
+* The other real asymmetry: the ICLA grants **patent** licences with defensive termination; the DCO
+  is silent on patents entirely. For a steward whose risk model includes patents, that gap — not
+  authorship tracking — is the reason to require a CLA.
+* A retrieval note worth keeping: `cla-corporate.txt` **no longer exists** and returns a one-line
+  notice pointing at a PDF. The fetch succeeds; the agreement is not in it. Checking for clause text
+  rather than HTTP status is what caught it.
 
 ## 2026-08-03
 

@@ -7,6 +7,7 @@
 # Provenance and attestation
 
 * [Developer Certificate of Origin (DCO)](dco.md) - A contributor's self-certification of the right to submit. Asserts the right, never authorship — and its text may not be modified.
+* [Contributor License Agreement (CLA)](cla.md) - A signed contract granting the steward copyright and patent licences. Its employer clause, not its licence grant, is what blocks contributors.
 * [SLSA](slsa.md) - Graded requirements for build provenance. Grades the process, not the code.
 * [in-toto](in-toto.md) - Layout, link metadata, and the attestation envelope SLSA provenance travels inside.
 
