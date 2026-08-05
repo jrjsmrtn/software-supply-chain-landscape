@@ -11,6 +11,22 @@ place for them.
 
 ## [Unreleased]
 
+### Added
+
+- **Pre-publication files**, ahead of the repository going public: `CONTRIBUTING.md`, `SECURITY.md`,
+  `CODE_OF_CONDUCT.md` and a root `LICENSE`. Adapted from the precedent set by
+  `ai-contribution-policies`, which went through the `public-release` gate first
+  - `CONTRIBUTING.md` states the sourcing rule with the evidence for it — re-verifying the CRA
+    concept against the enacting text found a **wrong annexe citation** carried in confidence, and
+    nothing but reading the instrument would have caught it. It also warns that a status code proves
+    the server answered and never that the content arrived: EUR-Lex answers `202` with an empty body,
+    and some hosts serve a challenge page for *any* path, including ones that do not exist
+  - Contributions are accepted under the **DCO**, with no CLA — both instruments are documented in
+    this bundle, which is a good reason to get our own use of them right
+  - `SECURITY.md` is explicit that a documentation repository's real failure mode is a **wrong
+    claim**, and names the class that matters most: a concept understating a security property such
+    that someone trusts an artifact they should not
+
 ## [0.6.0] - 2026-08-05
 
 ### Added

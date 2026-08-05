@@ -6,7 +6,7 @@ SPDX-PackageSupplier = "Georges Martin <jrjsmrtn@gmail.com>"
 # does structurally through `sources` and footnotes. The gates that check it live in the
 # supplychain-workspace meta-project and are licensed there.
 [[annotations]]
-path = ["knowledge/**", "README.md", "CHANGELOG.md", "CLAUDE.md"]
+path = ["knowledge/**", "README.md", "CHANGELOG.md", "CLAUDE.md", "CONTRIBUTING.md", "SECURITY.md", "CODE_OF_CONDUCT.md", "LICENSE"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Georges Martin <jrjsmrtn@gmail.com>"
 SPDX-License-Identifier = "CC-BY-4.0"
