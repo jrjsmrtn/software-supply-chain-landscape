@@ -12,6 +12,27 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases.
 
+## 2026-08-05
+
+* **Added**: `provenance/dco.md` — the Developer Certificate of Origin. A real gap: the corpus had
+  **no DCO concept and no mention of one**, while `ai-contribution-policies` leaned on the
+  instrument throughout to explain why organisations reach opposite conclusions about AI-generated
+  contributions. Mechanics belong here; the decisions organisations make with them belong there
+  (ADR-0008's reference-don't-restate boundary, applied in the other direction).
+* The record's point of leverage is that **(a), (b) and (c) are alternatives**, and only (a)
+  mentions creating anything — "in whole or in part". The common gloss *"I wrote this"* is not what
+  the certificate says; the load-bearing assertion is the **right to submit under the stated
+  licence**, and (c) covers pure pass-through of work the signer neither wrote nor touched.
+* Two things the text says that are easy to miss: it **may not be modified** ("changing it is not
+  allowed"), so a house variant is a contradiction rather than a stricter policy; and clause (d) is
+  a standing consent to **permanent publication of personal data**, which is why sign-off requires a
+  known identity.
+* Also records that multi-`Signed-off-by` chains are a **custody trail, not co-authorship** — later
+  entries are "from people handling and transporting the patch, but were not involved in its
+  development". Reading them as authorship misattributes work to maintainers who only forwarded it.
+* **Named gap**: no CLA concept exists in this corpus. The DCO record points at the distinction
+  without pretending it is covered.
+
 ## 2026-08-03
 
 * **Re-verified**: `regulation/cra.md`, ahead of its 2026-09-01 expiry, against the enacting text
