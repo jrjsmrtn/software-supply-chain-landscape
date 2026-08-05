@@ -42,6 +42,30 @@ field, and a git tag does not travel with a copied directory.
 * The other real asymmetry: the ICLA grants **patent** licences with defensive termination; the DCO
   is silent on patents entirely. For a steward whose risk model includes patents, that gap — not
   authorship tracking — is the reason to require a CLA.
+* **Added**: `provenance/commit-trailers.md` — absorbing the sign-off-chain material rather than
+  giving it a record of its own, because chain conventions are kernel practice while the trailer
+  *mechanism* is general. The framing fact: **git standardises the shape and nothing about the
+  meaning**. `Signed-off-by:` has no more standing in git than `Banana:`; every semantic is project
+  convention.
+* Records git's actual parsing rules, which are stricter than they look — no whitespace in the key,
+  the block must follow a blank line, and a group qualifies only if it is all trailers **or**
+  *"contains at least one Git-generated or user-configured trailer and consists of at least 25%
+  trailers"*. Prose mixed into the footer can drop a block below that threshold, at which point
+  nothing in it is a trailer to tooling while it still reads correctly to a human.
+* **A finding neither source states alone.** Guidance that circulated before the kernel's AI policy
+  landed recommended `Co-developed-by:` for AI attribution. The kernel's own rules make that
+  incoherent: `Co-developed-by:` denotes authorship and *"must be immediately followed by a
+  Signed-off-by: of the associated co-author"*, while the AI policy states *"AI agents MUST NOT add
+  Signed-off-by tags"*. The tag would require a sign-off the policy forbids — so `Assisted-by:` is
+  the only shape consistent with both rules, not a stylistic preference. This is exactly the
+  template the retired 27-project survey was shipping.
+* Also found while sourcing: `submitting-patches.rst` carries a dedicated *"Using Assisted-by:"*
+  section making the tag **required** — *"you need to acknowledge that use … Failure to do so may
+  impede the acceptance of your work."* Stronger than `coding-assistants.rst` alone conveys, and it
+  means a contributor following the ordinary submission process meets the requirement.
+* And: naming a person in a trailer needs their **explicit permission**, for every token except
+  `Cc:`, `Reported-by:` and `Suggested-by:`. A trailer publishes a permanent association between a
+  named person and a change.
 * A retrieval note worth keeping: `cla-corporate.txt` **no longer exists** and returns a one-line
   notice pointing at a PDF. The fetch succeeds; the agreement is not in it. Checking for clause text
   rather than HTTP status is what caught it.

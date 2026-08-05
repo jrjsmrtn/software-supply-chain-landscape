@@ -97,7 +97,9 @@ Beyond the first line, the chain is a provenance record in its own right:[^kerne
   procedures.
 
 So a multi-SoB commit is not multiple authors — it is a custody trail. Reading it as co-authorship
-misattributes the work to maintainers who only forwarded it.
+misattributes the work to maintainers who only forwarded it. The kernel has a separate token that
+*does* denote authorship, `Co-developed-by:`, and a vocabulary around it — see
+[commit trailers](commit-trailers.md).
 
 ## Where it is load-bearing, and where it is not
 
