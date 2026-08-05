@@ -11,6 +11,12 @@ place for them.
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-08-05
+
+**Published.** The repository is public at
+<https://github.com/jrjsmrtn/software-supply-chain-landscape>, having been private since
+extraction on 2026-08-01 with publication always the stated point.
+
 ### Added
 
 - **Pre-publication files**, ahead of the repository going public: `CONTRIBUTING.md`, `SECURITY.md`,

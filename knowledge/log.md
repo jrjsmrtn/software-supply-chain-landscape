@@ -8,7 +8,7 @@ heading and five releases landing on one day share one. The release map below is
 tree separated from this repository still names its version: OKF has no in-band content-version
 field, and a git tag does not travel with a copied directory.
 
-**Releases**, newest first: **v0.6.0** 2026-08-05 · **v0.5.0** 2026-08-02 · **v0.4.0** 2026-08-02 · **v0.3.0** 2026-08-02 ·
+**Releases**, newest first: **v0.7.0** 2026-08-05 · **v0.6.0** 2026-08-05 · **v0.5.0** 2026-08-02 · **v0.4.0** 2026-08-02 · **v0.3.0** 2026-08-02 ·
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases.
 
