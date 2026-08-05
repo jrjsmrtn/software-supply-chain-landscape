@@ -11,8 +11,31 @@ place for them.
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-08-05
+
+### Added
+
+- **Three `provenance/` concepts covering how a contribution's origin is asserted.** The corpus had
+  none of them, while its sibling `ai-contribution-policies` leaned on all three to explain why
+  organisations reading the same instruments reach opposite conclusions
+  - **[Developer Certificate of Origin](knowledge/provenance/dco.md)** — clauses (a), (b) and (c) are
+    *alternatives*, and only (a) mentions creating anything ("in whole or in part"). The common gloss
+    "I wrote this" is not what the certificate says; the load-bearing assertion is the **right to
+    submit under the stated licence**. Its text may not be modified, so a house variant is a
+    contradiction rather than a stricter policy
+  - **[Contributor License Agreement](knowledge/provenance/cla.md)** — worked from Apache's ICLA
+    V2.2. Apache *licenses* and explicitly does not assign, but that is a property of Apache's
+    agreement and not of the category. The operative clause is **§4, the employer representation**:
+    a missing sign-off is fixable by amending a commit, a §4 problem needs the employer to act
+  - **[Commit trailers](knowledge/provenance/commit-trailers.md)** — **git standardises the shape and
+    nothing about the meaning**. Absorbs sign-off-chain semantics rather than giving them a record,
+    since chain conventions are kernel practice while the mechanism is general
+
 ### Fixed
 
+- **A wrong citation in the CRA concept**, found by re-verifying against the enacting text ahead of
+  its 2026-09-01 expiry: the SBOM-on-reasoned-request provision is **Annex VII point 8, not Annex
+  VIII point 8** — Annex VIII is Conformity Assessment Procedures and says nothing about SBOMs
 - **`knowledge/log.md` violated OKF §9.** Earlier the same day its entries were re-headed by release
   (`## v0.5.0 — 2026-08-02`) to put a version inside the bundle. §9 requires date headings in ISO
   8601 `YYYY-MM-DD` form and admits no other, so that was 6 spec errors. The premise — that `log.md`
@@ -28,6 +51,13 @@ Both found by **`okf validate` v0.2.1** (`okfcli/okf`), run against the bundle f
 
 ### Changed
 
+- **`okf validate` and `okf lint` are now the conformance gate** (ADR-0010). `check-doc-links.py`
+  retired here — two implementations of one rule diverge silently, and this one was the weaker.
+  `check-okf.py` stays, reduced to the two footnote-definition faults `okf` does not cover;
+  `check-dates.py` stays because it checks files the bundle does not contain
+- Recorded the **EUR-Lex fetch method** by pointer rather than copy: EUR-Lex answers HTTP 202 with an
+  empty body to a non-browser client, so a `regulation/` re-verification silently degrades into a
+  commentary check unless content negotiation on the CELEX resource is used
 - Repaired an ordering fault found while regrouping: the five newest entries had been inserted into
   the middle of the **oldest** dated section, and one carried an inline date contradicting the
   heading above it. Entries are unchanged verbatim; only their grouping and order moved.
@@ -186,7 +216,8 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.2.0...v0.3.0
