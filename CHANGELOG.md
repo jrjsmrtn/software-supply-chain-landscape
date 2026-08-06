@@ -23,6 +23,11 @@ place for them.
     table. Three inclusion criteria, all required — a CVE ID, reliable evidence of active
     exploitation, and **clear remediation guidance**; the third is why absence from KEV is not
     evidence of safety. Two-week and six-month deadlines by CVE vintage
+  - Records KEV as a **published feed with a JSON Schema**. `requiredAction` and `dueDate` are
+    *required* per record, so the BOD 22-01 deadline ships inside the data rather than being policy a
+    consumer applies; `cveID` is the join key to OSV, NVD and any CVE-resolvable BOM; and
+    `knownRansomwareCampaignUse` is a triage signal with no equivalent elsewhere. The feed, CSV and
+    schema URLs are not discoverable from the landing page without a browser
 - **[The six SBOM types](knowledge/formats/sbom-types.md)** — Design, Source, Build, Analyzed,
   Deployed, Runtime, from the CISA-facilitated 2023 document. The corpus covered the **xBOM family**
   (*what* is inventoried) and had **no coverage at all** of *where an SBOM's data came from*, which is

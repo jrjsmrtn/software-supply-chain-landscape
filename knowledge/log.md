@@ -22,13 +22,23 @@ field, and a git tag does not travel with a copied directory.
   were merely *facilitated*, with the document stating "It is not an official US government document".
   A reader meeting those separately would reasonably assume they carry the same standing.
 
+  It records KEV as a **published feed with a JSON Schema**, not only as prose: `requiredAction` and
+  `dueDate` are *required* per record, so the BOD 22-01 deadline ships inside the data rather than
+  being policy a consumer applies, and `cveID` is the join key that composes KEV with OSV, NVD and any
+  CVE-resolvable BOM. `knownRansomwareCampaignUse` is a triage signal with no equivalent elsewhere.
+
   It also **defines KEV**, which the corpus previously contained only as a bare word in `grype`'s
-  capability table. Sourced from BOD 22-01 rather than the KEV landing page — that page returns 200
-  with 3,876 words of pure navigation and no mention of `BOD 22-01`, `criteria` or `remediate`,
-  the "wrong representation" failure `okf-verify` warns about. Three inclusion criteria, all
-  required: a CVE ID, reliable evidence of active exploitation, **and clear remediation guidance** —
-  the third being why absence from KEV is not evidence of safety. Deadlines of two weeks for CVEs
-  from 2021 onward, six months for older.
+  capability table. Three inclusion criteria, all required: a CVE ID, reliable evidence of active
+  exploitation, **and clear remediation guidance** — the third being why absence from KEV is not
+  evidence of safety. Deadlines of two weeks for CVEs from 2021 onward, six months for older.
+
+  **Sourced from BOD 22-01, not the KEV landing page**, and the reason was established with a real
+  browser rather than assumed. The first draft of this entry called that page JavaScript-rendered.
+  It is not: the rendered DOM yields ~2,900 words — *fewer* than `curl` returns — and still contains
+  no "BOD 22-01", "criteria" or "remediate". The page is a **catalog browser**, and the definitions
+  were never on it in any representation. Citing the directive was right; the first explanation for
+  why was wrong. The browser also surfaced the feed, CSV and schema URLs, which no `curl` of that
+  page would have revealed.
 
 * **Added**: `formats/sbom-types.md` — the six SBOM types (Design, Source, Build, Analyzed, Deployed,
   Runtime) from the 2023 CISA-facilitated document. A real gap: the corpus described the **xBOM

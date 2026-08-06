@@ -23,6 +23,9 @@ sources:
   - id: cisa-types
     title: 'Types of Software Bill of Material (SBOM) Documents (CISA, 2023-04-21)'
     resource: https://www.cisa.gov/sites/default/files/2023-04/sbom-types-document-508c.pdf
+  - id: kev-schema
+    title: 'CISA Catalog of Known Exploited Vulnerabilities — JSON Schema'
+    resource: https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities_schema.json
 ---
 
 The **Cybersecurity and Infrastructure Security Agency**, a US federal body whose outputs this corpus
@@ -78,6 +81,36 @@ someone is exploiting it in practice. That is why scanners such as [grype](/tool
 alongside EPSS as a prioritisation source, and why "is it in KEV" is usually a better first question
 than "what is its score".
 
+## The catalog is a published feed with a schema
+
+KEV is consumable as data, not only as a web page:
+
+| Artifact | |
+|---|---|
+| JSON feed | `https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json` |
+| JSON Schema | `…/feeds/known_exploited_vulnerabilities_schema.json` |
+| CSV | `https://www.cisa.gov/sites/default/files/csv/known_exploited_vulnerabilities.csv` |
+
+The envelope requires `catalogVersion`, `dateReleased`, `count` and `vulnerabilities`. Each record
+**requires** `cveID`, `vendorProject`, `product`, `vulnerabilityName`, `dateAdded`,
+`shortDescription`, `requiredAction` and `dueDate`, and may carry `knownRansomwareCampaignUse`,
+`notes` and `cwes`.[^kev-schema]
+
+Two consequences worth drawing out:
+
+- **`requiredAction` and `dueDate` are required fields.** The BOD 22-01 deadline is not external
+  policy commentary a consumer has to apply — it ships inside every record. The directive is encoded
+  as data.
+- **`cveID` is the join key.** KEV composes with [OSV](/intelligence/osv-schema.md),
+  [NVD](/intelligence/nvd.md) and any BOM whose components resolve to CVEs, the same way the rest of
+  this corpus's vulnerability sources do. `knownRansomwareCampaignUse` is a further triage signal with
+  no equivalent elsewhere.
+
+**The landing page is not a source for any of this.** It is a catalog browser: rendered in a real
+browser it yields ~2,900 words containing no occurrence of "BOD 22-01", "criteria" or "remediate" —
+*fewer* words than a plain `curl` returns, so this is not a JavaScript-rendering artifact. The
+definitions live in the directive and the field semantics in the schema.
+
 # Why this belongs in a supply-chain reference
 
 Four of this corpus's concepts trace to CISA, and they sit at three different points on the gradient
@@ -92,5 +125,6 @@ other is a community document CISA hosted and explicitly disclaimed.
 - [VEX](/intelligence/vex.md) — the status justifications CISA published
 - [NVD](/intelligence/nvd.md) — the other US vulnerability data source, and a different agency (NIST)
 
+[^kev-schema]: [CISA Catalog of Known Exploited Vulnerabilities — JSON Schema](https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities_schema.json)
 [^bod-22-01]: [BOD 22-01: Reducing the Significant Risk of Known Exploited Vulnerabilities](https://www.cisa.gov/news-events/directives/bod-22-01-reducing-significant-risk-known-exploited-vulnerabilities)
 [^cisa-types]: [Types of Software Bill of Material (SBOM) Documents (CISA, 2023-04-21)](https://www.cisa.gov/sites/default/files/2023-04/sbom-types-document-508c.pdf)
