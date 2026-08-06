@@ -11,6 +11,8 @@ place for them.
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-08-07
+
 ### Added
 
 - **[ADP (Authorized Data Publisher)](knowledge/intelligence/adp.md)** — the CVE Program role the
@@ -289,7 +291,9 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.7.0...v0.8.0
+[0.7.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.3.0...v0.4.0
