@@ -12,6 +12,61 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases.
 
+## 2026-08-06
+
+* **Added**: `intelligence/cisa.md` — the third `Organization` concept, alongside `cna` and `aegis`.
+  CISA was referenced in four concepts and defined in none, and the four references sit at **three
+  different points on an authority gradient** that the concept exists to record: BOD 22-01 is
+  *binding* on US federal civilian agencies with deadlines; the SBOM minimum elements were *authored*
+  under an OMB designation; the VEX status justifications were *published*; and the six SBOM types
+  were merely *facilitated*, with the document stating "It is not an official US government document".
+  A reader meeting those separately would reasonably assume they carry the same standing.
+
+  It also **defines KEV**, which the corpus previously contained only as a bare word in `grype`'s
+  capability table. Sourced from BOD 22-01 rather than the KEV landing page — that page returns 200
+  with 3,876 words of pure navigation and no mention of `BOD 22-01`, `criteria` or `remediate`,
+  the "wrong representation" failure `okf-verify` warns about. Three inclusion criteria, all
+  required: a CVE ID, reliable evidence of active exploitation, **and clear remediation guidance** —
+  the third being why absence from KEV is not evidence of safety. Deadlines of two weeks for CVEs
+  from 2021 onward, six months for older.
+
+* **Added**: `formats/sbom-types.md` — the six SBOM types (Design, Source, Build, Analyzed, Deployed,
+  Runtime) from the 2023 CISA-facilitated document. A real gap: the corpus described the **xBOM
+  family** in `bom-types/` — *what* is inventoried — and said nothing about *where an SBOM's data came
+  from*, which is the axis that decides what a given document can be trusted to say. Zero mentions
+  before this.
+
+  Filed under `formats/` as a **Practice**, alongside `bom-completeness` and `bom-merging`, because
+  it is a document-level property rather than a new BOM variant. Putting it in `bom-types/` would have
+  conflated the two axes it exists to separate.
+
+  Three findings that survive only by reading the document rather than a summary of it:
+  * **It is not a lifecycle taxonomy**, and says so in its second paragraph: the list is "not intended
+    to be tightly tied to the software lifecycle". The ordering invites the misreading, and the
+    misreading has a consequence — it implies a Runtime SBOM supersedes a Source SBOM, when the two
+    answer different questions and both remain valid.
+  * **"It is not an official US government document."** Drafted by a community-led working group that
+    CISA *facilitated*, led by Kate Stewart (Linux Foundation) and Melissa Rhodes (Medtronic).
+    "CISA published" is accurate; "CISA says" is not.
+  * Its footnote 1 anchors minimum content to the **2021 NTIA minimum elements**, an edition this
+    corpus already records as superseded by the 2026 CISA one. The taxonomy rests on a baseline that
+    has since moved, which does not invalidate the six types but is worth knowing when citing it.
+
+  It also records **how to declare a type in a CycloneDX document** — `metadata.lifecycles`, verified
+  against `bom-1.6.schema.json` rather than a capability page. The finding is that **the two
+  vocabularies do not align**: seven phases against six types, neither a subset of the other, and
+  Deployed and Runtime both collapse onto `operations`. That is the one distinction a consumer most
+  needs — what is installed versus what actually loaded — and `phase` cannot express it, so the
+  custom `name`/`description` form is the escape hatch. Prompted by a concrete case: `ansible-bom`
+  emits a **Deployed** SBOM and currently declares no lifecycle at all.
+
+  The operationally useful half is the limitations, recorded per type: Source can list components
+  compiled out of the shipped artifact, Build may hold the wrong versions of dynamically linked
+  dependencies, Analyzed is heuristic and is also the type you get when scanning someone else's
+  binary, and Runtime sees only what has actually executed. Hence the synthesis the concept ends on:
+  **two SBOMs for one artifact can disagree while both are accurate**, and reconciling them destroys
+  the information.
+
 ## 2026-08-05
 
 * **Added**: `provenance/dco.md` — the Developer Certificate of Origin. A real gap: the corpus had

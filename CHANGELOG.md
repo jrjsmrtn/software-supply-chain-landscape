@@ -11,6 +11,39 @@ place for them.
 
 ## [Unreleased]
 
+### Added
+
+- **[CISA](knowledge/intelligence/cisa.md)** — referenced in four concepts, defined in none. The
+  concept exists for the **authority gradient**: BOD 22-01 is *binding* on US federal civilian
+  agencies with deadlines, the SBOM minimum elements were *authored* under an OMB designation, the
+  VEX justifications were *published*, and the six SBOM types were only *facilitated* — a document
+  that says "It is not an official US government document". Cited interchangeably, they read as one
+  level of authority; they are three
+  - Also **defines KEV**, which appeared in the corpus only as a bare word in `grype`'s capability
+    table. Three inclusion criteria, all required — a CVE ID, reliable evidence of active
+    exploitation, and **clear remediation guidance**; the third is why absence from KEV is not
+    evidence of safety. Two-week and six-month deadlines by CVE vintage
+- **[The six SBOM types](knowledge/formats/sbom-types.md)** — Design, Source, Build, Analyzed,
+  Deployed, Runtime, from the CISA-facilitated 2023 document. The corpus covered the **xBOM family**
+  (*what* is inventoried) and had **no coverage at all** of *where an SBOM's data came from*, which is
+  what decides whether a given document can answer a given question
+  - **It is not a lifecycle taxonomy** — the document disclaims that in its second paragraph, and the
+    misreading matters: it implies a Runtime SBOM supersedes a Source SBOM, when in fact the two
+    answer different questions and both stay valid
+  - **"It is not an official US government document"** — a community-led working group that CISA
+    facilitated, drafting led by Kate Stewart (Linux Foundation) and Melissa Rhodes (Medtronic)
+  - Its minimum-content footnote still points at the **2021 NTIA** elements, which
+    [`regulation/sbom-minimum-elements.md`](knowledge/regulation/sbom-minimum-elements.md) records as
+    superseded by the 2026 edition
+  - The limitations are recorded per type, because they are the half that changes decisions: **two
+    SBOMs for one artifact can disagree while both are accurate**, and treating that as an error to
+    reconcile destroys the information
+  - Includes **how to declare a type in CycloneDX** via `metadata.lifecycles`, verified against
+    `bom-1.6.schema.json`. The two vocabularies **do not align** — seven phases, six types, neither a
+    subset of the other — and **Deployed and Runtime both collapse onto `operations`**, losing exactly
+    the installed-versus-loaded distinction a consumer needs. The custom `name`/`description` form is
+    the way out
+
 ## [0.7.0] - 2026-08-05
 
 **Published.** The repository is public at

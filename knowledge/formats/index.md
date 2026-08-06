@@ -7,6 +7,7 @@
 
 * [Declaring BOM completeness (`compositions`)](bom-completeness.md) - Saying a BOM is partial, so its silence is not read as assurance.
 * [Merging BOMs](bom-merging.md) - Flat versus hierarchical, and why linking is usually better.
+* [The six SBOM types](sbom-types.md) - Design, Source, Build, Analyzed, Deployed, Runtime: where the data came from, and what each type therefore cannot tell you.
 
 VEX interchange formats (OpenVEX, CSAF VEX) are **not** here. They are inseparable from the VEX
 state vocabularies and migrate with `intelligence/`.
