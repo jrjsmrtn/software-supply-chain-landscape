@@ -11,6 +11,8 @@ place for them.
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-08-07
+
 ### Added
 
 - **[EPSS](knowledge/intelligence/epss.md)** — the last prioritisation term the corpus used without
@@ -315,7 +317,8 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.5.0...v0.6.0
