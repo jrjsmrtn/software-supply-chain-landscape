@@ -13,6 +13,19 @@ place for them.
 
 ### Added
 
+- **[ADP (Authorized Data Publisher)](knowledge/intelligence/adp.md)** — the CVE Program role the
+  corpus was missing while already documenting [CNA](knowledge/intelligence/cna.md). Who may *create*
+  a CVE record was covered; who may *add to* one was not — which is where SSVC scores, KEV membership
+  and backfilled CPE strings come from
+  - The mechanism is the **container rule**: an ADP cannot modify the CNA container and writes into a
+    separate one, so a CVE Record is a set of containers each owned by its author and every assertion
+    stays attributable
+  - **Exactly one active ADP**: CISA. The role reads like a populated category and is not
+  - **Conflicts resolve by withdrawal, not precedence** — if a CNA later publishes its own CVSS, CWE
+    or CPE, the ADP *removes* its assessed value. Most enrichment pipelines accumulate opinions and
+    leave the consumer to reconcile them; here no consumer implements precedence logic
+  - Enrichment is **rationed by triage**: universal SSVC scoring since 2024-02, expensive analysis
+    only above a threshold, and a documented refusal to guess where evidence is insufficient
 - **[CISA](knowledge/intelligence/cisa.md)** — referenced in four concepts, defined in none. The
   concept exists for the **authority gradient**: BOD 22-01 is *binding* on US federal civilian
   agencies with deadlines, the SBOM minimum elements were *authored* under an OMB designation, the

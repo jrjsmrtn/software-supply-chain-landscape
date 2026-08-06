@@ -14,6 +14,37 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-08-06
 
+* **Added**: `intelligence/adp.md` — the **Authorized Data Publisher** role, which the corpus was
+  missing while already covering [CNA](intelligence/cna.md). That left the CVE Program account as half
+  a mechanism: who may *create* a record was documented, who may *add to* one was not — and SSVC
+  scores, KEV membership and backfilled CPE strings all arrive by the second route.
+
+  Sourced from the CVE Program's own page, reached with a **browser**: `cve.org` is a SPA and returns
+  22 words to `curl`. A genuine JavaScript-rendering case, unlike the CISA KEV page it was checked
+  against the same day.
+
+  The mechanism is the container rule: an ADP **cannot modify** the CNA container and writes into a
+  separate one, so a CVE Record is a set of containers each owned by its author, and every assertion
+  stays attributable. Three further findings:
+  * **There is exactly one active ADP** — CISA. "ADP" reads like a populated category and is not.
+  * **Enrichment is rationed by triage.** Since 2024-02 every new record gets three SSVC decision
+    points; only those scoring `Technical Impact: Total`, `Automatable: Yes`, or `Exploitation:
+    Proof-Of-Concept`/`Active` *and* missing CVSS, CWE or CPE get the expensive second pass. The
+    restraint is documented too — where a confident guess is impossible, CISA "will not venture such
+    a guess", so a missing field can mean *nobody could tell* rather than *nobody looked*.
+  * **Conflicts resolve by withdrawal, not precedence.** If a CNA later publishes its own CVSS, CWE
+    or CPE, the ADP **removes** its assessed value from the record. Most enrichment pipelines
+    accumulate opinions and leave the consumer to reconcile; here the third party stands down once
+    the first party speaks, so no consumer implements precedence logic.
+
+  Typed `Organization` to match `cna.md`, which the corpus already types that way despite CNA being a
+  role rather than a body. Consistency chosen over precision so that filtering the type returns both
+  CVE Program roles together.
+
+  `cna.md` and `cisa.md` both gained a pointer: the first because its account was incomplete without
+  the counterpart, the second because **KEV reaches consumers by two independent routes** — its own
+  JSON feed and the CISA ADP container inside CVE records.
+
 * **Added**: `intelligence/cisa.md` — the third `Organization` concept, alongside `cna` and `aegis`.
   CISA was referenced in four concepts and defined in none, and the four references sit at **three
   different points on an authority gradient** that the concept exists to record: BOD 22-01 is

@@ -9,6 +9,7 @@
 * [CNA (CVE Numbering Authority)](cna.md) - Who may assign CVE IDs, in what scope — the mechanism behind uneven coverage.
 * [EEF Ægis](aegis.md) - The BEAM ecosystem's security initiative and CNA; the pattern, not the specifics, is what transfers.
 * [CISA](cisa.md) - KEV, the SBOM minimum elements, the VEX justifications and the six SBOM types — and why those four carry very different weight.
+* [ADP (Authorized Data Publisher)](adp.md) - The other CVE Program role: enrich a record without touching what the CNA wrote. One active ADP.
 
 # Triage
 

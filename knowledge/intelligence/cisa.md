@@ -101,6 +101,9 @@ Two consequences worth drawing out:
 - **`requiredAction` and `dueDate` are required fields.** The BOD 22-01 deadline is not external
   policy commentary a consumer has to apply — it ships inside every record. The directive is encoded
   as data.
+- **KEV also reaches consumers through the CVE record itself.** CISA is the CVE Program's one active
+  [ADP](adp.md), and KEV membership is one of the three things its ADP container carries — so the
+  same fact arrives by two independent routes.
 - **`cveID` is the join key.** KEV composes with [OSV](/intelligence/osv-schema.md),
   [NVD](/intelligence/nvd.md) and any BOM whose components resolve to CVEs, the same way the rest of
   this corpus's vulnerability sources do. `knownRansomwareCampaignUse` is a further triage signal with

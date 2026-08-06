@@ -63,6 +63,12 @@ a guide for projects considering it.[^ossf-cna-guide]
 > **Acronym collision.** CNA here is a CVE Numbering Authority, unrelated to the container-networking
 > sense.
 
+# The other half of the mechanism
+
+A CNA decides who may *assign* an ID and describe the vulnerability. It does not cover who may *add
+to* a published record — that is the [ADP](adp.md) role, whose contributions live in a separate
+container the CNA's data is protected from.
+
 # Related
 
 - [CVE](/naming/cve.md) — what a CNA assigns
