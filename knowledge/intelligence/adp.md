@@ -55,8 +55,8 @@ likely thing on this page to change.
 
 The **CISA ADP** contributes three things:[^cve-adp]
 
-- **[SSVC](https://www.cisa.gov/stakeholder-specific-vulnerability-categorization-ssvc) decision
-  points** — Exploitation, Automatable, Technical Impact
+- **[SSVC](ssvc.md) decision points** — Exploitation, Automatable, Technical Impact. Note these are
+  three of five: the other two are stakeholder-specific and no central publisher can supply them
 - **[KEV](cisa.md) catalog data**
 - **"Vulnrichment"** — missing CVSS, CWE or CPE for records meeting specific threat characteristics
 

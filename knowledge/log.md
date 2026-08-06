@@ -12,6 +12,38 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases.
 
+## 2026-08-07
+
+* **Added**: `intelligence/ssvc.md`, closing a term the corpus had begun to lean on: `adp.md` and
+  `cisa.md` both referenced SSVC and neither defined it — the same dangling-term shape KEV had a day
+  earlier.
+
+  **SSVC is a CERT/CC (Carnegie Mellon) model**, not a CISA one; CISA operates a customised tree and
+  publishes a guide for it. The same author-versus-operator distinction the corpus already draws for
+  the six SBOM types, and worth stating for the same reason.
+
+  The substantive point is what the name encodes. The five decision points split cleanly: **State of
+  Exploitation, Technical Impact and Automatable are properties of the vulnerability** — anyone
+  analysing it reaches the same answer — while **Mission Prevalence and Public Well-Being Impact are
+  properties of your deployment**. That is exactly why the CISA ADP publishes only the first three
+  into CVE records: a central publisher can answer questions about the flaw and cannot answer
+  questions about your mission. The model is stakeholder-*specific* by construction.
+
+  Two properties worth knowing before relying on the published values:
+  * **There is no "unknown" value, deliberately.** Where evidence is thin CISA "identifies the value
+    that is the most reasonable assumption based on prior events", qualifying that this "requires
+    reliable historical evidence and future events may change these assumptions". So a decision point
+    can be an assumption rather than an observation, which is defensible for a model that must always
+    answer and a trap for a reader treating the values as measurements.
+  * **Exploitation is present-tense with a shelf life** — it "does not predict future exploitation",
+    reflects information at time of analysis, and "answers should be time-stamped".
+
+  Also records the boundary against VEX, which sits beside it in this directory: VEX asks whether a
+  vulnerability affects the product at all; SSVC asks what to do given that it does.
+
+  `adp.md`'s bare external SSVC link now points at the concept, and says the three decision points are
+  three of five.
+
 ## 2026-08-06
 
 * **Added**: `intelligence/adp.md` — the **Authorized Data Publisher** role, which the corpus was

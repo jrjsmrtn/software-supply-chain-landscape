@@ -11,6 +11,20 @@ place for them.
 
 ## [Unreleased]
 
+### Added
+
+- **[SSVC](knowledge/intelligence/ssvc.md)** — referenced by two concepts and defined by none, the
+  same shape KEV had a day earlier. A **CERT/CC (Carnegie Mellon) model**, not a CISA one; CISA
+  operates a customised tree over it
+  - It outputs an **action, not a score** — Track, Track\*, Attend, Act are organisational verbs, so
+    no local policy layer is needed to turn a number into a decision
+  - The five decision points **split by who can answer them**: Exploitation, Technical Impact and
+    Automatable are properties of the vulnerability; Mission Prevalence and Public Well-Being Impact
+    are properties of your deployment. That is precisely why the CISA ADP publishes only the first
+    three — the model is stakeholder-*specific* by construction
+  - **No "unknown" value, deliberately**: where evidence is thin the most reasonable assumption is
+    recorded instead, so a published decision point may be an assumption rather than an observation
+
 ## [0.8.0] - 2026-08-07
 
 ### Added

@@ -17,6 +17,7 @@
 * [VDR](vdr.md) - The product's whole vulnerability picture, disclosed outward.
 * [OpenVEX](openvex.md) - OpenSSF's minimal standalone VEX documents.
 * [CSAF VEX](csaf-vex.md) - A VEX profile of OASIS CSAF, favoured by large vendors.
+* [SSVC](ssvc.md) - A decision model that outputs an action, not a score — and why a central publisher can only fill in part of it.
 
 # Lifecycle and currency
 
