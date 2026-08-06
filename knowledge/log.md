@@ -14,6 +14,27 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-08-07
 
+* **Added** to `landscape.md`, under *Common Misconceptions*: **"the organisation that published it is
+  the organisation that wrote it"** — a pattern the corpus had recorded piecemeal eight times and
+  never named.
+
+  Recorded as **rationale rather than a concept**, deliberately. It has no source of its own — it
+  would cite the eight already cited elsewhere — and no independent expiry, which is precisely the
+  test `CLAUDE.md` sets for what belongs in `landscape.md` instead of the bundle. It is a reading
+  skill for the rest of the corpus, not a new fact about the world.
+
+  The instances, now collected in one place: CISA *facilitated* the six SBOM types (a document
+  stating "It is not an official US government document", drafted from the Linux Foundation and
+  Medtronic); SSVC is a CERT/CC model over which CISA runs a tree; EPSS is stewarded by a FIRST SIG
+  while Empirical Security generates the scores; OMS is a format and `model-signing` one
+  implementation; Sigstore is a project and `cosign` its client; OWASP develops CycloneDX while Ecma
+  standardises it; the Linux Foundation develops SPDX while ISO/IEC standardises it; and a CNA
+  assigns while an ADP enriches inside one CVE record.
+
+  The rule it leaves the reader with: **ask who authored and who published separately before citing
+  something as authority.** "CISA published" and "CISA requires" are different claims.
+
+
 * **Added**: `intelligence/epss.md`, the last of the prioritisation terms the corpus used without
   defining — it appeared in `grype`'s capability table and in `cisa.md` and was nowhere explained.
 
