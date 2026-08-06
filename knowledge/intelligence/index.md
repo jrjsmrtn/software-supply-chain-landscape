@@ -18,6 +18,7 @@
 * [OpenVEX](openvex.md) - OpenSSF's minimal standalone VEX documents.
 * [CSAF VEX](csaf-vex.md) - A VEX profile of OASIS CSAF, favoured by large vendors.
 * [SSVC](ssvc.md) - A decision model that outputs an action, not a score — and why a central publisher can only fill in part of it.
+* [EPSS](epss.md) - A daily probability of exploitation in the next 30 days. Explicitly not a risk score, and KEV takes precedence over it.
 
 # Lifecycle and currency
 

@@ -14,6 +14,32 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-08-07
 
+* **Added**: `intelligence/epss.md`, the last of the prioritisation terms the corpus used without
+  defining — it appeared in `grype`'s capability table and in `cisa.md` and was nowhere explained.
+
+  **A probability, not a severity**: the likelihood a CVE is exploited in the wild within the next 30
+  days, scored 0–1 for every published CVE and **refreshed daily**. Recorded with the distinction most
+  readers get wrong — `epss` is an absolute probability, `percentile` is a ranking against currently
+  scored vulnerabilities, and a percentile of 0.9 can still be an absolute probability of a few
+  percent.
+
+  Three findings worth the space:
+  * **The base rates explain the shape of the data.** KEV lists ~0.5% of published CVEs; EPSS observes
+    exploitation activity in ~2.5–3% in any 30-day window. Scores clustering near zero is the model
+    being *calibrated*, and it is why a high score is a strong signal.
+  * **FIRST says KEV takes precedence over EPSS when present.** Not a claim about model quality — it is
+    structural: EPSS predicts, KEV observes, and a prediction does not survive evidence.
+  * **"EPSS is not a complete risk score"**, in FIRST's own words: no impact, no environment, no
+    compensating controls. The same boundary SSVC draws from the other side.
+
+  Ends by separating the four things called "prioritisation" — CVSS (how bad), EPSS (how likely), KEV
+  (happening now), SSVC (what to do) — of which only the last produces a decision.
+
+  **The residual gate earned its keep here.** `check-okf.py` failed the first draft on an orphan
+  footnote definition: a source listed and cited nowhere, which renders as nothing. That is the exact
+  fault the check exists for, and it was in freshly written prose that had already passed `okf lint`
+  as a warning.
+
 * **Added**: `intelligence/ssvc.md`, closing a term the corpus had begun to lean on: `adp.md` and
   `cisa.md` both referenced SSVC and neither defined it — the same dangling-term shape KEV had a day
   earlier.

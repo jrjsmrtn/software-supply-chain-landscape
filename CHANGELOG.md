@@ -13,6 +13,16 @@ place for them.
 
 ### Added
 
+- **[EPSS](knowledge/intelligence/epss.md)** — the last prioritisation term the corpus used without
+  defining. A **probability, not a severity**: likelihood of exploitation in the wild within 30 days,
+  0–1 for every published CVE, refreshed daily
+  - `epss` is absolute, `percentile` is relative — a 0.9 percentile can be a few percent probability
+  - **The base rates explain the distribution**: KEV lists ~0.5% of CVEs, EPSS observes exploitation
+    in ~2.5–3% per 30-day window. Clustering near zero is calibration, and is why a high score matters
+  - **FIRST says KEV takes precedence when present** — structural, not a quality judgement: EPSS
+    predicts, KEV observes
+  - Separates the four things called prioritisation — CVSS, EPSS, KEV, SSVC — of which only SSVC
+    yields a decision
 - **[SSVC](knowledge/intelligence/ssvc.md)** — referenced by two concepts and defined by none, the
   same shape KEV had a day earlier. A **CERT/CC (Carnegie Mellon) model**, not a CISA one; CISA
   operates a customised tree over it
