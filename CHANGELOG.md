@@ -11,6 +11,39 @@ place for them.
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-08-11
+
+**Tooling only — no concept changed.** Nothing was added, re-verified or corrected, so
+`knowledge/log.md` carries no dated entry for this release. Within `knowledge/` the *only*
+difference from v0.10.0 is the one line of `log.md`'s release map, which has to move or a copied
+tree would name itself by the previous version — the map exists precisely because a git tag does
+not travel with a copied directory. Verified rather than assumed:
+`git diff v0.10.0..HEAD -- knowledge/` was empty before this release commit.
+
+What changed is the constraint around the bundle, which ships with the repository rather than with
+the tree.
+
+### Added
+
+- **`.okf-types`** — this bundle's type vocabulary, declared in a file a checker reads rather than
+  in a sentence a person reads. `check-bundle-types.py` in the meta-project enforces it **in both
+  directions**: a type used but not declared, and a type declared but used by nothing
+  - Scoped to the residual and confirmed by running it: `okf` already requires the `type` field and
+    fails without it (§4.1), but accepts **any value** — `type: Bananas` passes `validate` and
+    `lint` with zero errors and zero warnings. Nothing constrained the vocabulary until now
+  - This is what let `Attack` sit on four concepts for a week while the declared list named ten
+    types and not that one, corrected in v0.10.0. The type was legitimate and the list was stale;
+    the identical silence would have hidden a typo, and a mistyped concept is invisible to every
+    filter that selects on type
+  - Placed beside `knowledge/` rather than inside it: a vocabulary is a maintenance constraint, not
+    something a reader of a copied tree needs
+
+### Changed
+
+- **`CLAUDE.md`'s type list is now explicitly a gloss on `.okf-types`, not the record.** Prose that
+  restates an enforced list is a second source that can drift while the first does not — the shape
+  behind three separate corrections in this repository's recent history
+
 ## [0.10.0] - 2026-08-10
 
 The first release that **removes** published content rather than adding to it. Five passages in this
@@ -382,7 +415,8 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.10.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.11.0...HEAD
+[0.11.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.7.0...v0.8.0
