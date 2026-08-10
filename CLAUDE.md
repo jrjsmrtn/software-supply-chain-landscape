@@ -98,9 +98,12 @@ not a today problem — and until then the hook says so loudly instead of passin
   practice is something you adopt and an attack is something done to you.
   `Attack` covers the four techniques in `threats/`; `slsa-threat-model.md` sits beside them as a
   `Specification`, because SLSA's taxonomy is a document, not a technique.
-  **Verify a new type against this list before using it.** `Attack` was in use on four concepts for
-  a week while this list named ten types, so nothing contradicted anything — `okf` does not
-  constrain the vocabulary, and neither did anything else.
+  **The enforced list is [`.okf-types`](.okf-types), not this sentence.** `check-bundle-types.py`
+  reads that file and fails in both directions — a type used but not listed, and a type listed but
+  unused. The prose above is a gloss on it and can drift; the file cannot, because the gate reads
+  it. `okf` requires the `type` field (§4.1) but accepts any value: `type: Bananas` passes
+  `validate` and `lint` with zero findings, which is how `Attack` sat undeclared on four concepts
+  for a week without anything contradicting anything.
 - Commits: Conventional Commits. Branch: `main` only.
 - `knowledge/log.md` records bundle content changes; `CHANGELOG.md` records releases.
   **`log.md` headings are ISO dates and nothing else** — OKF §9 makes that a MUST, and `okf validate`

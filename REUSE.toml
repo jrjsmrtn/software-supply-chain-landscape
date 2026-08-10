@@ -12,7 +12,7 @@ SPDX-FileCopyrightText = "2026 Georges Martin <jrjsmrtn@gmail.com>"
 SPDX-License-Identifier = "CC-BY-4.0"
 
 [[annotations]]
-path = [".gitignore", ".editorconfig", ".lefthook.yml", "REUSE.toml"]
+path = [".gitignore", ".editorconfig", ".lefthook.yml", ".okf-types", "REUSE.toml"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Georges Martin <jrjsmrtn@gmail.com>"
 SPDX-License-Identifier = "CC0-1.0"

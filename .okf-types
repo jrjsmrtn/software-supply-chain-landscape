@@ -1,0 +1,17 @@
+# Type vocabulary for this bundle, one per line.
+# Enforced by ../workspace/scripts/check-bundle-types.py in both directions:
+# a type used but not listed fails, and a type listed but unused fails.
+# okf requires the 'type' field (OKF 4.1) but accepts any value, so this is the only
+# thing between a deliberate new type and a typo.
+
+Attack
+BOM Type
+Data Source
+Explanation
+Format
+Identifier
+Organization
+Practice
+Regulation
+Specification
+Tool
