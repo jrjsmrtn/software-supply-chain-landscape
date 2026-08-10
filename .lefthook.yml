@@ -29,6 +29,15 @@
 pre-commit:
   parallel: true
   commands:
+    # Relative links, anchors, and a sweep for filenames git says no longer exist.
+    #
+    # Run HERE, against THIS repository's history -- not from the workspace. The dead-name
+    # set is repo-scoped: `purl.md`, `index.md` and friends died in the workspace's history
+    # when ADR-0005 extracted this corpus, and are alive and correct here. Sweeping siblings
+    # with the workspace's set reports live files as dead, by construction.
+    doc-links:
+      run: python3 ../../workspace/scripts/check-doc-links.py README.md CLAUDE.md CHANGELOG.md
+
     gitleaks:
       run: gitleaks protect --staged --verbose
     reuse:
