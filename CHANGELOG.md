@@ -11,6 +11,28 @@ place for them.
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-08-10
+
+The first release that **removes** published content rather than adding to it. Five passages in this
+bundle were written for a maintainer and shipped to readers, and every gate reported clean the whole
+time.
+
+### Added
+
+- **An audience gate**, checking who a page is addressed to — the class no conformance check can
+  see. Three rules: **deixis** (prose tying the bundle to the workspace that produced it),
+  **private names** (repositories a reader cannot fetch), and **path escapes** (relative links
+  resolving outside the bundle root). Deliberate cases are marked inline with
+  `<!-- audience-ok: why -->`, and a reason is required
+  - Lives in the meta-project beside the other checkers, wired into this repository's pre-commit and
+    into the weekly scheduled sweep. It runs only where a `LICENSE` exists: a permanently-private
+    bundle has no outside reader to mis-address, and findings that are correct to ignore are how a
+    gate teaches people to ignore it
+  - **Proven against known-bad input**, not only against a clean tree — at the pre-fix commit it
+    reports every passage this release removes
+- **A documentation-link check** over this repository's own `README.md`, `CLAUDE.md` and
+  `CHANGELOG.md` — links, anchors, and references to filenames git says no longer exist
+
 ### Changed
 
 - **`landscape.md` gains a misconception the corpus had hit eight times without naming**: *"the
@@ -21,6 +43,38 @@ place for them.
   and ADP inside one CVE record
   - Filed as **rationale, not a concept** — it has no source and no expiry of its own, which is the
     test for what belongs in `landscape.md` rather than the bundle
+- **`Attack` is declared in the type vocabulary**, where it had been in use on the four `threats/`
+  techniques while the list named ten types. `okf` does not constrain the vocabulary and neither did
+  anything else, so nothing contradicted anything
+  - Recorded with the reason it exists: a practice is something you adopt, an attack is something
+    done to you. `slsa-threat-model.md` remains a `Specification` — a taxonomy is a document
+
+### Removed
+
+- **`landscape.md`'s "Relevance to This Workspace" section**, and four further passages across the
+  bundle that addressed a maintainer rather than a reader. The section **named a specific private
+  host and asserted a cryptographic weakness in it**, referred readers to five skill plugins — two
+  of them in private repositories — and pointed at `../reference/`, `../howto/` and `../adr/`,
+  sibling directories that do not exist beside a distributed bundle
+  - **The host assertion appeared twice**, in `landscape.md` and again in `bom-types/cbom.md`. A
+    full read of the bundle found one of them; a `grep` for the phrase found both
+  - Where an example was carrying its weight it is **generalised rather than deleted** — the CBOM
+    line item still demonstrates the `assetType: protocol` mapping, cosign's v2→v3 break is still
+    recorded as observed rather than read off a changelog, and syft's cataloger path is still real
+  - **Every gate reported clean before and after.** The passages were conformant, sourced, unexpired
+    and correctly footnoted, and wrong only in their audience
+
+### Fixed
+
+- **`threats/index.md`, three stale claims in one short file.** *"All three defeat the controls"* —
+  there are **four**, since `instruction-payloads` joined the directory on 2026-08-02. The SLSA
+  entry advertised *"the A-H taxonomy"* and *"threats SLSA v1.0 does not address"*; the concept it
+  points at has been rewritten twice since and is **A–I** and **v1.2**
+  - One defect twice: a summary that restates a neighbour and then ages separately from it. Every
+    other `index.md` was swept for the same shape — the remaining prose counts are counts of sourced
+    content and are correct
+- **`bundle-gates` calls `okf-gate`** rather than the retired local footnote checker, so the three
+  footnote rules are enforced from one implementation instead of two that can diverge
 
 ## [0.9.0] - 2026-08-07
 
@@ -328,7 +382,8 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.6.0...v0.7.0
