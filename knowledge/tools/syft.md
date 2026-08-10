@@ -49,9 +49,8 @@ an error. A BOM generated over an uncatalogued tree is therefore empty rather th
 the same silent-absence failure as an unregistered [purl](/naming/purl.md) type, arriving one layer
 earlier.
 
-Adding coverage means contributing a cataloger. That is a real path — `ansible-bom` in this
-workspace exists partly to build one — and it is why the parser boundary is worth knowing before
-trusting a generated inventory.
+Adding coverage means contributing a cataloger. That is a real path rather than a theoretical one,
+and it is why the parser boundary is worth knowing before trusting a generated inventory.
 
 # Related
 

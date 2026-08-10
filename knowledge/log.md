@@ -10,7 +10,53 @@ field, and a git tag does not travel with a copied directory.
 
 **Releases**, newest first: **v0.9.0** 2026-08-07 · **v0.8.0** 2026-08-07 · **v0.7.0** 2026-08-05 · **v0.6.0** 2026-08-05 · **v0.5.0** 2026-08-02 · **v0.4.0** 2026-08-02 · **v0.3.0** 2026-08-02 ·
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
-[`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases.
+[`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases. <!-- audience-ok: an explicit repository-level pointer; a copied tree loses it by design -->
+
+## 2026-08-10
+
+* **Removed**: `landscape.md`'s *Relevance to This Workspace* section <!-- audience-ok: naming the removed section is the point of the entry -->, and four further passages
+  across the bundle that addressed a maintainer rather than a reader. The bundle is published; that
+  section was internal guidance that had travelled with the corpus out of the meta-project and was
+  never re-scoped for a public audience.
+
+  **The section named a specific private host and asserted a cryptographic weakness in it**, under a
+  named GitHub account. It carried no hostname, so the secret-scanning rules never fired; the fault
+  was prose, and prose is what those rules do not read. It also referred readers to five skill
+  plugins — two of them in private repositories,
+  which a reader cannot install, and pointed at `../reference/`, `../howto/` and `../adr/` — sibling
+  directories that do not exist beside a distributed bundle, one of them a tier this log records as
+  retired.
+
+  **The same disclosure appeared twice**, and only one instance was found by reading. `bom-types/cbom.md`
+  carried it as its worked line item; a `grep` for the phrase found both. That is the finding worth
+  keeping: a leak stated in two voices reads as one sentence to a reviewer and as two hits to a
+  pattern.
+
+  Where an example was carrying its weight it was **generalised rather than deleted**, since the
+  teaching was never the ownership:
+  * `bom-types/cbom.md` — the CBOM line item now describes *a* self-hosted git server. The mapping
+    to `assetType: protocol` is what the concept was demonstrating.
+  * `provenance/cosign.md` — the v2→v3 bundle-format break is still recorded as observed in a real
+    pipeline rather than read off a changelog, no longer sited in "this workspace's" project. <!-- audience-ok: quoting the removed phrase -->
+  * `tools/syft.md` — contributing a cataloger is still "a real path rather than a theoretical one";
+    the sibling project offered as evidence is gone.
+
+  **These last two were fixed for the right reason and nearly recorded with the wrong one.** The
+  first draft of this entry called both projects private. They are public — the note asserting
+  otherwise had gone stale, and the check that caught it was `gh repo view`, run while assembling
+  the checker's denylist. The fault in those two passages was never privacy; it was **deixis**. A
+  reader holding a copied `knowledge/` tree has no workspace, so "this workspace's X" identifies <!-- audience-ok: quoting the removed phrase -->
+  nothing, whatever X's visibility. Removing them was right; the first explanation for why was not.
+  * `index.md` — the decision log is still declared private, no longer by repository name.
+
+  Two references remain and are correct as they stand. This entry's own predecessor at 2026-08-01
+  names the meta-project the bundle was extracted *from*; rewriting a dated entry to conceal that
+  would falsify the record rather than close a leak. And `../CHANGELOG.md` in this file's preamble
+  points outside `knowledge/` but inside the same public repository.
+
+  **No gate would have caught any of this**, which is the part to fix rather than to note: `okf
+  validate` and `okf lint` both report clean before and after, because every claim removed here was
+  conformant, sourced, unexpired and false only in the sense of being addressed to the wrong reader.
 
 ## 2026-08-07
 
@@ -516,7 +562,7 @@ field, and a git tag does not travel with a copied directory.
   hostile*, with no fixed version to upgrade to. A scanner that does not distinguish them from
   `PYSEC-`/`GHSA-` advisories invites the wrong remedy.
 
-* **Extracted**: the bundle moved out of the `supplychain-workspace` meta-project into this
+* **Extracted**: the bundle moved out of the `supplychain-workspace` meta-project into this <!-- audience-ok: dated historical entry; rewriting it to conceal the source would falsify the record -->
   repository, so it can be distributed. Cross-document links converted to bundle-relative form.
 * **Added**: `landscape.md` as a `type: Explanation` concept — previously a separate Diátaxis
   document outside the bundle. It now carries `sources` and a long `stale_after`, and is checked

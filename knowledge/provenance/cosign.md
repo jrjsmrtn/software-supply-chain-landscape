@@ -49,9 +49,9 @@ got "https://github.com/<owner>/<repo>/.github/workflows/release.yml@refs/tags/v
 v3 emits a single bundle file carrying the signature, the signing certificate and the Rekor
 inclusion proof together.
 
-This bit a real release pipeline in this workspace's `ansible-bom` project, which is why it is
-recorded rather than left to be rediscovered. Verify the installed binary's major version before
-copying any signing snippet.
+This was hit in a real release pipeline rather than read off a changelog, which is why it is
+recorded here rather than left to be rediscovered. Verify the installed binary's major version
+before copying any signing snippet.
 
 The v3 line remains current — 3.1.2 as of 2026-08-02, and the bundle format is unchanged since 3.0.
 The error text above was reproduced against 3.1.1.

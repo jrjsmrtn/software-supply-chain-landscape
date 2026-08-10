@@ -119,7 +119,7 @@ and datasets, SaaSBOM for hosted services — differ only in what "thing" means.
 The family exists because the original insight — *you cannot secure what you cannot enumerate* —
 turned out to generalize well beyond software packages.
 
-→ Short definitions of every variant: [the workspace glossary](/bom-types/index.md)
+→ Short definitions of every variant: [`bom-types/` in the knowledge bundle](/bom-types/index.md)
 
 ### CycloneDX and SPDX — the file formats
 
@@ -630,8 +630,8 @@ question months later, against advisories that did not exist when the artifact w
   *declared* licence, which is author-supplied and unverified. Treating it as a compliance answer
   rather than a starting point is how a copyleft file inside a permissive package survives review.
 - **This is a moving target.** Spec versions, field names, and conformance levels change. That is
-  precisely why they are quarantined in `../reference/` rather than stated here — but verify
-  against upstream before relying on any of it.
+  precisely why they are quarantined in the concepts — each of which carries its own sources and an
+  expiry — rather than stated here. Verify against upstream before relying on any of it.
 
 ---
 
@@ -717,42 +717,15 @@ malicious releases perfectly validly.
 
 ---
 
-## Relevance to This Workspace
-
-The `SupplyChain` workspace exists to host projects in this space. The concepts above are the
-shared vocabulary; the practical controls are already covered by installed skills, which should be
-reused rather than reimplemented:
-
-- `project-maintenance-skills:supply-chain` — dependency vulnerabilities, SBOM generation,
-  signing, OpenSSF Scorecard
-- `project-maintenance-skills:dependency-health` — Dependabot/Renovate configuration and update-PR
-  triage
-- `project-orchestration-skills:setup-container-security` — `grype` + `syft`, digest pinning,
-  non-root runtime
-- `project-orchestration-skills:harden-github-actions` / `:harden-gitlab-ci` — CI hardening,
-  SHA-pinning, provenance
-- `project-orchestration-skills:setup-pre-commit` — REUSE scaffolding and `reuse lint` as a hook
-  and a CI job; `setup-adrs` covers the `LICENSING.md` copyleft-floor analysis for anything that
-  vendors or bundles
-
-A worked example close to home: the private git server negotiates a classical, non-post-quantum
-SSH key exchange. That is exactly one CBOM line item — one host, one protocol, one classical
-algorithm, and a note that traffic over it is harvestable today and readable later.
-
----
-
 ## Related
 
 - The **concepts** this document points into are the rest of this bundle; start at
   [the index](/index.md).
-- **How-to**: none yet — "generate and verify an SBOM for project X" belongs in `../howto/`.
-- **ADR**: cross-project decisions (canonical BOM format, signing approach) belong in `../adr/`
-  once the workspace is promoted to t1.
 
 ## Sources
 
 Conceptual orientation drawn from the upstream projects. Per-topic source links live in the
-reference documents, alongside the facts they support.
+concepts, alongside the facts they support.
 
 - [CycloneDX](https://cyclonedx.org/) · [SPDX](https://spdx.dev/) ·
   [Package URL](https://github.com/package-url/purl-spec) ·

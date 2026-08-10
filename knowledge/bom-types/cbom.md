@@ -75,8 +75,8 @@ not here.
 
 # A worked line item
 
-This workspace's own private git server negotiates a classical, non-post-quantum SSH key exchange.
-As a CBOM entry that is one component with `assetType: protocol` and
+A self-hosted git server negotiating a classical, non-post-quantum SSH key exchange is the ordinary
+case, and an ordinary CBOM entry: one component with `assetType: protocol` and
 `protocolProperties.type: ssh`, related to the algorithm assets it negotiates — which is what makes
 "where is the classical crypto" a query rather than an audit.
 

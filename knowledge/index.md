@@ -25,5 +25,5 @@ okf_version: "0.2"
 Every concept carries its own `sources`, its review state in `verified`, and an expiry in
 `stale_after`. Facts are footnoted to the specific source that supports them, keyed to
 `sources[].id`. A concept past its `stale_after` fails this repository's pre-commit gate — see
-[`log.md`](log.md) for what has changed. Why the bundle is shaped this way is recorded in the
-`supplychain-workspace` meta-project's decision log, which is private.
+[`log.md`](log.md) for what has changed. Why the bundle is shaped this way is recorded in a private
+meta-project's decision log.
