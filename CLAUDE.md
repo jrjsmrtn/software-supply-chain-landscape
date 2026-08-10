@@ -92,8 +92,15 @@ not a today problem — and until then the hook says so loudly instead of passin
 - **Bundle-relative links** (`/naming/purl.md`) between concepts; the leading `/` means the bundle
   root, not the filesystem root.
 - **Type vocabulary**: `BOM Type`, `Format`, `Identifier`, `Specification`, `Data Source`, `Tool`,
-  `Practice`, `Organization`, `Explanation`, `Regulation`. A regulation is not a specification —
-  it obliges rather than describes — so it takes its own type.
+  `Practice`, `Organization`, `Explanation`, `Regulation`, `Attack`. Two of those exist because a
+  neighbouring type would have flattened a distinction the concept is *about*: a regulation is not a
+  specification — it obliges rather than describes — and an attack is not a practice, because a
+  practice is something you adopt and an attack is something done to you.
+  `Attack` covers the four techniques in `threats/`; `slsa-threat-model.md` sits beside them as a
+  `Specification`, because SLSA's taxonomy is a document, not a technique.
+  **Verify a new type against this list before using it.** `Attack` was in use on four concepts for
+  a week while this list named ten types, so nothing contradicted anything — `okf` does not
+  constrain the vocabulary, and neither did anything else.
 - Commits: Conventional Commits. Branch: `main` only.
 - `knowledge/log.md` records bundle content changes; `CHANGELOG.md` records releases.
   **`log.md` headings are ISO dates and nothing else** — OKF §9 makes that a MUST, and `okf validate`

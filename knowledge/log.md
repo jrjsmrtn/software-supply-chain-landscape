@@ -54,9 +54,32 @@ field, and a git tag does not travel with a copied directory.
   would falsify the record rather than close a leak. And `../CHANGELOG.md` in this file's preamble
   points outside `knowledge/` but inside the same public repository.
 
-  **No gate would have caught any of this**, which is the part to fix rather than to note: `okf
+  **No gate would have caught any of this**, which was the part to fix rather than to note: `okf
   validate` and `okf lint` both report clean before and after, because every claim removed here was
   conformant, sourced, unexpired and false only in the sense of being addressed to the wrong reader.
+  A checker for the class now runs on every commit and in the weekly sweep — three rules, deixis,
+  private names and links leaving the bundle, with `<!-- audience-ok: why -->` for deliberate cases.
+  It was proven by running it against the pre-fix tree, where it reports every passage removed here.
+
+* **Corrected**: `threats/index.md`, three stale claims in one short file.
+  * **"All three defeat the controls"** — there are **four**. `instruction-payloads` was added to
+    this directory on 2026-08-02 and the sentence beneath the list was never re-counted.
+  * The SLSA entry advertised **"the A-H taxonomy"** and **"threats SLSA v1.0 does not address"**.
+    The concept it points at has been rewritten twice since — it is **A–I** and **v1.2**, and says
+    so in its own `description`. The index kept describing the version the concept no longer covers.
+
+  Both are the same defect: **a summary that restates what a neighbour says, and ages separately
+  from it.** An index is the file most likely to be read and least likely to be re-read. Swept every
+  other `index.md` for prose counts afterwards rather than assuming this was the only one — the
+  other five hits are counts of *content* ("the six SBOM types", "five target types") that belong to
+  a source and are correct.
+
+* **Declared**: `Attack` in the type vocabulary, where it had been in use on the four `threats/`
+  techniques without being listed. `okf` does not constrain the vocabulary and neither did anything
+  else, so nothing contradicted anything — the list said ten types while the corpus used eleven.
+  Recorded with the reason the type exists at all: a practice is something you adopt and an attack
+  is something done to you, so filing these under `Practice` would flatten the distinction the
+  concepts are about. `slsa-threat-model.md` stays a `Specification`; a taxonomy is a document.
 
 ## 2026-08-07
 
