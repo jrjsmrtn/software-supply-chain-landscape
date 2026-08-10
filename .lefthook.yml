@@ -48,12 +48,18 @@ pre-commit:
         [ "$rc1" -eq 0 ] && [ "$rc2" -eq 0 ]
     bundle-gates:
       run: |
+        if ! command -v okf-gate >/dev/null 2>&1; then
+          echo "bundle-gates: okf-gate not found on PATH — footnote faults are UNCHECKED." >&2
+          echo "  It promotes okf's footnote WARNINGS to failures; okf alone exits 0 on them." >&2
+          echo "  Install it from the okf-gate repository (see CLAUDE.local.md for the remote)." >&2
+          exit 1
+        fi
         G=../workspace/scripts
         if [ ! -d "$G" ]; then
           echo "bundle-gates: no meta-project at $G" >&2
           echo "The gates live in supplychain-workspace, expected beside this repository." >&2
-          echo "Without it, footnote definitions and repo-level ISO dates are UNCHECKED." >&2
+          echo "Without it, repo-level ISO dates are UNCHECKED (footnotes now come from okf-gate)." >&2
           exit 1
         fi
-        python3 "$G/check-okf.py" knowledge &&
+        okf-gate knowledge &&
         python3 "$G/check-dates.py" .
