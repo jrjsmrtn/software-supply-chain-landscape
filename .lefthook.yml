@@ -11,6 +11,13 @@
 #   - check-okf.py   two footnote-DEFINITION faults (referenced-but-undefined, defined-but-unused)
 #   - check-dates.py ISO dates across the whole repository, including CLAUDE.md and CHANGELOG.md,
 #                    which are not part of the bundle and which okf therefore never sees
+#   - check-bundle-audience.py
+#                    WHO the prose addresses. Added 2026-08-10, after five maintainer-facing
+#                    passages were found in the published bundle -- one naming a private host and
+#                    asserting a cryptographic weakness in it. Every one was conformant: okf
+#                    validate, okf lint, okf-gate and reuse lint were all clean before the fix and
+#                    after it. Conformance cannot see audience, and a full human read of the bundle
+#                    found one of the two copies of the disclosure. A grep found both.
 # `check-doc-links.py` was retired here: okf resolves bundle links, and two implementations of one
 # rule diverge silently.
 #
@@ -71,4 +78,5 @@ pre-commit:
           exit 1
         fi
         okf-gate knowledge &&
-        python3 "$G/check-dates.py" .
+        python3 "$G/check-dates.py" . &&
+        python3 "$G/check-bundle-audience.py" knowledge
