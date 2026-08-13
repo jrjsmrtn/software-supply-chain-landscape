@@ -70,7 +70,8 @@ pre-commit:
           echo "  Install it from the okf-gate repository (see CLAUDE.local.md for the remote)." >&2
           exit 1
         fi
-        G=../workspace/scripts
+        G=../workspace/scripts        # this workspace
+        S=../../workspace/scripts     # the outer meta-project: shared, format-generic checkers
         if [ ! -d "$G" ]; then
           echo "bundle-gates: no meta-project at $G" >&2
           echo "The gates live in supplychain-workspace, expected beside this repository." >&2
@@ -79,5 +80,5 @@ pre-commit:
         fi
         okf-gate knowledge &&
         python3 "$G/check-dates.py" . &&
-        python3 "$G/check-bundle-audience.py" knowledge &&
-        python3 "$G/check-bundle-types.py" knowledge
+        python3 "$S/check-bundle-audience.py" knowledge &&
+        python3 "$S/check-bundle-types.py" knowledge
