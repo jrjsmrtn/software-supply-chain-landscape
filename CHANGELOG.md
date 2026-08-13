@@ -11,6 +11,24 @@ place for them.
 
 ## [Unreleased]
 
+## [0.12.0] - 2026-08-13
+
+**Tooling only — no concept changed.** Within `knowledge/` the only difference from v0.11.0 is the
+one line of `log.md`'s release map. Verified: `git diff v0.11.0..HEAD -- knowledge/` was empty before
+this release commit.
+
+### Changed
+
+- **The shared bundle checkers moved up one level**, to the outer meta-project, joining the link and
+  ADR-index checkers as the single copy every workspace calls. Nothing about what they check
+  changed; a second workspace needed them, and copying would have created the drift the promotion
+  rule exists to prevent. This repository's hook now distinguishes what its own workspace owns from
+  what every workspace shares
+- **The audience checker now reads `README` and `CHANGELOG`**, not only `knowledge/`. A repository's
+  most published-facing file had been audited by nothing. It flagged this `CHANGELOG` on its first
+  run — every finding a dated release entry or a quotation, all legitimate, each now carrying a
+  marker with its reason. History is not rewritten to satisfy a gate
+
 ## [0.11.0] - 2026-08-11
 
 **Tooling only — no concept changed.** Nothing was added, re-verified or corrected, so
@@ -415,7 +433,8 @@ through its own gate, and a version tag does not pre-empt it.
 - `README.md`, `CHANGELOG.md`, and `knowledge/log.md` — which records content changes, while this
   file records releases
 
-[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.11.0...v0.12.0
 [0.11.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/jrjsmrtn/software-supply-chain-landscape/compare/v0.8.0...v0.9.0
