@@ -53,7 +53,7 @@ time.
 ### Added
 
 - **An audience gate**, checking who a page is addressed to — the class no conformance check can
-  see. Three rules: **deixis** (prose tying the bundle to the workspace that produced it),
+  see. Three rules: **deixis** (prose tying the bundle to the workspace that produced it), <!-- audience-ok: describes the deixis rule and must name the pattern it forbids -->
   **private names** (repositories a reader cannot fetch), and **path escapes** (relative links
   resolving outside the bundle root). Deliberate cases are marked inline with
   `<!-- audience-ok: why -->`, and a reason is required
@@ -84,7 +84,7 @@ time.
 
 ### Removed
 
-- **`landscape.md`'s "Relevance to This Workspace" section**, and four further passages across the
+- **`landscape.md`'s "Relevance to This Workspace" section**, and four further passages across the <!-- audience-ok: quotes the title of the section this entry records removing -->
   bundle that addressed a maintainer rather than a reader. The section **named a specific private
   host and asserted a cryptographic weakness in it**, referred readers to five skill plugins — two
   of them in private repositories — and pointed at `../reference/`, `../howto/` and `../adr/`,
@@ -383,7 +383,7 @@ consumer can see.
 
 ## [0.1.0] - 2026-08-02
 
-First release: **62 concepts**, extracted from the `supplychain-workspace` meta-project into a
+First release: **62 concepts**, extracted from the `supplychain-workspace` meta-project into a <!-- audience-ok: dated first-release entry naming where the corpus was extracted from -->
 repository of their own. A bundle that cannot leave its parent cannot be fetched, and OKF names a
 git repository as the recommended distribution unit.
 
