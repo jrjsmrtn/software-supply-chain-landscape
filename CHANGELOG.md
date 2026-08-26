@@ -11,6 +11,28 @@ place for them.
 
 ## [Unreleased]
 
+## [0.12.1] - 2026-08-26
+
+### Corrected
+
+- ⚠⚠ **`knowledge/tools/renovate.md`'s description asserted a superlative its own body never makes.**
+  It ended *…and **the only option for a self-hosted forge***, and **that phrase appears nowhere but
+  line 4.** The body says Renovate is *forge-agnostic — which is usually why it is chosen*, and its
+  table lists **GitHub, GitLab, Bitbucket, Azure DevOps, Gitea and Forgejo, hosted or self-hosted.**
+
+  ⚠ **It was also unscoped.** The neighbouring `tools/cdxgen.md` says *the only tool **here***, which
+  is honest about meaning *in this corpus*; this one read as a claim about the world, which two
+  update-bot concepts cannot support.
+
+  **The description now lists what the body lists.** The contrast a reader actually needs — against
+  `tools/dependabot.md`'s *GitHub only* — survives without either sentence claiming exclusivity, and
+  **neither can now rot from a concept being added.**
+
+  Found 2026-08-26 while auditing this bundle's descriptions against their bodies. ⚠⚠ **It was the
+  only fault in 73 concepts**, against 57 that a date-gap heuristic flagged as candidates — **because
+  19% of this bundle's descriptions make a corpus-relative or absence claim**, where a sibling bundle
+  audited the same day ran at 58%. **A definitional description cannot go stale when a body changes.**
+
 ## [0.12.0] - 2026-08-13
 
 **Tooling only — no concept changed.** Within `knowledge/` the only difference from v0.11.0 is the

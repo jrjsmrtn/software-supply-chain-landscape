@@ -8,9 +8,20 @@ heading and five releases landing on one day share one. The release map below is
 tree separated from this repository still names its version: OKF has no in-band content-version
 field, and a git tag does not travel with a copied directory.
 
-**Releases**, newest first: **v0.12.0** 2026-08-13 (tooling only) · **v0.11.0** 2026-08-11 (tooling only — no concept changed) · **v0.10.0** 2026-08-10 · **v0.9.0** 2026-08-07 · **v0.8.0** 2026-08-07 · **v0.7.0** 2026-08-05 · **v0.6.0** 2026-08-05 · **v0.5.0** 2026-08-02 · **v0.4.0** 2026-08-02 · **v0.3.0** 2026-08-02 ·
+**Releases**, newest first: **v0.12.1** 2026-08-26 · **v0.12.0** 2026-08-13 (tooling only) · **v0.11.0** 2026-08-11 (tooling only — no concept changed) · **v0.10.0** 2026-08-10 · **v0.9.0** 2026-08-07 · **v0.8.0** 2026-08-07 · **v0.7.0** 2026-08-05 · **v0.6.0** 2026-08-05 · **v0.5.0** 2026-08-02 · **v0.4.0** 2026-08-02 · **v0.3.0** 2026-08-02 ·
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases. <!-- audience-ok: an explicit repository-level pointer; a copied tree loses it by design -->
+
+## 2026-08-26
+
+* **Corrected**: ⚠⚠ **`tools/renovate.md`'s description claimed a superlative its body never makes.**
+  It ended *and the only option for a self-hosted forge* — **a phrase that appears only in the
+  description.** The body says Renovate is *forge-agnostic — which is usually why it is chosen*, and
+  its table lists **GitHub, GitLab, Bitbucket, Azure DevOps, Gitea and Forgejo, hosted or
+  self-hosted.** ⚠ **It was also unscoped**, reading as a claim about the world where the neighbouring
+  `tools/cdxgen.md` correctly says *the only tool **here***. **The description now lists what the body
+  lists**, and the contrast with `tools/dependabot.md` — *GitHub only* — survives without either
+  claiming exclusivity.
 
 ## 2026-08-10
 

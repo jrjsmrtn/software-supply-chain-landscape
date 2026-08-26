@@ -1,7 +1,7 @@
 ---
 type: Tool
 title: Renovate
-description: The forge-agnostic dependency-update bot — AGPL-3.0, self-hostable, and the only option for a self-hosted forge.
+description: The forge-agnostic dependency-update bot — AGPL-3.0, self-hostable, and supported on GitHub, GitLab, Bitbucket, Azure DevOps, Gitea and Forgejo, hosted or self-hosted.
 resource: https://docs.renovatebot.com/
 tags:
   - tool
