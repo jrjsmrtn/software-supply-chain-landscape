@@ -14,6 +14,26 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-09-04
 
+* **Re-verified**: `tools/syft.md`, against the upstream README (last modified 2026-08-07) and the
+  docs. **Nothing it claimed was wrong** — a different outcome from `cdxgen.md` the same day, and
+  worth recording as such rather than manufacturing a correction. "Dozens of packaging ecosystems",
+  the apk/dpkg/RPM/Go/… list, the OCI/Docker/Singularity image formats and the scan targets are all
+  verbatim upstream.
+
+  ⚠ **Two omissions, one of which crosses a category boundary.** syft creates **signed SBOM
+  attestations using the in-toto specification** — so it sits on both sides of a line this corpus
+  otherwise keeps apart, the inventory and the signed statement about it, and the concept never said
+  so. That makes the syft/cdxgen choice not purely about BOM-type breadth, since CDXA attestations
+  are the counterpart. Second: the output-format list is not the exhaustive three; upstream says
+  "and more".
+
+  **The ecosystem-count rule survives contact and gets sharper.** Upstream now publishes a
+  *Supported package ecosystems* table, which **enumerates without totalling** — checked directly,
+  the page states no number anywhere. So "count the catalogers yourself" is now actionable against
+  a named page rather than aspirational, and the refusal to repeat an unsourced figure stands. The
+  summarising fetch that first read that page volunteered "approximately 50+"; that number is not
+  upstream's and is deliberately not recorded here.
+
 * **Re-verified and corrected**: `tools/cdxgen.md`, against the upstream README (last modified
   2026-09-04), prompted by the question *how* it generates an HBOM or an OBOM — which the concept
   asserted in three places and **explained nowhere**. Every one of those claims traced to a
