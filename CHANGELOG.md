@@ -11,6 +11,15 @@ place for them.
 
 ## [Unreleased]
 
+### Changed
+
+- **The entire `tools/` category re-verified** — eleven concepts, against primary sources. Seven were
+  correct as written; four needed work. The pattern across them: **what decays is not what expires.**
+  `dependency-track` was two releases behind with months left on its clock, `osv-scanner` had never
+  recorded that its remediation command executes, and `cyclonedx-cli`'s table contradicted its own
+  description. None of those is a thing `stale_after` can detect, which is the argument for
+  re-verification being a cycle rather than a reaction to a gate.
+
 ### Added
 
 - **The bundle can be published as a browseable site** — `site/build.py` renders

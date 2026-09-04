@@ -15,12 +15,14 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T12:33:36Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-04T13:20:00Z'
+stale_after: 2027-01-04
 sources:
   - id: grype-repo
     title: anchore/grype
     resource: https://github.com/anchore/grype
-    last_modified: '2026-07-31'
+    last_modified: '2025-12-17'
 ---
 
 Anchore's vulnerability scanner, Apache-2.0, and the natural consumer of a

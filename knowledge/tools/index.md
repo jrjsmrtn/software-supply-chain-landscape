@@ -1,13 +1,13 @@
 # Generation
 
-* [syft](syft.md) - Anchore's SBOM generator; images, filesystems, archives → CycloneDX, SPDX or Syft JSON.
-* [cdxgen](cdxgen.md) - CycloneDX-native, and the only generator here covering the whole xBOM family.
+* [syft](syft.md) - Anchore's SBOM generator; images, filesystems, archives → CycloneDX, SPDX, Syft JSON and more. Also signs what it generates, as in-toto attestations.
+* [cdxgen](cdxgen.md) - CycloneDX-native, and the only generator here covering the whole xBOM family — though each type has its own narrower scope, and HBOM and OBOM inspect a live host rather than an artifact.
 
 # Scanning
 
 * [grype](grype.md) - Anchore's scanner; takes an SBOM directly, filters with OpenVEX.
 * [trivy](trivy.md) - Broad: vulnerabilities, misconfigurations, secrets and licences across five target types.
-* [osv-scanner](osv-scanner.md) - First-party OSV client, with offline mode and guided remediation.
+* [osv-scanner](osv-scanner.md) - First-party OSV client, with offline mode and guided remediation (experimental, and its `fix` command executes).
 
 # BOM manipulation
 

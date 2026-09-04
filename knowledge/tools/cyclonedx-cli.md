@@ -14,12 +14,14 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T12:33:36Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-04T13:20:00Z'
+stale_after: 2027-01-04
 sources:
   - id: cyclonedx-cli-repo
     title: CycloneDX/cyclonedx-cli
     resource: https://github.com/CycloneDX/cyclonedx-cli
-    last_modified: '2026-07-23'
+    last_modified: '2026-02-10'
 ---
 
 Apache-2.0. Not a generator — it operates on BOMs that already exist.[^cyclonedx-cli-repo]
@@ -35,6 +37,8 @@ Apache-2.0. Not a generator — it operates on BOMs that already exist.[^cyclone
 | `merge` | merge two or more BOMs |
 | `validate` | validate a BOM |
 | `keygen` | generate an RSA key pair for BOM signing |
+| `sign` | sign a BOM or file — the whole document, or elements within it |
+| `verify` | verify signatures in a BOM |
 | `sign bom` / `sign file` | sign a whole BOM, or an arbitrary file (PKCS1 RSA SHA256) |
 | `verify all` / `verify file` | verify signatures |
 

@@ -15,11 +15,17 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:37:22Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-04T13:20:00Z'
+stale_after: 2027-01-04
 sources:
   - id: dependency-track
     title: OWASP Dependency-Track
     resource: https://dependencytrack.org/
+  - id: dependency-track-repo
+    title: DependencyTrack/dependency-track
+    resource: https://github.com/DependencyTrack/dependency-track
+    last_modified: '2026-08-24'
   - id: dt-5-release
     title: Dependency-Track 5.0 release announcement
     resource: https://dependencytrack.org/news/dependency-track-5-0/
@@ -46,8 +52,16 @@ honest cost of the capability. Tools that scan on demand are cheaper and answer 
 # Version
 
 5.0 became generally available on **2026-06-09**, described by the project as its largest
-architectural redesign. **5.0.4 is current as of 2026-08-02**; 5.0.3 was current when this concept
-was first written a day earlier, which is the decay rate this tier exists for.[^dt-5-release]
+architectural redesign.[^dt-5-release] **5.1.0 is current as of 2026-09-04.**
+
+The decay rate is the point of recording it. This concept said 5.0.3 when written, was corrected to
+5.0.4 a day later, and by this re-verification had passed 5.0.5 (2026-08-24) and 5.1.0 (2026-08-27)
+— two releases inside five weeks, none of which any expiry date would have flagged, because
+`stale_after` was months away throughout.
+
+⚠ **v4 is dated.** Upstream states v4 reaches end-of-life in **2026-12**, roughly six months after
+v5 GA, and is in maintenance mode on its own branch.[^dependency-track-repo] Anyone still on v4 has
+a deadline rather than a preference.
 
 > Version facts are the perishable part of this concept and the reason for its earlier expiry.
 
@@ -59,3 +73,4 @@ was first written a day earlier, which is the decay rate this tier exists for.[^
 
 [^dependency-track]: [OWASP Dependency-Track](https://dependencytrack.org/)
 [^dt-5-release]: [Dependency-Track 5.0 release announcement](https://dependencytrack.org/news/dependency-track-5-0/)
+[^dependency-track-repo]: [DependencyTrack/dependency-track](https://github.com/DependencyTrack/dependency-track)

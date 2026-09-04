@@ -14,6 +14,37 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-09-04
 
+* **Re-verified the whole `tools/` category** — all eleven concepts, against primary sources rather
+  than summaries. Every one now carries a second `verified` entry. **Seven were correct as written**
+  (`grype`, `trivy`, `scorecard`, `dependabot`, `renovate`, `update-cooldown`, and `syft`'s claims);
+  recording that is the point, since the next cycle should not redo them blind.
+
+  ⚠ **`dependency-track`'s version claim had decayed exactly as the concept predicted of itself.**
+  It said 5.0.4 current as of 2026-08-02; upstream had since shipped 5.0.5 (2026-08-24) and 5.1.0
+  (2026-08-27). **Two releases in five weeks, and no expiry date would have flagged either** —
+  `stale_after` was months out the whole time. This is the argument for the version-currency sweep
+  being a separate pass from claim-checking. Also added: upstream states v4 reaches end-of-life in
+  2026-12, so anyone still on v4 has a deadline rather than a preference.
+
+  ⚠ **`osv-scanner` omitted that guided remediation is Experimental and that its `fix` command
+  executes** — upstream warns it may trigger the package manager to run scripts or follow external
+  registries on untrusted projects. That is the remediation tool reaching for the network and the
+  shell on the strength of a manifest, which is the surface `threats/dependency-confusion.md`
+  describes. Also recorded: extraction is **OSV-Scalibr's**, not osv-scanner's, so ecosystem
+  coverage is a question about that library.
+
+  ⚠ **`cyclonedx-cli` contradicted itself.** Its `description:` promised "convert, merge, diff,
+  validate and sign", and its subcommand table omitted `sign` and `verify` entirely. Both added.
+
+  **Three `tools/index.md` entries repeated forms this pass had just corrected** — cdxgen's
+  unqualified "whole xBOM family", osv-scanner's flat "guided remediation", syft's exhaustive-looking
+  output list. Found by the summary sweep, not by any gate; a corrected body with an uncorrected
+  index is the failure mode that sweep exists for.
+
+  **Two of the checks were themselves wrong before the corpus was.** A grep for `risk score` missed
+  upstream's `risk scoring`, and Dependabot's quotation reported unmatched until HTML tags were
+  stripped — a normalisation fault, not a misquotation. Both would have produced a false correction.
+
 * **Re-verified**: `tools/syft.md`, against the upstream README (last modified 2026-08-07) and the
   docs. **Nothing it claimed was wrong** — a different outcome from `cdxgen.md` the same day, and
   worth recording as such rather than manufacturing a correction. "Dozens of packaging ecosystems",

@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:52:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-04T13:30:00Z'
+stale_after: 2027-03-04
 sources:
   - id: dependabot
     title: Dependabot documentation

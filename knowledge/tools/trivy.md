@@ -15,12 +15,14 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T12:33:36Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-04T13:20:00Z'
+stale_after: 2027-01-04
 sources:
   - id: trivy-repo
     title: aquasecurity/trivy
     resource: https://github.com/aquasecurity/trivy
-    last_modified: '2026-07-31'
+    last_modified: '2026-04-24'
   - id: trivy-docs
     title: Trivy documentation
     resource: https://trivy.dev/docs/latest/
