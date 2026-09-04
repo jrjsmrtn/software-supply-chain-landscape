@@ -1,0 +1,73 @@
+# Publish the OKF bundle in `knowledge/` as a browseable site on GitHub Pages.
+#
+# ONLY `knowledge/` is published. `CLAUDE.md` is developer guidance and `CHANGELOG.md` is
+# release history; neither is the product. `site/build.py` reads the bundle and nothing
+# else, and asserts that its output corresponds one-to-one to the bundle's files.
+#
+# Built here rather than by the legacy "Jekyll from a branch" mode, because the bundle
+# needs a link rewrite that no stock generator does: OKF cross-links are bundle-absolute
+# (`/formats/sbom-types.md`, where `/` means the BUNDLE root) and end in `.md`. A browser
+# reads that `/` as the SITE root, so on a project page all 190 of them 404. The corpus
+# cannot be changed to suit the website -- the convention is the spec's, and `okf`
+# enforces it -- so the rewrite happens at build time and `knowledge/` is never written.
+#
+# Actions are pinned to a COMMIT SHA, not a tag. A tag is a moving pointer, and this
+# repository is a supply-chain corpus; `threats/` documents what a mutable dependency
+# reference costs. Comments record the tag each SHA stood for when it was pinned.
+
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths: ['knowledge/**', 'site/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time; do not cancel a running one, since it may be mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.13'
+
+      - name: Install the two build dependencies
+        run: pip install --require-hashes --no-deps -r site/requirements.txt
+
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+        id: pages
+
+      # The build FAILS on a dead link in its own output, so a broken rewrite cannot ship.
+      - name: Build
+        env:
+          SITE_BASEURL: ${{ steps.pages.outputs.base_path }}
+        run: python3 site/build.py
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+        id: deployment

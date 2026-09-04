@@ -12,3 +12,9 @@ CLAUDE.local.md
 # Python
 __pycache__/
 *.pyc
+
+# Generated site — built from knowledge/ by site/build.py, never committed
+_site/
+
+# Playwright MCP scratch output
+.playwright-mcp/

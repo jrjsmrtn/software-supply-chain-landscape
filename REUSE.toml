@@ -11,8 +11,11 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Georges Martin <jrjsmrtn@gmail.com>"
 SPDX-License-Identifier = "CC-BY-4.0"
 
+# Site scaffolding is build tooling, not knowledge — it renders the bundle, it is not part
+# of it. Kept CC0-1.0 with the other non-content files rather than introducing a third
+# licence, so the repository stays single-licensed for everything it actually publishes.
 [[annotations]]
-path = [".gitignore", ".editorconfig", ".lefthook.yml", ".okf-types", "REUSE.toml"]
+path = [".gitignore", ".editorconfig", ".lefthook.yml", ".okf-types", "REUSE.toml", "site/**", ".github/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Georges Martin <jrjsmrtn@gmail.com>"
 SPDX-License-Identifier = "CC0-1.0"

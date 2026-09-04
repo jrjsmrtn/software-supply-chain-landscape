@@ -11,6 +11,26 @@ place for them.
 
 ## [Unreleased]
 
+### Added
+
+- **The bundle can be published as a browseable site** — `site/build.py` renders
+  `knowledge/` to static HTML, with a SHA-pinned GitHub Actions workflow that deploys it to
+  Pages. **Only `knowledge/` is published**; the generator reads nothing else and asserts that
+  its output corresponds one-to-one to the bundle's files, so `CLAUDE.md` and `CHANGELOG.md`
+  cannot leak into the site.
+  - **The link rewrite is the reason this is not stock Jekyll.** OKF cross-links are
+    bundle-absolute (`/formats/sbom-types.md`, where `/` means the *bundle* root) and end in
+    `.md`. A browser reads that `/` as the *site* root, so all 190 of them would 404 on a
+    project page. The corpus is not changed to suit the website — the convention is the spec's
+    and `okf` enforces it — so the rewrite happens at build time.
+  - **The build fails on a dead link in its own output**: 1627 internal links are resolved on
+    every run, so a broken rewrite cannot ship. Proven against a planted missing target.
+  - Rewriting is done on rendered HTML, not markdown, so a link inside a code block stays
+    documentation rather than becoming a link. A literal `href=` anywhere in the corpus would
+    defeat that, and fails the build rather than being assumed absent.
+  - A link that deliberately leaves the bundle (`log.md` → `../CHANGELOG.md`) resolves to the
+    file in the repository instead of dying.
+
 ### Fixed
 
 - **Bundle-relative links were checked by nothing.** `.lefthook.yml` had retired
