@@ -13,6 +13,12 @@ place for them.
 
 ### Changed
 
+- **10 of 15 `intelligence/` concepts re-verified**; the five not opened keep their single stamp and
+  are named. The pass found a **fabricated clause inside quotation marks** in `adp` — a real phrase
+  from the CNA Operational Rules spliced onto the ADP scope sentence — and three counted claims that
+  had all drifted while nowhere near expiry. `osv-dev`'s source count is now stated as *18 listed,
+  17 distinct*, because upstream's own list double-counts one entry.
+
 - **The entire `tools/` category re-verified** — eleven concepts, against primary sources. Seven were
   correct as written; four needed work. The pattern across them: **what decays is not what expires.**
   `dependency-track` was two releases behind with months left on its clock, `osv-scanner` had never

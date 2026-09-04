@@ -1,7 +1,7 @@
 ---
 type: Data Source
 title: osv.dev
-description: The free aggregating database that normalises roughly two dozen ecosystem advisory sources into the OSV schema.
+description: The free aggregating database that normalises eighteen listed ecosystem advisory sources — seventeen distinct — into the OSV schema.
 resource: https://osv.dev/
 tags:
   - vulnerability
@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:37:22Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:00:00Z'
+stale_after: 2027-01-04
 sources:
   - id: osv-dev
     title: OSV — Open Source Vulnerabilities
@@ -29,16 +31,19 @@ The database half of OSV: upstream advisory sources normalised into the
 
 # Coverage
 
-**Around twenty current sources** as of 2026-08-02, plus conversion pipelines the OSV team
+**18 entries listed, 17 distinct**, as of 2026-09-04 — plus conversion pipelines the OSV team
 maintains for Debian Security Advisories, Alpine SecDB and NVD CVEs.[^osv-data-sources]
 
-Ecosystem advisory databases (GitHub, PyPA, Go, RustSec, Haskell, R Consortium, opam), Linux
-distribution trackers (Rocky, AlmaLinux, Ubuntu, Bitnami), OSS-Fuzz, and the Global Security
-Database. Two entries are worth noticing because they appear elsewhere in this bundle:
-**OpenSSF Malicious Packages** (the `MAL-` records — see [OSV IDs](/naming/osv-ids.md)) and the
-**Erlang Ecosystem Foundation CNA** (see [Ægis](aegis.md)).
+Ecosystem advisory databases (GitHub, PyPA, Go, RustSec, Drupal, Haskell, R Consortium, Python
+Software Foundation, opam), Linux distribution trackers (Rocky, AlmaLinux, Ubuntu, Bitnami),
+OSS-Fuzz, and the Global Security Database. Two entries are worth noticing because they appear
+elsewhere in this bundle: **OpenSSF Malicious Packages** (the `MAL-` records — see
+[OSV IDs](/naming/osv-ids.md)) and the **Erlang Ecosystem Foundation CNA** (see [Ægis](aegis.md)).
 
-An earlier revision of this concept said "roughly two dozen", which overstated it.
+⚠ **The list double-counts, so count the URLs and not the bullets.** *Haskell Security Advisories*
+and *Haskell Security Advisory DB* are separate entries pointing at the same repository, which is
+why the honest figure is 18 listed and 17 distinct. An earlier revision of this concept said
+"roughly two dozen" and then "around twenty"; both were estimates of something enumerable.
 
 > This count and source list are the perishable part of this concept and the reason for its earlier
 > expiry. The schema does not move at this rate — see [OSV schema](osv-schema.md).

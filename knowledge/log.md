@@ -14,6 +14,49 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-09-04
 
+* **Re-verified 10 of the 15 `intelligence/` concepts** against primary sources. `cisa`, `cna`,
+  `nvd`, `ssvc` and `osv-schema` were **not opened** in this pass and keep their single `verified`
+  entry — naming them is the point, since a stamped tier that nobody read is the failure this cycle
+  exists to prevent.
+
+  ⚠⚠ **`intelligence/adp` carried a clause inside quotation marks that its source does not
+  contain.** The ADP scope was quoted as ending *and approved by the CVE Board*. The CVE Program's
+  ADP page contains no such clause; the phrase is real but belongs to the **CNA Operational Rules**,
+  about how those rules are maintained. A true phrase from a different document, spliced onto a
+  sentence it does not belong to — citable, authoritative-looking, and invisible to every gate. The
+  quotation now matches the page. **Reaching the page needed a rendering browser**: cve.org is a
+  JavaScript application that serves 22 words and an enable-JavaScript notice to a plain fetch, so a
+  status-code check would have called it retrieved.
+
+  ⚠ **Three counted claims had all moved**, none of them near expiry:
+  `endoflife-date` 462 → **470** products; `repology` 293 → **298** repositories, 323,052 →
+  **325,717** projects, 4,863,320 → **4,970,875** packages; and `osv-dev`'s *around twenty* sources
+  is now stated as **18 listed, 17 distinct** — because upstream's own list **double-counts**,
+  carrying Haskell twice under two names pointing at one repository. Counting the URLs rather than
+  the bullets is the only way to get that right, and the concept now says so. Two sources it never
+  named, **Drupal** and the **Python Software Foundation**, were added.
+
+  **An open question from a previous cycle is closed.** `endoflife-date` recorded its API's *beta*
+  status as unconfirmed; the OpenAPI contract (v1.2.1) carries no beta marker anywhere. Whether the
+  label was dropped or the earlier reading was wrong is not recoverable, so the concept records the
+  observation rather than a story about it.
+
+  **`aegis`'s embargo quotation was accurate but mis-sourced** — it lives on the CNA's
+  `/security-policy` page, not the site root the footnote pointed at. A reader following that
+  citation would not have found it. The CVE Program's roster also assigns `CNA-2025-0023`, which
+  corroborates the **year** of authorisation and not the month.
+
+  **The summary sweep found four stale copies of figures corrected minutes earlier** — including
+  `osv-dev`'s own `description:`, which still said *roughly two dozen* after its body had been
+  fixed, and `naming/osv-ids`, a different concept repeating the same figure. That is the whole
+  argument for the sweep being a step rather than an intention.
+
+  **Two gates caught what this pass got wrong.** `okf-gate` rejected a footnote left defined but
+  unreferenced and two labels with no matching `sources[].id` — introduced by an edit whose
+  find-and-replace silently matched nothing, because it was the one replacement written without an
+  assertion. And `repology.org` answers **403 to a plain `curl`** while serving normally to a
+  browser user-agent; retrieval was blocked, not the source unavailable.
+
 * **Re-verified the whole `tools/` category** — all eleven concepts, against primary sources rather
   than summaries. Every one now carries a second `verified` entry. **Seven were correct as written**
   (`grype`, `trivy`, `scorecard`, `dependabot`, `renovate`, `update-cooldown`, and `syft`'s claims);

@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-07T09:40:00Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:00:00Z'
+stale_after: 2027-01-04
 sources:
   - id: epss-faq
     title: 'EPSS Frequently Asked Questions (FIRST)'

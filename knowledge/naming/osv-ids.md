@@ -36,8 +36,9 @@ into the OSV schema by osv.dev.[^osv-dev]
 | `GHSA-` | GitHub Advisory Database |
 | `MAL-` | OpenSSF malicious-packages — **not a vulnerability namespace** |
 
-The list is not exhaustive — osv.dev aggregates roughly two dozen upstream sources, and the prefix
-set grows as ecosystems adopt it.
+The list is not exhaustive — osv.dev aggregates eighteen listed upstream sources, and the prefix
+set grows as ecosystems adopt it. The count is [osv.dev](/intelligence/osv-dev.md)'s to state; it is
+not restated here beyond this pointer.
 
 # `MAL-` is a different kind of claim
 

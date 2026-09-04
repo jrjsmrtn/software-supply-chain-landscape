@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:45:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:20:00Z'
+stale_after: 2027-03-04
 sources:
   - id: openvex
     title: OpenVEX

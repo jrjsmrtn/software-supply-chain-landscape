@@ -15,7 +15,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-02T06:57:47Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:00:00Z'
+stale_after: 2027-01-04
 sources:
   - id: repology-about
     title: 'Repology: about'
@@ -32,8 +34,10 @@ sources:
 ---
 
 A service that "tracks and compares package versions" across package repositories — distributions,
-language ecosystems and ports trees.[^repology-about] **293 repositories are listed on its statistics
-page as of 2026-08-02**, covering **323,052 projects and 4,863,320 individual packages**.[^repology-stats]
+language ecosystems and ports trees.[^repology-about] **298 repositories are listed on its statistics
+page as of 2026-09-04**, covering **325,717 projects and 4,970,875 individual
+packages**.[^repology-stats] Five weeks earlier those figures were 293, 323,052 and 4,863,320 — all
+three move continuously, so quote them with a read-on date or not at all.
 
 # The axis it adds
 
@@ -90,8 +94,9 @@ GPLv3+"; nothing states terms for the aggregated package data.[^repology-about] 
 entirely on redistributing other projects' metadata, that gap is worth knowing before building on it.
 
 **Its own figures disagree.** The about page says "more than 120 package repositories" while the
-statistics page lists 293.[^repology-about][^repology-stats] Both are true as written; the prose is
-simply older than the data. Prefer the statistics page.
+statistics page lists 298.[^repology-about][^repology-stats] Both are true as written; the prose is
+simply older than the data — and the gap widens, since only one of the two numbers is maintained.
+Prefer the statistics page.
 
 Version comparison across ecosystems is hard enough to have produced a dedicated library — the same
 project publishes **libversion** (MIT), "advanced version string comparison".[^libversion] The about

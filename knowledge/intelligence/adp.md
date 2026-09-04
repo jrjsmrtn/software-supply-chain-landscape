@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-06T22:20:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:20:00Z'
+stale_after: 2027-03-04
 sources:
   - id: cve-adp
     title: 'CVE Program: Authorized Data Publishers (ADPs)'
@@ -28,8 +30,16 @@ A [CNA](cna.md) decides *who may assign a CVE ID and describe the vulnerability*
 other role: an organisation authorised to **enrich a record someone else published**, with risk
 scores, references, vulnerability characteristics or translations.[^cve-adp]
 
-The scope of any given ADP is "specific informational elements agreed upon with the CVE Program, and
-approved by the CVE Board" — so an ADP is not licensed to add anything it likes.[^cve-adp]
+An ADP "focuses on specific informational elements, agreed upon with the CVE Program, as the scope
+of that ADP's contributions" — so an ADP is not licensed to add anything it likes.[^cve-adp]
+
+> ⚠ **A quotation correction.** Earlier revisions ended that quotation *and approved by the CVE
+> Board*. **The ADP page does not contain that clause.** It appears in the CVE Program's *CNA
+> Operational Rules*, about how those rules themselves are maintained — a real phrase from a
+> different document, spliced onto a sentence it does not belong to. Checked 2026-09-04 against the
+> rendered page, the roster page being a JavaScript application that serves no text to a plain
+> fetch. A wrong clause inside quotation marks is the worst failure this corpus can have: it is
+> citable, it reads as authoritative, and nothing downstream catches it.
 
 # The container rule is the whole mechanism
 

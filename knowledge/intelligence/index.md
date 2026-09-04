@@ -23,4 +23,4 @@
 # Lifecycle and currency
 
 * [endoflife.date](endoflife-date.md) - Support-lifecycle data: the leading indicator scanners are blind to.
-* [Repology](repology.md) - How far behind upstream a packaging is, across 293 repositories — and identity across ecosystems, which purl does not attempt.
+* [Repology](repology.md) - How far behind upstream a packaging is, across 298 repositories — and identity across ecosystems, which purl does not attempt.
