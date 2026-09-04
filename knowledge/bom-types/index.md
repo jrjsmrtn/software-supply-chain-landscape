@@ -25,3 +25,15 @@ documents that are confidently wrong.
 
 Why the family exists at all, and CBOM's post-quantum deadline, are durable rationale and live in
 [the landscape explanation](/landscape.md#the-xbom-family--whats-in-the-box).
+
+# A separate axis: where the data came from
+
+This page classifies by **what is inventoried**. It says nothing about **how the inventory was
+produced** — and that is an independent question with its own answer, the six SBOM types (Design,
+Source, Build, Analyzed, Deployed, Runtime): see [the six SBOM types](/formats/sbom-types.md).
+
+Knowing a document is an SBOM does not tell you whether its contents were read off the source tree,
+emitted by the build, or inferred from a finished binary, and those differ in what they can be
+trusted to have seen. Two SBOMs of one artifact can disagree without either being wrong. The
+CISA document is scoped to SBOMs; it does not extend the six types to the other members of the
+family above.

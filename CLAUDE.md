@@ -63,9 +63,12 @@ different failures:
 | every commit here | `bundle-gates` in `.lefthook.yml`, invoking `../workspace/scripts/` | anything a change breaks |
 | weekly, unattended | `workspace/scripts/run-gates.sh` via a `launchd` agent | `stale_after` expiry |
 
-**Conformance is `okf`'s job** (ADR-0010) — `okf validate` + `okf lint`, pinned at v0.2.1, covering
+**Conformance is `okf`'s job** (ADR-0010) — `okf validate` + `okf lint`, **v0.4.0 or newer**, covering
 §5.1 attribution, §5.2 datetimes, §5.5 expiry, §8 `index.md` frontmatter, §9 `log.md` headings and
-links. Install with `go install github.com/okfcli/okf/cmd/okf@v0.2.1`; the hook fails without it.
+links. Install with `go install github.com/okfcli/okf/cmd/okf@v0.4.0`; the hook fails without it,
+and fails too if the version on PATH is below the floor — **the minimum is asserted, not stated**.
+Until 2026-09-04 three files named three different versions (v0.2.1 here, v0.3.0 in `run-gates.sh`,
+0.4.0 installed) and nothing compared them.
 The local scripts now cover only the residual: two footnote-*definition* faults, and ISO dates
 across files outside the bundle. **Do not reimplement an `okf` check locally.**
 

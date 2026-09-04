@@ -11,6 +11,15 @@ place for them.
 
 ## [Unreleased]
 
+### Fixed
+
+- **Bundle-relative links were checked by nothing.** `.lefthook.yml` had retired
+  `check-doc-links.py` for `knowledge/` on the grounds that `okf` resolves bundle links. It does
+  not: a planted `/formats/sbom-types-NOPE.md` left `okf validate` and `okf lint` both reporting
+  `valid: true` at exit 0, and `run-gates.sh` green. The checker is wired back in over `knowledge/`
+  (511 links across 86 files, previously unchecked) and added to the weekly `run-gates.sh` for
+  every bundle, and the comment stating the false premise is corrected.
+
 ## [0.12.1] - 2026-08-26
 
 ### Corrected

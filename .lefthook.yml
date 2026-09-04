@@ -1,11 +1,13 @@
 # Quality gates for the landscape bundle.
 #
-# CONFORMANCE comes from `okf` (github.com/okfcli/okf), pinned at v0.2.1 — ADR-0010. It checks
+# CONFORMANCE comes from `okf` (github.com/okfcli/okf), v0.4.0 or newer — ADR-0010. The floor is
+# ASSERTED below, not just stated: this line read `pinned at v0.2.1` until 2026-09-04 while the
+# installed tool was 0.4.0 and run-gates.sh claimed v0.3.0. Three numbers, no comparison. It checks
 # §5.1 footnote->sources[].id, §5.2 ISO datetimes, §5.5 stale_after expiry, §8 index.md
 # frontmatter, §9 log.md date headings, and link resolution. On first run against this bundle it
 # found 6 errors and 37 malformed timestamps that the previous local gates never looked at.
 #
-#   install: go install github.com/okfcli/okf/cmd/okf@v0.2.1
+#   install: go install github.com/okfcli/okf/cmd/okf@v0.4.0
 #
 # The LOCAL gates in the `supplychain-workspace` meta-project now cover only what okf does not:
 #   - check-okf.py   two footnote-DEFINITION faults (referenced-but-undefined, defined-but-unused)
@@ -18,8 +20,16 @@
 #                    validate, okf lint, okf-gate and reuse lint were all clean before the fix and
 #                    after it. Conformance cannot see audience, and a full human read of the bundle
 #                    found one of the two copies of the disclosure. A grep found both.
-# `check-doc-links.py` was retired here: okf resolves bundle links, and two implementations of one
-# rule diverge silently.
+# `check-doc-links.py` covers `knowledge/` as well as this repository's own prose. It was
+# retired for the bundle on 2026-08-10 on the stated grounds that `okf resolves bundle links`.
+# MEASURED 2026-09-04: it does not. A `/formats/sbom-types-NOPE.md` planted in
+# `bom-types/index.md` left `okf validate` and `okf lint` both reporting `valid: true`,
+# exit 0, and `run-gates.sh` green -- so bundle-relative links were checked by nothing at
+# all. The divergence argument was sound; the premise it rested on was untested.
+#
+# Re-wiring it needed a fix in the shared checker, not a local copy: its reference-style
+# guard matched OKF FOOTNOTE definitions (`[^id]:`) and fired on all 71 concept files.
+# See the REFDEF_RE comment in check-doc-links.py.
 #
 # Three limits to know about:
 #
@@ -43,7 +53,7 @@ pre-commit:
     # when ADR-0005 extracted this corpus, and are alive and correct here. Sweeping siblings
     # with the workspace's set reports live files as dead, by construction.
     doc-links:
-      run: python3 ../../workspace/scripts/check-doc-links.py README.md CLAUDE.md CHANGELOG.md
+      run: python3 ../../workspace/scripts/check-doc-links.py knowledge README.md CLAUDE.md CHANGELOG.md
 
     gitleaks:
       run: gitleaks protect --staged --verbose
@@ -51,9 +61,20 @@ pre-commit:
       run: reuse lint
     okf-conformance:
       run: |
+        OKF_MIN=0.4.0
         if ! command -v okf >/dev/null 2>&1; then
           echo "okf not found on PATH — OKF conformance is UNCHECKED." >&2
-          echo "  install: go install github.com/okfcli/okf/cmd/okf@v0.2.1" >&2
+          echo "  install: go install github.com/okfcli/okf/cmd/okf@v$OKF_MIN" >&2
+          exit 1
+        fi
+        HAVE=$(okf version 2>/dev/null | sed -n 's/.*"version": *"\([^"]*\)".*/\1/p')
+        if [ -z "$HAVE" ]; then
+          echo "could not read okf's version — refusing to assume it is new enough." >&2
+          exit 1
+        fi
+        if [ "$(printf '%s\n%s\n' "$HAVE" "$OKF_MIN" | sort -t. -k1,1n -k2,2n -k3,3n | head -1)" != "$OKF_MIN" ]; then
+          echo "okf $HAVE is older than the required $OKF_MIN." >&2
+          echo "  install: go install github.com/okfcli/okf/cmd/okf@v$OKF_MIN" >&2
           exit 1
         fi
         R=../workspace/scripts/okf-report.py

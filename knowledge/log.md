@@ -12,6 +12,17 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases. <!-- audience-ok: an explicit repository-level pointer; a copied tree loses it by design -->
 
+## 2026-09-04
+
+* **Cross-linked**: `bom-types/index.md` now points to [the six SBOM types](/formats/sbom-types.md)
+  under a new *A separate axis: where the data came from* heading. The two pages classify on independent
+  axes — the index by **what is inventoried**, `sbom-types.md` by **how the inventory was produced** —
+  and nothing in the index said so, so a reader arriving at the xBOM family had no route to the
+  distinction that decides whether a component's absence means *not present* or *not detected*. The
+  reverse link already existed at concept level (`sbom-types.md` → `/bom-types/sbom.md`). The new
+  section states the source's scope limit explicitly: CISA's document is about SBOMs and does not
+  extend the six types to the rest of the family.
+
 ## 2026-08-26
 
 * **Corrected**: ⚠⚠ **`tools/renovate.md`'s description claimed a superlative its body never makes.**
