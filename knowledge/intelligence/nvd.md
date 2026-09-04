@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:52:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:45:00Z'
+stale_after: 2027-03-04
 sources:
   - id: nvd
     title: National Vulnerability Database
@@ -22,9 +24,15 @@ sources:
 ---
 
 The **National Vulnerability Database** — NIST's enrichment layer over the
-[CVE](/naming/cve.md) namespace. It does not issue identifiers; it adds
-[CPE](/naming/cpe.md) applicability data and CVSS scores to records that already
+[CVE](/naming/cve.md) namespace. It does not issue identifiers: it "performs enrichment on CVEs
+that have been published to the CVE List", producing **impact metrics (CVSS)**, **vulnerability
+types (CWE)** and **applicability statements ([CPE](/naming/cpe.md))** on records that already
 exist.[^nvd]
+
+It also states what it does not do: **"The NVD does not actively perform vulnerability testing"**,
+relying on vendors, researchers and coordinators for the information it then structures.[^nvd] The
+enrichment is an act of reading and classifying someone else's disclosure, which is why its output
+is revised as more becomes known.
 
 It is listed among "identifier namespaces" often enough to be worth correcting: **NVD is a data
 source, not a namespace.**

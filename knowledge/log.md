@@ -14,6 +14,34 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-09-04
 
+* **Completed `intelligence/`** — the five concepts left unopened in the previous entry are now
+  verified against primary sources. **All 15 carry a second `verified` entry.**
+
+  ⚠⚠ **`intelligence/cna` overstated a scope, in the concept whose thesis is that scope is the
+  operative word.** It gave the Python Software Foundation's CNA scope as *Python and PyPI*. The
+  CVE Program's roster says otherwise: supported and end-of-life **CPython** releases, **pip** as a
+  specific project, and the **Pallets** projects — explicitly *excluding* third-party
+  redistributions. **PyPI the registry is not in scope at all**, so the shorthand implied
+  registry-wide coverage that does not exist. The curl row is now the roster's own wording and
+  includes `trurl`. This concept argues that a reader must ask what a CNA actually covers; it had
+  not done that for its own examples.
+
+  ⚠ **`intelligence/nvd` omitted a third of what NVD produces.** Upstream names **impact metrics
+  (CVSS), vulnerability types (CWE) and applicability statements (CPE)**; the concept listed CPE and
+  CVSS and dropped CWE. Added, with upstream's own statement that *"The NVD does not actively
+  perform vulnerability testing"* — which is the sentence that explains why its output gets revised.
+
+  **`cisa`, `ssvc` and `osv-schema` were correct as written.** BOD 22-01's three KEV criteria, both
+  remediation deadlines, the grave-risk sentence and the federal-systems scope are verbatim; so is
+  *"It is not an official US government document"* in the SBOM-types PDF, which extracted from a
+  native text layer rather than OCR. SSVC's decision points, values and outcome guidance all hold.
+
+  **Two SSVC quotations reported unmatched and both were false negatives** — the first split by a
+  PDF page header running through the middle of the sentence (*"…most reasonable assumption **CISA |
+  Cybersecurity and Infrastructure Security Agency 3** based on prior events"*), the second a
+  leading capital. Neither is a transcription fault, and a checker without normalisation would have
+  produced two false corrections.
+
 * **Re-verified 10 of the 15 `intelligence/` concepts** against primary sources. `cisa`, `cna`,
   `nvd`, `ssvc` and `osv-schema` were **not opened** in this pass and keep their single `verified`
   entry — naming them is the point, since a stamped tier that nobody read is the failure this cycle

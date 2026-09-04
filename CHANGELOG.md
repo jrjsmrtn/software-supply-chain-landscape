@@ -13,6 +13,12 @@ place for them.
 
 ### Changed
 
+- **All 15 `intelligence/` concepts re-verified.** Completing the category found that `cna` — the
+  concept arguing that *scope is the operative word* — had itself overstated the Python Software
+  Foundation's CNA scope as *Python and PyPI*, when PyPI the registry is not in scope at all. The
+  broader pattern across this and the `tools/` pass: the errors are in the summaries and the
+  shorthands, not in the analysis.
+
 - **10 of 15 `intelligence/` concepts re-verified**; the five not opened keep their single stamp and
   are named. The pass found a **fabricated clause inside quotation marks** in `adp` — a real phrase
   from the CNA Operational Rules spliced onto the ADP scope sentence — and three counted claims that

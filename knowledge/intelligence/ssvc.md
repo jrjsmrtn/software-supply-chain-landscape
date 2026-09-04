@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-07T09:15:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:45:00Z'
+stale_after: 2027-03-04
 sources:
   - id: certcc-ssvc
     title: 'SSVC — CERT Coordination Center, Carnegie Mellon University'

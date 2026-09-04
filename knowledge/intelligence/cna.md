@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:45:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:45:00Z'
+stale_after: 2027-03-04
 sources:
   - id: cve-program
     title: CVE Program
@@ -28,6 +30,9 @@ sources:
   - id: eef-cna
     title: Erlang Ecosystem Foundation CNA
     resource: https://cna.erlef.org/
+  - id: cve-cnalist
+    title: CVE Program — CNA roster data (CNAsList.json)
+    resource: https://github.com/CVEProject/cve-website/blob/dev/src/assets/data/CNAsList.json
 ---
 
 An organization authorized by the CVE Program to assign [CVE](/naming/cve.md) IDs and publish CVE
@@ -53,9 +58,14 @@ This is also why a tool must declare when it has no coverage rather than emit a 
 
 | CNA | Scope | Notes |
 |---|---|---|
-| **Python Software Foundation** | Python and PyPI | its Security Developer-in-Residence's experience informed the OpenSSF guide[^psf-cna] |
-| **curl** | curl / libcurl | adopted partly to gate low-quality CVE filings against the project |
+| **Python Software Foundation** | supported and end-of-life **CPython** releases, **pip**, and the **Pallets** projects (Flask, Jinja, Click, MarkupSafe, Werkzeug, ItsDangerous) — explicitly *excluding* third-party redistributions[^cve-cnalist] | its Security Developer-in-Residence's experience informed the OpenSSF guide[^psf-cna] |
+| **curl** | "All products made and managed by the curl project" — curl, libcurl and trurl[^cve-cnalist] | adopted partly to gate low-quality CVE filings against the project |
 | **Erlang Ecosystem Foundation** | active packages on Hex.pm, and projects under the `elixir-lang`, `erlang`, `erlef`, `erlef-cna` and `gleam-lang` GitHub organizations; fallback CNA for all Hex.pm packages | authorized 2025-05, under [Ægis](aegis.md); publishes to OSV; disclosure embargo capped at 3 months[^eef-cna] |
+
+> ⚠ **A scope correction, in the concept about scope.** This table gave the PSF's scope as *Python
+> and PyPI*. **It is neither of those things as written**: the registry is not in scope, and pip is
+> named as a specific project rather than PyPI standing for what it hosts. Read the roster entry,
+> not the shorthand — which is this concept's own argument, applied to itself.
 
 Illustrative, not exhaustive — the authoritative roster is the CVE Program's own. OpenSSF publishes
 a guide for projects considering it.[^ossf-cna-guide]
@@ -79,3 +89,4 @@ container the CNA's data is protected from.
 [^ossf-cna-guide]: [OpenSSF: Becoming a CNA as an Open Source Org or Project](https://github.com/ossf/wg-vulnerability-disclosures/blob/main/docs/guides/becoming-a-cna-as-an-open-source-org-or-project.md)
 [^psf-cna]: [PSF authorized as a CNA](https://discuss.python.org/t/the-python-software-foundation-has-been-authorized-by-the-cve-program-as-a-cve-numbering-authority-cna/32561)
 [^eef-cna]: [Erlang Ecosystem Foundation CNA](https://cna.erlef.org/)
+[^cve-cnalist]: [CVE Program — CNA roster data](https://github.com/CVEProject/cve-website/blob/dev/src/assets/data/CNAsList.json)

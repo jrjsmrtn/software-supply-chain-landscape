@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T23:05:00Z'
-stale_after: 2027-08-01
+  - by: claude/opus-5
+    at: '2026-09-04T14:45:00Z'
+stale_after: 2027-09-04
 sources:
   - id: osv-schema
     title: OSV Schema
