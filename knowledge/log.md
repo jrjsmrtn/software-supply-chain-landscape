@@ -14,6 +14,31 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-09-04
 
+* **Re-verified and corrected**: `tools/cdxgen.md`, against the upstream README (last modified
+  2026-09-04), prompted by the question *how* it generates an HBOM or an OBOM — which the concept
+  asserted in three places and **explained nowhere**. Every one of those claims traced to a
+  CycloneDX capability page or the repository homepage, the source class this bundle already
+  records as weaker than a schema.
+
+  ⚠ **The capability list was true and misleading.** Each BOM type is supported over a different
+  and narrower input set, and two are not artifact scans at all: **HBOM inspects the live host
+  only** (Apple Silicon macOS and Linux amd64/arm64 — nothing on Intel macOS or Windows), and
+  **OBOM is an alias for `cdxgen -t os`**, powered by **osquery**, whose coverage and granted
+  privileges bound the result rather than cdxgen alone. A reader of the old table would reasonably
+  have expected an HBOM of an arbitrary repository or image. Both are now per-type scoped in a
+  table, with the subcommands and their prerequisites.
+
+  ⚠ **A stated fact had also drifted inside its own window.** Spec versions read "CycloneDX
+  1.5 – 1.7"; upstream targets **1.6, 1.7 and 2.0**, downgradable to 1.4 or 1.5. `stale_after` was
+  2026-12-01, so nothing had expired — **this is the case the expiry gate structurally cannot
+  catch**, and it was found by a question rather than by a sweep. VDR generation, via OWASP
+  depscan, was missing from the list entirely.
+
+  Quotations were grepped against the raw README rather than taken from the summarising fetch that
+  first reported them — the path that shipped a fabricated quotation in a sibling bundle.
+  `bom-types/hbom.md` and `bom-types/obom.md` now point at that scope rather than restating it.
+
+
 * **Cross-linked**: `bom-types/index.md` now points to [the six SBOM types](/formats/sbom-types.md)
   under a new *A separate axis: where the data came from* heading. The two pages classify on independent
   axes — the index by **what is inventoried**, `sbom-types.md` by **how the inventory was produced** —

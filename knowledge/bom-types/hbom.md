@@ -42,6 +42,7 @@ years rather than sprints.
 
 - [MBOM](mbom.md) — the adjacent artifact describing how a product was *made*, not what it contains
 - [SBOM](sbom.md) — the software analogue
-- [cdxgen](/tools/cdxgen.md) — generates HBOM among the family
+- [cdxgen](/tools/cdxgen.md) — generates an HBOM, but only by inspecting the live host it runs
+  on, and only on some platforms; the scope and prerequisites are recorded there
 
 [^cdx-hbom]: [CycloneDX: HBOM](https://cyclonedx.org/capabilities/hbom/)

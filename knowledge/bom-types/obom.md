@@ -45,6 +45,7 @@ artifact does not.
 # Related
 
 - [SBOM](sbom.md) — the artifact-scoped counterpart
-- [cdxgen](/tools/cdxgen.md) — generates OBOM
+- [cdxgen](/tools/cdxgen.md) — generates an OBOM, by querying osquery rather than by scanning an
+  artifact; the scope, platforms and privilege requirements are recorded there
 
 [^cdx-obom]: [CycloneDX: OBOM](https://cyclonedx.org/capabilities/obom/)
