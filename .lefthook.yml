@@ -102,4 +102,5 @@ pre-commit:
         okf-gate knowledge &&
         python3 "$G/check-dates.py" . &&
         python3 "$S/check-bundle-audience.py" knowledge &&
-        python3 "$S/check-bundle-types.py" knowledge
+        python3 "$S/check-bundle-types.py" knowledge &&
+        python3 "$S/check-bundle-log.py" knowledge/log.md
