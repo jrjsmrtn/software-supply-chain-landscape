@@ -112,9 +112,11 @@ those appear below in their own right.
 
 ### The xBOM family — what's in the box
 
-A bill of materials is an inventory of what a thing is made of. The variants — SBOM for software,
-HBOM for hardware, OBOM for a deployed environment, CBOM for cryptography, AI/ML-BOM for models
-and datasets, SaaSBOM for hosted services — differ only in what "thing" means.
+A bill of materials is an inventory of what a thing is made of. **`BOM` is always Bill of
+Materials; the letter in front names the subject**, and *xBOM* is the placeholder for whichever
+letter you substitute. The variants — SBOM for software, HBOM for hardware, OBOM for a deployed
+environment, CBOM for cryptography, AI/ML-BOM for models and datasets, SaaSBOM for hosted services,
+MBOM for how a thing was manufactured — differ only in what "thing" means.
 
 The family exists because the original insight — *you cannot secure what you cannot enumerate* —
 turned out to generalize well beyond software packages.

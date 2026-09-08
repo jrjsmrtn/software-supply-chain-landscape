@@ -22,6 +22,9 @@ sources:
     resource: https://cyclonedx.org/capabilities/saasbom/
 ---
 
+**SaaSBOM — Software as a Service Bill of Materials.** The one variant whose prefix is itself an
+acronym.
+
 **"Inventory services, endpoints, and data flows and classifications that power cloud-native
 applications."**[^cdx-saasbom]
 

@@ -12,6 +12,28 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases. <!-- audience-ok: an explicit repository-level pointer; a copied tree loses it by design -->
 
+## 2026-09-08
+
+* **The xBOM acronyms were never expanded where a reader meets them.** Every `bom-types/` concept
+  opened straight into a CycloneDX quotation, so someone landing on `cbom.md` learned what a CBOM
+  *contains* without ever being told the **C** is Cryptographic. **The expansions existed only in
+  `description:` frontmatter** — which a reader of the rendered body never sees, and which the
+  category index had dropped when its entries were written by hand.
+
+  All seven concepts now open by naming themselves, the index carries each expansion, and both state
+  the general rule: **`BOM` is always Bill of Materials, the letter in front names the subject, and
+  *xBOM* is a placeholder written with a literal `x`** rather than a format. `ml-bom.md` already did
+  this and is unchanged.
+
+  ⚠ **`landscape.md` listed six of the seven** — MBOM was missing from the sentence introducing the
+  family, in the one document meant to be read straight through. Added, along with the expansion
+  rule.
+
+  **First attempt bolded each initial** — `**C**ryptographic **B**ill **o**f **M**aterials` — which
+  looked like it answered the question and **broke the searchable string**: `grep "Cryptographic
+  Bill of Materials"` then matched only the frontmatter, not the body. A bundle that agents load and
+  grep cannot afford decorative markup inside the terms it is searched by. Rewritten plainly.
+
 ## 2026-09-04
 
 * **Completed `intelligence/`** — the five concepts left unopened in the previous entry are now

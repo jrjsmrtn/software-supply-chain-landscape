@@ -3,13 +3,18 @@
 A bill of materials is an inventory of what a thing is made of. The variants differ in what "thing"
 means — and, less obviously, in whether they describe an *artifact*, a *deployment*, or a *process*.
 
-* [SBOM](sbom.md) - Software components, services, and the dependency relationships between them.
-* [HBOM](hbom.md) - Physical hardware components **and their firmware**, for embedded and connected devices.
-* [OBOM](obom.md) - Full-stack inventory of a runtime environment: OS, hardware, configuration, dependencies.
-* [SaaSBOM](saasbom.md) - Services, endpoints, data flows and their classifications.
-* [CBOM](cbom.md) - Cryptographic assets and where each is used.
-* [ML-BOM](ml-bom.md) - Datasets, models and configurations, with dataset provenance.
-* [MBOM](mbom.md) - Declared and observed production formulations and workflows.
+**The letter is the subject; `BOM` is always Bill of Materials.** *xBOM* is not a format — it is the
+placeholder, written with a literal `x`, for whichever letter you substitute. So the family reads
+as **S**oftware, **H**ardware, **O**perations, **C**ryptographic and **M**anufacturing, with **ML**
+for Machine Learning and **SaaS** for Software as a Service — the one prefix that is itself an acronym.
+
+* [SBOM](sbom.md) - **Software Bill of Materials.** Software components, services, and the dependency relationships between them.
+* [HBOM](hbom.md) - **Hardware Bill of Materials.** Physical hardware components **and their firmware**, for embedded and connected devices.
+* [OBOM](obom.md) - **Operations Bill of Materials.** Full-stack inventory of a runtime environment: OS, hardware, configuration, dependencies.
+* [SaaSBOM](saasbom.md) - **Software as a Service Bill of Materials.** Services, endpoints, data flows and their classifications.
+* [CBOM](cbom.md) - **Cryptographic Bill of Materials.** Cryptographic assets and where each is used.
+* [ML-BOM](ml-bom.md) - **Machine Learning Bill of Materials**, also written AI/ML-BOM. Datasets, models and configurations, with dataset provenance.
+* [MBOM](mbom.md) - **Manufacturing Bill of Materials.** Declared and observed production formulations and workflows.
 
 # What each one describes
 

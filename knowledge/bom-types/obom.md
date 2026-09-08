@@ -22,6 +22,8 @@ sources:
     resource: https://cyclonedx.org/capabilities/obom/
 ---
 
+**OBOM — Operations Bill of Materials.**
+
 **"Full-stack inventory of runtime environments, configurations, and additional
 dependencies."**[^cdx-obom]
 

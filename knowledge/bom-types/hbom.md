@@ -22,6 +22,8 @@ sources:
     resource: https://cyclonedx.org/capabilities/hbom/
 ---
 
+**HBOM — Hardware Bill of Materials.**
+
 **"Inventory hardware components for IoT, ICS, and other types of embedded and connected
 devices."**[^cdx-hbom]
 

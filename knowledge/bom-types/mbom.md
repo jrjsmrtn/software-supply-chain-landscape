@@ -22,6 +22,9 @@ sources:
     resource: https://cyclonedx.org/capabilities/mbom/
 ---
 
+**MBOM — Manufacturing Bill of Materials.** The oldest sense of the term, and the one the
+software variants borrowed.
+
 **"Declared and observed formulation for reproducibility throughout the product
 lifecycle."**[^cdx-mbom]
 

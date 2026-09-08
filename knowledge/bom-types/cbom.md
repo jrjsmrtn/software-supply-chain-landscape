@@ -27,6 +27,8 @@ sources:
     resource: https://github.com/CycloneDX/specification/blob/master/schema/bom-1.7.schema.json
 ---
 
+**CBOM — Cryptographic Bill of Materials.**
+
 **"Detailed representation of cryptographic assets within a system. This includes algorithms,
 keys, certificates, and their relationships to software components."**[^cdx-cbom]
 

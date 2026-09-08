@@ -21,7 +21,8 @@ sources:
     resource: https://cyclonedx.org/capabilities/sbom/
 ---
 
-The original, and the one every other variant generalises from.
+**SBOM — Software Bill of Materials.** The original, and the one every other variant
+generalises from.
 
 CycloneDX's definition: **"Inventory software components and services and the dependency
 relationships between them."**[^cdx-sbom]
