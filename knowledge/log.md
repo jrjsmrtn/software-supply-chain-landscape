@@ -12,6 +12,30 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases. <!-- audience-ok: an explicit repository-level pointer; a copied tree loses it by design -->
 
+## 2026-09-09
+
+* **Added `pkg:swid` to `naming/purl-type-definitions`** — the purl type for ISO/IEC 19770-2
+  Software Identification tags, and the one that **breaks the mental model the rest of the corpus
+  builds**. Its definition sets `use_repository: false`, and the identifying information lives in
+  **qualifiers** (`tag_id`, `tag_version`, `tag_creator_regid`) rather than in namespace, name and
+  version, which map instead onto the tag's own fields. A `pkg:swid` purl re-encodes an existing
+  identifier; it is not a coordinate in a registry, so a purl `type` does not imply a fetchable
+  location — an assumption easy to carry over from `npm` or `pypi`.
+
+  ⚠ **The bundle already held both halves of a contradiction and connected neither.**
+  `regulation/sbom-minimum-elements` records that the 2026 edition **dropped SWID tags** as "not a
+  widely used" format, while `distribution/tei` records `swid` as an accepted TEI identifier type —
+  and purl registers it. Both are current. The regulation concept now says so in place: **dropped
+  from a procurement floor is not withdrawn from the ecosystem.**
+
+* **Re-verified `naming/purl-type-definitions`.** The registered-type count is **still 42**,
+  unchanged since 2026-08-02 — counted from the directory listing, discounting its `README.md`,
+  which is the only way to get 42 rather than 43 from that folder. Its schema table was checked
+  against `purl-type-definition.schema-1.0.json` and was **incomplete**: it presented itself as the
+  fields a definition carries and omitted `subpath_definition` and `note`. purl has a subpath
+  segment and a type can constrain it, so that was a substantive gap rather than a cosmetic one.
+  Both added, and only then was the concept stamped.
+
 ## 2026-09-08
 
 * **The xBOM acronyms were never expanded where a reader meets them.** Every `bom-types/` concept

@@ -78,6 +78,11 @@ changes alter meaning rather than coverage:[^cisa-2026]
   admission, not a fix.
 - **Automation Support became Machine-Processable Data** and moved out of the data fields into
   practices, with **SWID tags dropped** from the list of data formats as "not a widely used" format.
+  ⚠ Note what that does *not* settle: purl still registers a
+  [`swid` type](/naming/purl-type-definitions.md), and [TEI](/distribution/tei.md) still accepts
+  `swid` as an identifier type. **Dropped from a procurement floor is not withdrawn from the
+  ecosystem** — a component can carry a SWID-derived identifier in a document this instrument
+  no longer asks for.
 - **Access Controls was removed as an element**, its considerations folded into Distribution and
   Delivery.
 
