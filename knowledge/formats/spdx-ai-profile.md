@@ -15,7 +15,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T21:50:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-10T10:00:00Z'
+stale_after: 2027-03-10
 sources:
   - id: spdx-ai
     title: 'SPDX 3.0.1: AI profile'
@@ -38,7 +40,7 @@ independent of any model built from it.[^spdx-ai][^spdx-dataset]
 > "The AI Profile is designed to provide a standardized way of documenting and sharing information
 > about AI software packages (i.e. systems)."[^spdx-ai]
 
-Classes: `AIPackage`, `EnergyConsumption`, `EnergyConsumptionDescription`. Nineteen properties, two
+Classes: `AIPackage`, `EnergyConsumption`, `EnergyConsumptionDescription`. Twenty properties, two
 vocabularies (`EnergyUnitType`, `SafetyRiskAssessmentType`).
 
 | Grouping | Properties |

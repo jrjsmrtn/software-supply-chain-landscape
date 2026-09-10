@@ -15,11 +15,16 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T21:50:00Z'
-stale_after: 2027-02-01
+  - by: claude/opus-5
+    at: '2026-09-10T10:00:00Z'
+stale_after: 2027-03-10
 sources:
   - id: spdx
     title: SPDX
     resource: https://spdx.dev/
+  - id: spdx-3-model
+    title: 'SPDX 3 model (tags 3.0.1 and 3.1-rc1)'
+    resource: https://github.com/spdx/spdx-3-model
   - id: spdx-security
     title: 'SPDX 3.0.1: Security profile'
     resource: https://spdx.github.io/spdx-spec/v3.0.1/model/Security/Security/
@@ -53,17 +58,34 @@ Two things follow from the licensing origin:
 # Profiles are the 3.0 mechanism
 
 SPDX 3.0 reorganised around **namespaces (profiles)**, each adding a domain's vocabulary on top of
-Core. Nine exist in 3.0.1:[^spdx-security]
+Core:[^spdx-security]
 
 `Core` · `Software` · `Licensing` · `Security` · `Build` · `Dataset` · `AI` · `Extension` · `Lite`
+
+**Count them from the model tree at the 3.0.1 tag and you get eleven, not nine**, because
+`SimpleLicensing` and `ExpandedLicensing` sit beside `Licensing` as their own
+namespaces.[^spdx-3-model] The nine above are the ones a consumer chooses between; the extra two
+subdivide licensing rather than adding a domain. Stated because the two numbers are both defensible
+and neither is wrong — say which you are counting.
+
+⚠ **SPDX 3.1 is in progress**, tagged `3.1-rc1`, and adds five namespaces absent from 3.0.1:
+**`Hardware`**, **`SupplyChain`**, `Operations`, `Service` and `FunctionalSafety`.[^spdx-3-model]
+The first two are this bundle's own subject matter arriving in a format that previously left it to
+[CycloneDX](cyclonedx.md) — worth watching rather than acting on, since a release candidate is not
+a specification.
 
 Two consequences matter:
 
 - **SPDX now covers domains it used to leave alone.** The [AI and Dataset
   profiles](spdx-ai-profile.md) carry structured model and training-data metadata — energy by
   phase, `knownBias`, `safetyRiskAssessment` — with no CycloneDX equivalent.
-- **VEX is native.** The Security profile defines twelve vulnerability-assessment relationship
-  classes (`VexAffected…`, `VexNotAffected…`, `VexFixed…`, `VexUnderInvestigation…`), a
+- **VEX is native, and it is not only VEX.** The Security profile defines twelve
+  vulnerability-assessment relationship classes, of which **five are `Vex…`** (`VexAffected…`,
+  `VexNotAffected…`, `VexFixed…`, `VexUnderInvestigation…`, plus the abstract base). The other seven
+  model **CVSS v2, v3 and v4 scores, [EPSS](/intelligence/epss.md), [SSVC](/intelligence/ssvc.md)
+  and exploit catalogs** such as [KEV](/intelligence/cisa.md) as first-class
+  relationships.[^spdx-3-model] So the profile carries the whole triage stack this bundle documents
+  separately, not just the supplier's verdict. A
   `Vulnerability` class, 21 properties including `justificationType` and `vexVersion`, and a
   `VexJustificationType` vocabulary. Its own description is terse — "The Security Profile captures
   security related information."[^spdx-security]
@@ -84,3 +106,4 @@ Two consequences matter:
 
 [^spdx]: [SPDX](https://spdx.dev/)
 [^spdx-security]: [SPDX 3.0.1 Security profile](https://spdx.github.io/spdx-spec/v3.0.1/model/Security/Security/)
+[^spdx-3-model]: [SPDX 3 model](https://github.com/spdx/spdx-3-model)

@@ -13,6 +13,12 @@ place for them.
 
 ### Changed
 
+- **All six `formats/` concepts re-verified** against schemas rather than prose; four were correct
+  as written. `spdx` gained the two things it was missing: that its Security profile models CVSS,
+  EPSS, SSVC and exploit catalogs as well as VEX, and that **SPDX 3.1-rc1 adds `Hardware` and
+  `SupplyChain` namespaces** — this bundle's subject arriving in the format that had left it to
+  CycloneDX.
+
 - **All 15 `intelligence/` concepts re-verified.** Completing the category found that `cna` — the
   concept arguing that *scope is the operative word* — had itself overstated the Python Software
   Foundation's CNA scope as *Python and PyPI*, when PyPI the registry is not in scope at all. The

@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-06T21:40:00Z'
-stale_after: 2027-08-01
+  - by: claude/opus-5
+    at: '2026-09-10T10:00:00Z'
+stale_after: 2027-09-10
 sources:
   - id: cisa-types
     title: 'Types of Software Bill of Material (SBOM) Documents (CISA, 2023-04-21)'

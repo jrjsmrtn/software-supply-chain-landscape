@@ -13,7 +13,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T23:05:00Z'
-stale_after: 2027-08-01
+  - by: claude/opus-5
+    at: '2026-09-10T10:00:00Z'
+stale_after: 2027-09-10
 sources:
   - id: cyclonedx-cli
     title: cyclonedx-cli

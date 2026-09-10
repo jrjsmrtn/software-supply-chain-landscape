@@ -12,6 +12,42 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases. <!-- audience-ok: an explicit repository-level pointer; a copied tree loses it by design -->
 
+## 2026-09-10
+
+* **Re-verified all six `formats/` concepts** against schemas and model trees rather than prose.
+  **Four were correct as written.** `cyclonedx` pins **1.7.1, released 2026-06-02** — still exactly
+  current, with JSON, XML and Protobuf schemas all present for 1.7, and ECMA-424 confirmed from
+  Ecma's own page. `bom-completeness`'s ten `compositions.aggregate` values match the 1.7 schema
+  with nothing missing and nothing extra. `sbom-types`'s seven-phase `metadata.lifecycles` mapping
+  holds, including the collapse it exists to point out — Deployed and Runtime both land on
+  `operations`. `bom-merging`'s claim that **no `fragment` object exists in the specification** is
+  confirmed by absence: zero occurrences in the 1.7 schema.
+
+  ⚠ **`spdx` framed the Security profile as a VEX mechanism, and it is more than that.** The twelve
+  vulnerability-assessment relationship classes are correctly counted, but only **five** are `Vex…`.
+  The other seven model **CVSS v2/v3/v4, EPSS, SSVC and exploit catalogs** as first-class
+  relationships — so SPDX 3.0 natively carries the whole triage stack this bundle documents in
+  `intelligence/`, and the concept said none of it. Now linked to the concepts concerned.
+
+  ⚠ **`spdx` said "nine profiles exist in 3.0.1"; the model tree at that tag has eleven.**
+  `SimpleLicensing` and `ExpandedLicensing` sit beside `Licensing` as their own namespaces. Both
+  numbers are defensible and the concept now says which it counts and why — the nine are what a
+  consumer chooses between, the extra two subdivide licensing.
+
+  ⚠ **SPDX 3.1 is in progress and was unmentioned.** Tag `3.1-rc1` adds five namespaces absent from
+  3.0.1: **`Hardware`**, **`SupplyChain`**, `Operations`, `Service`, `FunctionalSafety`. The first
+  two are this bundle's own subject arriving in a format that had left that ground to CycloneDX.
+  Recorded as something to watch, not to act on — a release candidate is not a specification.
+
+  ⚠ **`spdx-ai-profile` contradicted itself by one.** The prose said *Nineteen properties*; its own
+  table listed twenty, and upstream has twenty — identical sets, verified by diffing the concept's
+  table against the model directory. The table was right and the count was wrong.
+
+  **Two of the checks were wrong before the corpus was**, again. Counting the SPDX model directory
+  on `main` gave sixteen namespaces, which would have made "nine" look badly stale — until the same
+  count at the **3.0.1 tag** gave eleven, with the extra five belonging to 3.1. And a first attempt
+  to count the AI properties swallowed the Dataset table with them and reported thirty-three.
+
 ## 2026-09-09
 
 * **Added `pkg:swid` to `naming/purl-type-definitions`** — the purl type for ISO/IEC 19770-2
