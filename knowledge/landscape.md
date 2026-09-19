@@ -452,14 +452,15 @@ itself, so publishing a new VEX statement for an unchanged binary is a first-cla
 than a silent file swap.
 
 Governance follows CycloneDX's lineage: an OWASP effort being standardized through Ecma
-International TC54. The identifier syntax and resolution mechanics have since settled enough to
-document — a `urn:tei:` URN resolved through DNS to a `/.well-known/tea` endpoint — but the
-specification is at **beta 2**, and deliberately covers the *consumer* side only: work on the
-publisher API begins after 1.0.
+International TC54. The identifier resolves through DNS to a `/.well-known/tea` endpoint — though
+**the identifier syntax itself changed on 2026-09-18**, from a `urn:tei:` URN to a `tei://` URL, so
+"settled enough to document" was optimistic and is the best illustration in this document of what
+*least settled layer* means in practice.
 
-So the asymmetry decides what you can do with it. Building something that *reads* TEA is possible
-now; building something that *publishes* is not, and publishing is the side most projects would
-need.
+The specification is at **beta 2** and its conformance base is the *consumer* side; the publisher
+API is a 0.0.2 draft that says it *will be* a recommendation. The asymmetry therefore shapes what
+you can rely on rather than what you can build: reading TEA is specified, publishing is happening
+against a draft that carries no conformance standing — several open-source servers already do it.
 
 → Object model, TEI, status:
 [`distribution/` in the knowledge bundle](/distribution/index.md)

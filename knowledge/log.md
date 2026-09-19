@@ -12,6 +12,52 @@ field, and a git tag does not travel with a copied directory.
 **v0.2.0** 2026-08-02 · **v0.1.0** 2026-08-02. Unreleased work sits at the top of the newest date.
 [`../CHANGELOG.md`](../CHANGELOG.md) is the repository-level view of the same releases. <!-- audience-ok: an explicit repository-level pointer; a copied tree loses it by design -->
 
+## 2026-09-20
+
+* **Re-verified `distribution/` — and the TEI syntax had changed underneath it two days earlier.**
+  Both concepts were 42 days from expiry, in the bundle's ~3-month tier. Upstream pushed on
+  **2026-09-18**; this concept recorded the repository as last updated 2026-05-20.
+
+  ⚠⚠ **`distribution/tei` documented a URN; TEI is now a URL.**
+  `urn:tei:<type>:<domain-name>:<unique-identifier>` became
+  `tei://<domain-name>/<type>/<unique-identifier>` — **the scheme, the separator and the order of
+  the two segments all changed**, so an identifier written against the previous revision does not
+  parse under this one. Both worked examples were replaced; a purl inside a TEI is now
+  **BASE64URL**-encoded, which costs readability and buys a parser that no longer collides with
+  purl's own `/`, `@` and `?`.
+
+  ⚠ **The declared TEI types went from three to seven, and `swid` is not among them** — `purl`,
+  `hash`, `uuid`, `ean`/`upc`, `gtin`, `asin`, `udi`. It is not deprecated; it is absent.
+
+  ⚠⚠ **Two concepts corrected eleven days ago asserted the opposite, and this pass falsified
+  them.** On 2026-09-09 `naming/purl-type-definitions` and `regulation/sbom-minimum-elements` were
+  both given the claim that *purl registers `swid` and TEI accepts it*, as the corroboration for
+  SWID's contested standing. **TEI stopped accepting it nine days later.** Both are repointed: two
+  of the three systems this bundle cites have now dropped SWID and purl is the one still carrying
+  it — a sharper finding than the original, arrived at by being wrong. `landscape.md` carried the
+  `urn:tei:` form too and is corrected.
+
+  ⚠ **"A publisher cannot be built" was too strong.** A publisher specification exists at
+  `spec/publisher/`, declaring version **0.0.2** and describing itself as what *will be* a
+  recommendation, with the consumer API as "the base of conformance"; it has not moved since
+  2026-01-16 while the consumer spec reached 0.5.0. Meanwhile upstream lists **three open-source
+  servers** and a client claiming full Consumer **and Producer** OpenAPI compliance. The honest
+  form is that publishing is happening ahead of the specification that will govern it.
+
+  ⚠ **Four version signals disagree**: the only git release is `0.1.0-beta.1` (2025-05-22), the
+  README says Beta 2, `spec/openapi.yaml` declares **0.5.0**, and the implementations cite **v0.4.0**.
+  The concept's existing advice — do not infer status from the release list — holds and is stronger;
+  the OpenAPI `info.version` is the number implementations track.
+
+  **Added**: TEA now transports **CLE**, standardised as **ECMA-428** (1st edition 2025-12, CLE
+  1.0.0) — end-of-life and end-of-support events published by the vendor, which is the counterpart
+  to what [endoflife.date](/intelligence/endoflife-date.md) curates by hand. Also *Insights*,
+  deferred past 1.0, and the note that CSAF's own distribution requirements keep
+  [CSAF VEX](/intelligence/csaf-vex.md) out of the initial VEX carriage.
+
+  **The category index had predicted exactly this** — *the only part of this bundle where the
+  specification is expected to move before the concepts expire* — and now records that it happened.
+
 ## 2026-09-10
 
 * **Re-verified all six `formats/` concepts** against schemas and model trees rather than prose.

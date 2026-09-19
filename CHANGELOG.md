@@ -13,6 +13,12 @@ place for them.
 
 ### Changed
 
+- **`distribution/` re-verified; the TEI identifier syntax changed from a URN to a URL** on
+  2026-09-18, two days before the check and 42 days before the concepts were due. The breaking
+  change also **falsified two claims this bundle had added eleven days earlier** — both asserting
+  that TEI accepts a `swid` identifier type, which it no longer does. Repointed, with the sharper
+  finding that purl is now the only one of three cited systems still carrying SWID.
+
 - **All six `formats/` concepts re-verified** against schemas rather than prose; four were correct
   as written. `spdx` gained the two things it was missing: that its Security profile models CVSS,
   EPSS, SSVC and exploit catalogs as well as VEX, and that **SPDX 3.1-rc1 adds `Hardware` and

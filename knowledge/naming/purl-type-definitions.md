@@ -103,11 +103,16 @@ Two consequences follow. There is nothing to resolve it against, so the silent-a
 answers, but whether anyone issued a tag at all. And it means a purl `type` does not imply a
 fetchable location — an assumption easy to carry over from `npm` or `pypi` and wrong here.
 
-⚠ **Its standing is contested across this bundle's own sources.** purl registers it and
-[TEI](/distribution/tea.md) accepts `swid` as an identifier type, while the
-[2026 SBOM minimum elements](/regulation/sbom-minimum-elements.md) **dropped SWID tags** from its
-data formats as "not a widely used" format. Both are current. Registered is not the same as
-adopted, and this is the clearest case of the gap in the corpus.
+⚠ **Its standing is contested, and two of the three sources this bundle cites have now dropped
+it.** The [2026 SBOM minimum elements](/regulation/sbom-minimum-elements.md) removed SWID tags from
+its data formats as "not a widely used" format. **[TEI](/distribution/tei.md) listed `swid` among
+its identifier types and no longer does** — the seven types it declares as of 2026-09-18 do not
+include it, and it is not marked deprecated either; it is simply absent. purl still registers it.
+
+So the direction of travel is visible: **purl is the one system still carrying SWID**, and this
+concept recorded the opposite balance eleven days earlier, on 2026-09-09, when TEI still listed it.
+Registered is not the same as adopted, and a type can be registered by one system while another
+quietly stops naming it.
 
 # Related
 
