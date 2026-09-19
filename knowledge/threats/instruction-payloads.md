@@ -15,12 +15,18 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:13:20Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-20T11:00:00Z'
+stale_after: 2027-03-20
 sources:
   - id: owasp-ast10
     title: 'OWASP Agentic Skills Top 10'
     resource: https://owasp.org/www-project-agentic-skills-top-10/
     last_modified: '2026-07-31'
+  - id: owasp-ast10-repo
+    title: 'OWASP Agentic Skills Top 10 — project repository'
+    resource: https://github.com/OWASP/www-project-agentic-skills-top-10
+    last_modified: '2026-09-20'
   - id: cve-2026-25253
     title: 'CVE-2026-25253'
     resource: https://api.osv.dev/v1/vulns/CVE-2026-25253
@@ -52,10 +58,18 @@ often unremarkable to a person skimming a diff.
 
 # It is a real class, not a projection
 
-[OWASP runs an Agentic Skills Top 10](https://owasp.org/www-project-agentic-skills-top-10/), at v1
-public review as of 2026-07, with per-risk codes `AST01`–`AST10`, an incident timeline, case studies
-and threat intelligence.[^owasp-ast10] Agentic systems have begun accruing
-CVEs — `CVE-2026-25253` is retrievable from OSV like any other.[^cve-2026-25253]
+[OWASP runs an Agentic Skills Top 10](https://owasp.org/www-project-agentic-skills-top-10/)
+(AST10). As of 2026-09-20 it is at **version 1.0, 2026 Edition**, status *Active Development →
+Launch Preparation*, and remains an OWASP **Incubator** project — the *v1 public review* this
+concept previously recorded has been superseded.[^owasp-ast10]
+
+The substance is in the **project repository**, not the project page this concept used to cite for
+it: one file per risk, `ast01.md` through `ast10.md`, plus `case-studies.md`,
+`incident-response.md` and `threat-intelligence.md`.[^owasp-ast10-repo] Each risk is also mapped to
+the Cloud Security Alliance's **MAESTRO** seven-layer threat model for agentic systems.[^owasp-ast10]
+
+Agentic systems have begun accruing CVEs — `CVE-2026-25253` is retrievable from OSV like any other,
+confirmed 2026-09-20.[^cve-2026-25253]
 
 > **Scope.** Most of that Top 10 is *runtime* agent security — prompt injection, excessive
 > permission, exfiltration — which is application security rather than supply chain and is not
@@ -97,3 +111,4 @@ soundness properties a compiler-oriented tool can offer.
 
 [^owasp-ast10]: [OWASP Agentic Skills Top 10](https://owasp.org/www-project-agentic-skills-top-10/)
 [^cve-2026-25253]: [CVE-2026-25253 in OSV](https://api.osv.dev/v1/vulns/CVE-2026-25253)
+[^owasp-ast10-repo]: [OWASP Agentic Skills Top 10 — repository](https://github.com/OWASP/www-project-agentic-skills-top-10)

@@ -15,7 +15,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:13:20Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-20T11:00:00Z'
+stale_after: 2027-01-20
 sources:
   - id: model-transparency
     title: sigstore/model-transparency
@@ -30,8 +32,9 @@ sources:
     last_modified: '2026-08-01'
 ---
 
-From the Sigstore project (`sigstore/model-transparency`, Apache-2.0; PyPI `model-signing`, 1.1.1 at
-the time of writing).[^model-transparency][^pypi] It exists because
+From the Sigstore project (`sigstore/model-transparency`, Apache-2.0; PyPI `model-signing`,
+**1.1.1 — released 2025-10-10 and still current at 2026-09-20**, so this is a settled line rather
+than a snapshot).[^model-transparency][^pypi] It exists because
 [cosign](cosign.md) signs *a* thing, and a model is not one thing.
 
 # The unit of signing is a directory

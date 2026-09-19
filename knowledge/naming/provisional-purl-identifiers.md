@@ -13,7 +13,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:37:22Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-20T11:00:00Z'
+stale_after: 2027-01-20
 sources:
   - id: type-definitions
     title: purl type definitions directory
@@ -54,7 +56,11 @@ ecosystem, say so rather than emitting a clean scan.
 
 # Worked example
 
-`ansible-bom` faced exactly this for the proposed `ansible` type. Its ADR-0004 records the decision
+`ansible-bom` faced exactly this for the proposed `ansible` type, **which is still
+unregistered**: checked 2026-09-20, there is no `ansible-definition.json` among the registered
+types, and [purl-spec#854](https://github.com/package-url/purl-spec/pull/854) has been **open since
+at least 2026-06-09** — over three months without movement.[^type-definitions] The neighbouring
+concept's remark that review *can* stall is no longer hypothetical; this is the worked case. Its ADR-0004 records the decision
 and, more usefully, records that an earlier revision **claimed conformance while emitting a
 different shape**, and that the claim survived for months because the proposal had been paraphrased
 into prose with nothing able to contradict it. The fix was structural — vendor the proposal, and

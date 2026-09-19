@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:37:22Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-20T11:00:00Z'
+stale_after: 2027-01-20
 sources:
   - id: cosign
     title: 'Sigstore: cosign'
@@ -53,8 +55,14 @@ This was hit in a real release pipeline rather than read off a changelog, which 
 recorded here rather than left to be rediscovered. Verify the installed binary's major version
 before copying any signing snippet.
 
-The v3 line remains current — 3.1.2 as of 2026-08-02, and the bundle format is unchanged since 3.0.
-The error text above was reproduced against 3.1.1.
+The v3 line remains current — **3.1.3 as of 2026-08-06** — and the bundle format is unchanged since
+3.0. **Both error texts above were re-reproduced against 3.1.3** on 2026-09-20, and
+`cosign sign --help` no longer lists `--output-signature` or `--output-certificate` at all.
+
+⚠ **v2 has not been retired, which is why checking the major version still matters.** `v2.6.5`
+shipped on **2026-08-06, the same day as v3.1.3**, and `v2.6.4` a fortnight before it. Two major
+lines are being released in parallel, so "cosign is on v3 now" is not a safe assumption about any
+particular machine — the installed binary decides which flags exist.
 
 # Practice
 

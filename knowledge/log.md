@@ -14,6 +14,36 @@ field, and a git tag does not travel with a copied directory.
 
 ## 2026-09-20
 
+* **Re-verified the five concepts at 72 days**, across four categories. `licensing/spdx-license-expression`
+  was correct as written: its claim that CycloneDX's `acknowledgement` field arrived in 1.6 checks
+  out against the schemas — **0 occurrences in `bom-1.5`, 2 in each of 1.6 and 1.7**.
+
+  ⚠ **`provenance/cosign` was one patch behind, and missed that v2 is still shipping.** v3.1.3
+  (2026-08-06) supersedes the 3.1.2 recorded here — but the more useful finding is that **`v2.6.5`
+  was published the same day**, with `v2.6.4` a fortnight earlier. Two major lines are being
+  released in parallel, so the concept's advice to check the installed major version is not
+  transitional guidance; it is permanent for as long as that holds.
+
+  **Both cosign error texts were re-reproduced against 3.1.3 rather than re-read**, and
+  `cosign sign --help` confirms `--output-signature` and `--output-certificate` are gone from v3.
+  This concept's own rule is measurement, and the binary was on `PATH`.
+
+  ⚠ **`threats/instruction-payloads` cited the wrong document for most of what it claimed.** The
+  per-risk codes, case studies and threat intelligence are in the **project repository** —
+  `ast01.md` through `ast10.md`, `case-studies.md`, `threat-intelligence.md` — and not on the OWASP
+  project page the concept footnoted, which carries none of them. Same shape as the Ægis embargo
+  quotation: an accurate claim pointed at a page that does not support it. Repointed, and the repo
+  added as a source. Its status also moved: **v1.0, 2026 Edition, "Active Development → Launch
+  Preparation"**, superseding *v1 public review as of 2026-07*. Added the MAESTRO mapping.
+
+  **Two claims held and are now stated more strongly, because holding is itself a result.**
+  `model-signing` is still 1.1.1 — released 2025-10-10 and unchanged since, so *at the time of
+  writing* becomes a dated fact about a settled line. And `naming/provisional-purl-identifiers`'
+  premise survives: the `ansible` purl type is **still unregistered**, with
+  [purl-spec#854](https://github.com/package-url/purl-spec/pull/854) open since at least
+  2026-06-09. The neighbouring concept's *review can stall* now has its worked case, over three
+  months old.
+
 * **Re-verified `distribution/` — and the TEI syntax had changed underneath it two days earlier.**
   Both concepts were 42 days from expiry, in the bundle's ~3-month tier. Upstream pushed on
   **2026-09-18**; this concept recorded the repository as last updated 2026-05-20.

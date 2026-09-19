@@ -14,7 +14,9 @@ generated:
 verified:
   - by: claude/opus-5
     at: '2026-08-01T22:37:22Z'
-stale_after: 2026-12-01
+  - by: claude/opus-5
+    at: '2026-09-20T11:00:00Z'
+stale_after: 2027-03-20
 sources:
   - id: spdx
     title: SPDX

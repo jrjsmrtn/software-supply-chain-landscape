@@ -13,6 +13,12 @@ place for them.
 
 ### Changed
 
+- **The five concepts at 72 days re-verified**, across `provenance/`, `licensing/`, `naming/` and
+  `threats/`. `instruction-payloads` was citing the OWASP project page for per-risk codes, case
+  studies and threat intelligence that live in the project *repository*; `cosign` was a patch behind
+  and had missed that the v2 line is still being released alongside v3. Its error texts were
+  re-reproduced against the installed 3.1.3 rather than re-read.
+
 - **`distribution/` re-verified; the TEI identifier syntax changed from a URN to a URL** on
   2026-09-18, two days before the check and 42 days before the concepts were due. The breaking
   change also **falsified two claims this bundle had added eleven days earlier** — both asserting
