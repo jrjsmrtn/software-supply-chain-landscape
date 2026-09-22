@@ -73,8 +73,8 @@ supply the half that depends on them.
 # Two properties worth knowing before relying on it
 
 **There is no "unknown" value, deliberately.** From the guide: *"One important omission from the
-values for each decision point below is an 'unknown' option. Instead of declaring a decision point as
-'unknown,' CISA identifies the value that is the most reasonable assumption based on prior
+values for each decision point below is an "unknown" option. Instead of declaring a decision point as
+"unknown," CISA identifies the value that is the most reasonable assumption based on prior
 events."*[^cisa-ssvc] The guide immediately qualifies it — the approach "requires reliable historical
 evidence and future events may change these assumptions over time."
 

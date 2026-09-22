@@ -107,7 +107,7 @@ publication date announced.[^ecma-tc54]
 |---|---|
 | the only git release | `0.1.0-beta.1`, published 2025-05-22 |
 | the README | **Beta 2** |
-| `spec/openapi.yaml` `info.version` | **0.5.0** — *"the OWASP Transparency Exchange API specification for consumers"*[^tea-openapi] |
+| `spec/openapi.yaml` `info.version` | **0.5.0** — *"The OWASP Transparency Exchange API specification for consumers"*[^tea-openapi] |
 | the implementations upstream lists | **TEA v0.4.0**[^tea-implementations] |
 
 The advice this concept already gave — *do not infer the status from the release list* — holds and

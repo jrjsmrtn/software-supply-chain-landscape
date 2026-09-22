@@ -80,9 +80,9 @@ them.[^kernel-submitting-patches]
 
 Two details that change how these should be read:
 
-**`Acked-by:` may cover only part of a patch.** *"If a patch affects multiple subsystems and has an
+**`Acked-by:` may cover only part of a patch.** *"if a patch affects multiple subsystems and has an
 Acked-by: from one subsystem maintainer then this usually indicates acknowledgement of just the part
-which affects that maintainer's code."* A `# Suffix` can disambiguate:
+which affects that maintainer's code"*. A `# Suffix` can disambiguate:
 `Acked-by: The Stakeholder <stakeholder@example.org> # As primary user`.[^kernel-submitting-patches]
 
 **`Co-developed-by:` is structurally coupled to sign-off.** *"Since Co-developed-by: denotes

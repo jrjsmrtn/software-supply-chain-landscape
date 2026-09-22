@@ -20,7 +20,7 @@ stale_after: 2027-03-04
 sources:
   - id: dependabot
     title: Dependabot documentation
-    resource: https://docs.github.com/en/code-security/dependabot
+    resource: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
 ---
 
 GitHub's dependency-update bot: proprietary, hosted, and **requires no infrastructure at
@@ -59,4 +59,4 @@ misconfiguration.
   [the landscape explanation](/landscape.md#dependabot-and-renovate--closing-the-loop)
 - [Update cooldown](update-cooldown.md) · [Scorecard](scorecard.md)
 
-[^dependabot]: [Dependabot documentation](https://docs.github.com/en/code-security/dependabot)
+[^dependabot]: [Dependabot options reference](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference)

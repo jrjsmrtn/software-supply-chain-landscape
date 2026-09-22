@@ -22,7 +22,7 @@ sources:
     resource: https://docs.renovatebot.com/key-concepts/minimum-release-age/
   - id: dependabot
     title: Dependabot documentation
-    resource: https://docs.github.com/en/code-security/dependabot
+    resource: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference
 ---
 
 Delays proposing a release until it has existed for a configured period.
@@ -55,4 +55,4 @@ registries acting on reports, neither of which happens in minutes.
 - [Renovate](renovate.md) · [Dependabot](dependabot.md)
 
 [^renovate-min-age]: [Renovate: minimum release age](https://docs.renovatebot.com/key-concepts/minimum-release-age/)
-[^dependabot]: [Dependabot documentation](https://docs.github.com/en/code-security/dependabot)
+[^dependabot]: [Dependabot options reference](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference)

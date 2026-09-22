@@ -79,20 +79,20 @@ A §4 problem requires **your employer** to act — waive rights, or sign a Corp
 a process measured in weeks, if it succeeds at all.
 
 A Corporate CLA does not substitute for the individual one: *"a Corporate CLA does not remove the
-need for every developer to sign their own ICLA as an individual."*[^apache-agreements]
+need for every developer to sign their own ICLA as an individual"*.[^apache-agreements]
 
 ## Two clauses that create ongoing duties
 
 - **§7 — third-party work is a separate submission.** Work that is not your original creation *"may
   submit it to the Foundation separately from any Contribution"*, identifying its source and any
-  licence or restriction, *"conspicuously marking the work as 'Submitted on behalf of a
-  third-party: [named here]'."*[^apache-icla] Compare the DCO's clause (c), which handles
+  licence or restriction, *"conspicuously marking the work as "Submitted on behalf of a
+  third-party: [named here]""*.[^apache-icla] Compare the DCO's clause (c), which handles
   pass-through inline via the sign-off chain.
 - **§8 — a continuing obligation.** *"You agree to notify the Foundation of any facts or
   circumstances of which you become aware that would make these representations inaccurate in any
   respect."*[^apache-icla] The agreement does not end at signature.
 
-Contributions are also provided *"on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+Contributions are also provided *"on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 KIND"*, and support is explicitly not expected (§6).[^apache-icla]
 
 ## It is a personal legal instrument
@@ -101,7 +101,7 @@ The form states plainly: *"This is a legal contract containing Personally Identi
 Information."*[^apache-icla] Starred fields *"will become part of your public profile"*, and Apache
 recommends contributors *"use their personal email addresses in the contact details, rather than
 their @work addresses"*, since the ICLA *"is not tied to any employer they may
-have."*[^apache-agreements]
+have"*.[^apache-agreements]
 
 That advice is worth noting for its logic: the agreement follows the *person*, so binding it to an
 employer address misrepresents what was signed and breaks when the job changes.

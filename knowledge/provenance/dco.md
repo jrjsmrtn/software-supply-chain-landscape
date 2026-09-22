@@ -75,9 +75,9 @@ employer clause can be a hard stop for contributors bound by one.
 
 ## Its stated purpose is tracking, not enforcement
 
-The kernel introduced sign-off *"to improve tracking of who did what, especially with patches that
+The kernel introduced sign-off to *"improve tracking of who did what, especially with patches that
 can percolate to their final resting place in the kernel through several layers of
-maintainers."*[^kernel-submitting-patches]
+maintainers"*[^kernel-submitting-patches].
 
 That framing matters for how much weight a DCO can bear. It is a **self-certification**: nothing
 verifies it, and no third party attests to it. Compare [SLSA](slsa.md), which grades a *build
@@ -93,7 +93,7 @@ Beyond the first line, the chain is a provenance record in its own right:[^kerne
   patch, but were not involved in its development."*
 - *"SoB chains should reflect the **real** route a patch took"*, with *"the first SoB entry
   signalling primary authorship of a single author."*
-- Extra tags after a sign-off *"will just be ignored for now"*, but may mark internal company
+- Extra tags after a sign-off — *"They'll just be ignored for now"* — but may mark internal company
   procedures.
 
 So a multi-SoB commit is not multiple authors — it is a custody trail. Reading it as co-authorship

@@ -23,7 +23,7 @@ sources:
 ---
 
 **Vulnerability Disclosure Report.** A supplier's standing, outward disclosure of a product's whole
-vulnerability picture — *what is wrong*. CycloneDX frames it as the ability to *"communicate known
+vulnerability picture — *what is wrong*. CycloneDX frames it as the ability to *"Communicate known
 and unknown vulnerabilities affecting components and services"*, carrying vulnerability sources,
 severity, affected components and recommended mitigations.[^cyclonedx-vdr]
 
