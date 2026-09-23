@@ -39,7 +39,7 @@ Signed-off-by: Random J Developer <random@developer.example.org>
 
 ## What it actually certifies
 
-Read the clauses for what they claim, because the common summary — *"I wrote this"* — is not what
+Read the clauses for what they claim, because the common summary — *I wrote this* — is not what
 any of them says:[^dco-canonical]
 
 - **(a)** the contribution *"was created in whole or in part by me and I have the right to submit it
@@ -52,6 +52,10 @@ any of them says:[^dco-canonical]
 - **(d)** the contributor understands the contribution and its record — *"including all personal
   information I submit with it, including my sign-off"* — is public and *"maintained
   indefinitely"*.
+
+> That phrase is **ours, not the licence's**, and it is set in plain emphasis rather than quotation
+> marks deliberately: in a corpus where quotation marks mean *the source wrote this*, using them for
+> a paraphrase silently promotes it to sourced.
 
 **(a), (b) and (c) are alternatives.** Only (a) mentions creating anything, and even it says *"in
 whole or in part"*. The load-bearing assertion across all three is **the right to submit under the

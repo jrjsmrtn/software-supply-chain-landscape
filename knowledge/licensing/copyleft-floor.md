@@ -15,6 +15,9 @@ verified:
     at: '2026-08-01T23:12:00Z'
 stale_after: 2027-08-01
 sources:
+  - id: agpl-3-0
+    title: 'GNU Affero General Public License v3.0'
+    resource: https://www.gnu.org/licenses/agpl-3.0.txt
   - id: spdx-license-list
     title: SPDX License List
     resource: https://spdx.org/licenses/
@@ -37,7 +40,7 @@ the code you wrote — not the thing you ship.
 
 AGPL-3.0 §13 is headed *"Remote Network Interaction; Use with the GNU General Public License"*
 and requires a modified version to *"prominently offer all users interacting with it remotely
-through a computer network"* access to the source. Interaction over a network is the trigger —
+through a computer network"*[^agpl-3-0] access to the source. Interaction over a network is the trigger —
 not distribution of a binary.
 
 # Two consequences that catch people
@@ -67,3 +70,4 @@ aggregate: bundling is an `AND`, and `AND` accumulates obligations.
 - [Declared versus concluded](declared-vs-concluded.md) — a wrong component licence produces a
   wrong floor
 - [REUSE](reuse.md) — per-file attribution for the vendored trees that create the floor
+[^agpl-3-0]: [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.txt)

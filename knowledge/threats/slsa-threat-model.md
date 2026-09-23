@@ -77,12 +77,12 @@ SLSA states its own gaps plainly:[^slsa-threats-12]
   SLSA."*
 - **Usage (I)**: *"not addressed by SLSA"* — the new letter arrives already marked out of scope.
 - **Availability**: *"SLSA does not currently address availability threats, though future versions
-  might."*
+  might."*[^slsa-threats-12]
 - **(G) Distribution Channel** *is* partially addressed, through consumer verification — a change
   made in v1.1, where v1.0 left registry compromise unmitigated.
 - **Within (B)**, collusion between two reviewers, "bugdoor" changes that look benign, and rubber
-  stamping are each *"not currently addressed by SLSA"* — worth knowing before treating two-party
-  review as a solved control.
+  stamping are each *"not currently addressed by SLSA"*[^slsa-threats-12] — worth knowing before
+  treating two-party review as a solved control.
 
 That is not a criticism; SLSA says what it covers. But it means a "SLSA Level 3" claim — which
 almost always means *Build* L3 — answers the build threats and is silent about how the dependency
